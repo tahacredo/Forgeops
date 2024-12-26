@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/bd9e83dc-691d-4723-96d9-ee014e6e5061",
+    "_type": {
+      "_id": "AccountLockoutNode",
+      "collection": false,
+      "name": "AccountLockoutNode"
+    },
+    "lockAction": "UNLOCK"
+  },
+  "metadata": {
+    "entityId": "default/bd9e83dc-691d-4723-96d9-ee014e6e5061",
+    "entityType": "AccountLockoutNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "bd9e83dc-691d-4723-96d9-ee014e6e5061"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=bd9e83dc-691d-4723-96d9-ee014e6e5061,ou=default,ou=OrganizationConfig,ou=1.0,ou=AccountLockoutNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

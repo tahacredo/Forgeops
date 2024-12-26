@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "UsernameCollectorNode",
+      "collection": false,
+      "name": "UsernameCollectorNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "UsernameCollectorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=UsernameCollectorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

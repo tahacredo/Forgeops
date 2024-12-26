@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/33b24514-3e50-4180-8f08-ab6f4e51b07e",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "collection": false,
+      "name": "InnerTreeEvaluatorNode"
+    },
+    "tree": "ProgressiveProfile"
+  },
+  "metadata": {
+    "entityId": "default/33b24514-3e50-4180-8f08-ab6f4e51b07e",
+    "entityType": "InnerTreeEvaluatorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "33b24514-3e50-4180-8f08-ab6f4e51b07e"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=33b24514-3e50-4180-8f08-ab6f4e51b07e,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "data": {
+    "_id": "default/a5aecad8-854a-4ed5-b719-ff6c90e858c0",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "0a042e10-b22e-4e02-86c4-65e26e775f7a:AttributeCollectorNode:Attribute Collector"
+    ],
+    "pageDescription": {},
+    "pageHeader": {
+      "en": "Please select your preferences"
+    }
+  },
+  "metadata": {
+    "entityId": "default/a5aecad8-854a-4ed5-b719-ff6c90e858c0",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "a5aecad8-854a-4ed5-b719-ff6c90e858c0"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=a5aecad8-854a-4ed5-b719-ff6c90e858c0,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

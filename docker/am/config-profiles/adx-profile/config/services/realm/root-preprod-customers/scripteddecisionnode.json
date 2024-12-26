@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "ScriptedDecisionNode",
+    "_type": {
+      "_id": "ScriptedDecisionNode",
+      "collection": false,
+      "name": "ScriptedDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "ScriptedDecisionNode",
+    "entityType": "ScriptedDecisionNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "ScriptedDecisionNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=ScriptedDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

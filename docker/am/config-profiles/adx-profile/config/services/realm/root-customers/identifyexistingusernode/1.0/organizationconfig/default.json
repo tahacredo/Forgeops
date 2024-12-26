@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "IdentifyExistingUserNode",
+      "collection": false,
+      "name": "IdentifyExistingUserNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "IdentifyExistingUserNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

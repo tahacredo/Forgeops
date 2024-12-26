@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/50f28c0e-aafa-41fd-9928-7d0ea1bb5587",
+    "_type": {
+      "_id": "PasswordCollectorNode",
+      "collection": false,
+      "name": "PasswordCollectorNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default/50f28c0e-aafa-41fd-9928-7d0ea1bb5587",
+    "entityType": "PasswordCollectorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "50f28c0e-aafa-41fd-9928-7d0ea1bb5587"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=50f28c0e-aafa-41fd-9928-7d0ea1bb5587,ou=default,ou=OrganizationConfig,ou=1.0,ou=PasswordCollectorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

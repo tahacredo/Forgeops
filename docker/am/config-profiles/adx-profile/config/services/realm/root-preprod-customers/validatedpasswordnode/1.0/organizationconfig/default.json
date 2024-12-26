@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "ValidatedPasswordNode",
+      "collection": false,
+      "name": "ValidatedPasswordNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "ValidatedPasswordNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=ValidatedPasswordNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

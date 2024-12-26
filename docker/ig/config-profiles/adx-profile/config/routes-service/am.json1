@@ -1,0 +1,146 @@
+{
+  "heap": [
+      {
+          "name": "404Handler",
+          "type": "StaticResponseHandler",
+          "config": {
+              "status": 200,
+              "reason": "Page not found",
+              "entity": "${read('/opt/forgerock/tomcat/webapps/ROOT/error/404.html')}",
+              "headers": {
+                  "content-type": [
+                      "text/html"
+                  ]
+              }
+          }
+      },
+      {
+          "name": "503Handler",
+          "type": "StaticResponseHandler",
+          "config": {
+              "status": 200,
+              "reason": "Generic error",
+              "entity": "${read('/opt/forgerock/tomcat/webapps/ROOT/error/503.html')}",
+              "headers": {
+                  "content-type": [
+                      "text/html"
+                  ]
+              }
+          }
+      },
+      {
+          "name": "FailureHandler",
+          "type": "StaticResponseHandler",
+          "config": {
+              "status": 200, 
+              "reason": "SERVICE UNAVAILABLE",
+              "entity": "${read('/opt/forgerock/tomcat/webapps/ROOT/error/genericError.html')}",
+              "headers": {
+                  "content-type": [
+                      "text/html"
+                  ]
+              }
+          }
+      },
+      {
+          "name": "ChainHandler",
+          "type": "Chain",
+          "config": {
+              "soTimeout": "30 seconds",
+              "connectionTimeout": "30 seconds",
+              "filters": [
+                  {
+                      "type": "HeaderFilter",
+                      "config": {
+                          "messageType": "REQUEST",
+                          "add": {
+                              "X-Forwarded-For": [
+                                  "${contexts.client.remoteAddress}"
+                              ]
+                          }
+                      }
+                  },
+                  {
+                    "type": "ConditionalFilter",
+                    "config": {
+                        "condition": "${find(request.uri.path, '^/auth/json/realms(/root/realms)?/preprod-Customers/authenticate') or find(request.uri.path, '^/auth/json/realms(/root/realms)?/Customers/authenticate')}",
+                        "delegate": {
+                            "type": "ScriptableFilter",
+                            "config": {
+                                "type": "application/x-groovy",
+                                "file": "decryption.groovy"
+                            }
+                        }
+                    }
+                  },
+                  {
+                      "name": "SwitchFilter",
+                      "type": "SwitchFilter",
+                      "config": {
+                          "onResponse": [
+                              {
+                                  "condition": "${response.status.code == 404}",
+                                  "handler": "404Handler"
+                              },
+                              {
+                                  "condition": "${response.status.code == 502 or response.status.code == 503}",
+                                  "handler": "503Handler"
+                              },
+                              {
+                                  "condition": "${response.status.code == 500}",
+                                  "handler": "FailureHandler"
+                              }
+                          ]
+                      }
+                  }
+              ],
+              "handler": {
+                  "name": "CaptureClientHandler",
+                  "type": "ClientHandler",
+                  "config": {
+                      "soTimeout": "30 seconds",
+                      "connectionTimeout": "30 seconds"
+                  },
+                  "capture": "all"
+              }
+          }
+      }
+  ],
+  "handler": {
+      "type": "DispatchHandler",
+      "config": {
+          "bindings": [
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'http' and (find(request.uri.query, 'realm=/Customers') or find(request.uri.query, 'realm=/iam') or matches(request.uri.path, '^/enduser') and not matches(request.uri.path, '^/auth/json/serverinfo/version') )}",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://adx.example.com"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (find(request.uri.query, 'realm=/Customers') or find(request.uri.query, 'realm=/iam') or matches(request.uri.path, '^/enduser') and not matches(request.uri.path, '^/auth/json/serverinfo/version')) }",
+                  "handler": "ChainHandler",
+                  "baseURI": "https://adx.example.com"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/auth/json/serverinfo/version')) }",
+                  "handler": "ChainHandler",
+                  "baseURI": "https://adx.example.com/xyz"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'http' and (matches(request.uri.path, '^/admin') or matches(request.uri.path, '^/openidm'))}",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://adx.example.com"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/admin') or matches(request.uri.path, '^/openidm')) }",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://adx.example.com"
+              },
+              {
+                  "handler": "ChainHandler",
+                  "baseURI": "https://adx.example.com"
+              }
+          ]
+      }
+  },
+  "condition": "${find(request.uri.path, '^/') and (request.uri.path == '/' or find(request.uri.query, 'realm=/Customers') or find(request.uri.query, 'realm=/iam') or find(request.uri.query, 'realm=/preprod-iam') or find(request.uri.path, '^/enduser') or find(request.uri.path, '^/openidm/info')  or find(request.uri.path, '^/openidm/config')  or find(request.uri.path, '^/auth/XUI') or find(request.uri.path, '^/auth/json/realms/root/realms/Customers') or find(request.uri.path, '^/auth/json/realms/root/realms/iam') or find(request.uri.path, '^/auth/json/realms/root/realms/preprod-iam') or find(request.uri.path, '^/auth/json/realms/Customers') or find(request.uri.path, '^/auth/json/realms/iam') or find(request.uri.path, '^/auth/json/realms/preprod-iam') or find(request.uri.path, '^/auth/oauth2') or find(request.uri.path, '^/openidm/authentication') or find(request.uri.path, '^/openidm/managed') or find(request.uri.path, '^/openidm/privilege') or find(request.uri.path, '^/openidm/schema') or find(request.uri.path, '^/openidm/consent') or find(request.uri.path, '^/openidm/selfservice') or find(request.uri.path, '^/auth/json/iam/push') or find(request.uri.path, '^/auth/SSORedirect')  or find(request.uri.path, '^/auth/saml2/jsp') or find(request.uri.path, '^/auth/saml2/continue/metaAlias/iam/pulsesecurevpn-idp') or find(request.uri.path, '^/auth/js')) and not matches(request.uri.path, '^/user/create') and not matches(request.uri.path, '^/user/update') }"
+}

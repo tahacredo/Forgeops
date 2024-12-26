@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/1ba9e073-3128-4873-a7a7-cc1077ce3e04",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Set adxIsAltLogin to true for migrated investor",
+    "script": "objectAttributes = sharedState.get(\"objectAttributes\");\nobjectAttributes.put(\"adxIsAltLogin\", \"TRUE\");\nsharedState.put(\"objectAttributes\", objectAttributes);\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/1ba9e073-3128-4873-a7a7-cc1077ce3e04",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "1ba9e073-3128-4873-a7a7-cc1077ce3e04"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=1ba9e073-3128-4873-a7a7-cc1077ce3e04,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

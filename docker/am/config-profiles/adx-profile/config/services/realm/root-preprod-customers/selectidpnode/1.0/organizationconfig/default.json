@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "SelectIdPNode",
+      "collection": false,
+      "name": "SelectIdPNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "SelectIdPNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=SelectIdPNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

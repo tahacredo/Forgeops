@@ -1,0 +1,32 @@
+{
+  "data": {
+    "_id": "default/3c2bef9d-1fef-4d09-90a0-7d08158fbecc",
+    "_type": {
+      "_id": "SelectIdPNode",
+      "collection": false,
+      "name": "SelectIdPNode"
+    },
+    "filteredProviders": [
+      "UAEPASS-adxwebpreprodV2"
+    ],
+    "identityAttribute": "mail",
+    "includeLocalAuthentication": false,
+    "offerOnlyExisting": false,
+    "passwordAttribute": "password"
+  },
+  "metadata": {
+    "entityId": "default/3c2bef9d-1fef-4d09-90a0-7d08158fbecc",
+    "entityType": "SelectIdPNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "3c2bef9d-1fef-4d09-90a0-7d08158fbecc"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=3c2bef9d-1fef-4d09-90a0-7d08158fbecc,ou=default,ou=OrganizationConfig,ou=1.0,ou=SelectIdPNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

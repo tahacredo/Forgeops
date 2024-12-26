@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/ce0e5f9d-e008-465a-81b1-491cb769d502",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Login - Message 917 - 918",
+    "script": "var fr = JavaImporter(\n    org.forgerock.openam.auth.node.api,\n    javax.security.auth.callback.TextOutputCallback,\n    javax.security.auth.callback.ConfirmationCallback,\n    java.util.ArrayList,\n    org.forgerock.json.JsonValue,\n    java.lang.Integer\n);\n\nlogger.error(\"header: \" + requestHeaders.get(\"Accept-Language\"));\n\nwith (fr) {\n    var cbList = ArrayList();\n    var jsonMessage = {};\n\n    var acceptLanguageHeader = requestHeaders.get(\"Accept-Language\");\n\n    if (acceptLanguageHeader !== null && acceptLanguageHeader.get(0) == \"ar\") {\n        jsonMessage.msg = \"\u062a\u0645 \u0642\u0641\u0644 \u062d\u0633\u0627\u0628\u0643 \u0628\u0633\u0628\u0628 \u0627\u0644\u0639\u062f\u064a\u062f \u0645\u0646 \u0645\u062d\u0627\u0648\u0644\u0627\u062a \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0627\u0644\u0641\u0627\u0634\u0644\u0629. \u0644\u0641\u062a\u062d \u062d\u0633\u0627\u0628\u0643\u060c \u064a\u0631\u062c\u0649 \u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0646\u0633\u064a\u062a \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0623\u0648 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u0628\u0640 helpdesk@adx.ae \u0644\u0644\u062d\u0635\u0648\u0644 \u0639\u0644\u0649 \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629.\u062a\u0645 \u0625\u063a\u0644\u0627\u0642 \u062d\u0633\u0627\u0628\u0643. \u0627\u0644\u0631\u062c\u0627\u0621 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0645\u0639\";\n        jsonMessage.code = 918;\n    } else {\n        jsonMessage.msg = \"Your account is locked due to too many failed login attempts. To unlock your account, please click on Forgot Password or contact helpdesk@adx.ae for assistance.\";\n        jsonMessage.code = 917;\n    }\n  \n    jsonMessage.code = Integer.valueOf(jsonMessage.code);\n\n    if (callbacks.isEmpty()) {\n        logger.error(\"callback empty start\");\n        cbList.add(new TextOutputCallback(0, JsonValue.json(jsonMessage)));\n        cbList.add(new ConfirmationCallback(\" \", 0, [\"Yes\", \"No\"], 1));\n        action = Action.send(cbList).build();\n        logger.error(\"callback empty end\");\n    } else {\n    outcome = \"true\";\n}\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/ce0e5f9d-e008-465a-81b1-491cb769d502",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "ce0e5f9d-e008-465a-81b1-491cb769d502"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=ce0e5f9d-e008-465a-81b1-491cb769d502,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

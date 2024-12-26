@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/weChatConfig",
+    "_type": {
+      "_id": "SocialIdentityProviders",
+      "collection": false,
+      "name": "SocialIdentityProviders"
+    }
+  },
+  "metadata": {
+    "entityId": "default/weChatConfig",
+    "entityType": "SocialIdentityProviders",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "weChatConfig"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "weChatConfig",
+    "uid": "ou=weChatConfig,ou=default,ou=OrganizationConfig,ou=1.0,ou=SocialIdentityProviders,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

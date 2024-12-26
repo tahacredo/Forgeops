@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/f5c8a8b7-b3f7-4bad-92f2-7b00cb1167c8",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "collection": false,
+      "name": "InnerTreeEvaluatorNode"
+    },
+    "tree": "Register-FRUI"
+  },
+  "metadata": {
+    "entityId": "default/f5c8a8b7-b3f7-4bad-92f2-7b00cb1167c8",
+    "entityType": "InnerTreeEvaluatorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "f5c8a8b7-b3f7-4bad-92f2-7b00cb1167c8"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=f5c8a8b7-b3f7-4bad-92f2-7b00cb1167c8,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

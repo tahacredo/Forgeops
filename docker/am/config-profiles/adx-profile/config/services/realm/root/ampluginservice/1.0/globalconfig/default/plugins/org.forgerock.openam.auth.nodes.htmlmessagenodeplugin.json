@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/plugins/org.forgerock.openam.auth.nodes.HTMLMessageNodePlugin",
+    "_type": {
+      "_id": "amPluginService",
+      "collection": false,
+      "name": "amPluginService"
+    },
+    "version": "1.0.1"
+  },
+  "metadata": {
+    "entityId": "default/plugins/org.forgerock.openam.auth.nodes.HTMLMessageNodePlugin",
+    "entityType": "amPluginService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "org.forgerock.openam.auth.nodes.HTMLMessageNodePlugin"
+    ],
+    "pathParams": {},
+    "realm": null,
+    "sunServiceID": "plugin",
+    "uid": "ou=org.forgerock.openam.auth.nodes.HTMLMessageNodePlugin,ou=plugins,ou=default,ou=GlobalConfig,ou=1.0,ou=amPluginService,ou=services,ou=am-config"
+  }
+}

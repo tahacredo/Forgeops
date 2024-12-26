@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "HTMLMessageNode",
+    "_type": {
+      "_id": "HTMLMessageNode",
+      "collection": false,
+      "name": "HTMLMessageNode"
+    }
+  },
+  "metadata": {
+    "entityId": "HTMLMessageNode",
+    "entityType": "HTMLMessageNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "HTMLMessageNode"
+    ],
+    "pathParams": {},
+    "realm": "/",
+    "sunServiceID": null,
+    "uid": "ou=HTMLMessageNode,ou=services,ou=am-config"
+  }
+}

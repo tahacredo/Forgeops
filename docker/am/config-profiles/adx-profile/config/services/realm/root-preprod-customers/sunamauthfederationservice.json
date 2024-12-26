@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "sunAMAuthFederationService",
+    "_type": {
+      "_id": "sunAMAuthFederationService",
+      "collection": false,
+      "name": "sunAMAuthFederationService"
+    }
+  },
+  "metadata": {
+    "entityId": "sunAMAuthFederationService",
+    "entityType": "sunAMAuthFederationService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "sunAMAuthFederationService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=sunAMAuthFederationService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

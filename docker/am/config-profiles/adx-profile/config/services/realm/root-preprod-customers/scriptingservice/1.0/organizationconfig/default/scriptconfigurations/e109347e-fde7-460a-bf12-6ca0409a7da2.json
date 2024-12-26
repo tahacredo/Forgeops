@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/e109347e-fde7-460a-bf12-6ca0409a7da2",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "SOCIAL_IDP_PROFILE_TRANSFORMATION",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "Converts a normalized social profile into a managed user",
+    "evaluatorVersion": "V1_0",
+    "language": "GROOVY",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "ADX Normalized Profile to Managed User",
+    "script": "/*\n * Copyright 2020-2022 ForgeRock AS. All Rights Reserved\n *\n * Use of this code requires a commercial software license with ForgeRock AS.\n * or with one of its affiliates. All use shall be exclusively subject\n * to such license between the licensee and ForgeRock AS.\n */\n\nimport static org.forgerock.json.JsonValue.field\nimport static org.forgerock.json.JsonValue.json\nimport static org.forgerock.json.JsonValue.object\n\nimport org.forgerock.json.JsonValue\n\n\nJsonValue managedUser;\n\nsharedState.put(\"firstName\", normalizedProfile.givenName)\nsharedState.put(\"uaepass_uuid\", normalizedProfile.username)\nsharedState.put(\"emiratesID\", normalizedProfile.idn)\nsharedState.put(\"userType\", normalizedProfile.userType)\n\n\n  sharedState.put(\"userName\", normalizedProfile.username);\n  sharedState.put(\"givenName\", normalizedProfile.givenName);\n  sharedState.put(\"firstnameAR\", normalizedProfile.firstnameAR);\n  sharedState.put(\"fullnameAR\", normalizedProfile.fullnameAR);\n  sharedState.put(\"lastnameAR\", normalizedProfile.lastnameAR);\n  sharedState.put(\"emiratesID\", normalizedProfile.idn);\n  sharedState.put(\"uuid\", normalizedProfile.uuid);\n  sharedState.put(\"userTypeUAE\", normalizedProfile.userType);\n  sharedState.put(\"nationalityAR\", normalizedProfile.nationalityAR);\n  sharedState.put(\"cn\", normalizedProfile.displayName);\n  sharedState.put(\"sn\", normalizedProfile.familyName);\n  sharedState.put(\"adxUaePassEmail\", normalizedProfile.email);\n  sharedState.put(\"adxUaePassMobile\", normalizedProfile.mobile);\n  sharedState.put(\"gender\", normalizedProfile.gender);\n  sharedState.put(\"nationalityEN\", normalizedProfile.nationalityEN);\n  sharedState.put(\"adxUserType\", \"UAEPASS\");\n\n\nif (normalizedProfile.userType.asString() == \"SOP1\") {\n  managedUser = json(object(\n        //field(\"userName\", normalizedProfile.username),\n\t\tfield(\"userTypeUAE\", normalizedProfile.userType),\n\t\tfield(\"nationalityAR\", normalizedProfile.nationalityAR),\n\t\tfield(\"givenName\", normalizedProfile.givenName),\n        field(\"cn\", normalizedProfile.displayName),\n        field(\"sn\", normalizedProfile.familyName),\n\t\tfield(\"adxUaePassEmail\", normalizedProfile.email),\n\t\tfield(\"adxUaePassMobile\", normalizedProfile.mobile),\n        field(\"gender\", normalizedProfile.gender),\n        field(\"nationalityEN\", normalizedProfile.nationalityEN)))\n} else {\n  managedUser = json(object(\n        //field(\"userName\", normalizedProfile.username),\n\t\tfield(\"givenName\", normalizedProfile.givenName),\n\t\tfield(\"firstnameAR\", normalizedProfile.firstnameAR),\n\t\tfield(\"fullnameAR\", normalizedProfile.fullnameAR),\n\t\tfield(\"lastnameAR\", normalizedProfile.lastnameAR),\n\t\tfield(\"emiratesID\", normalizedProfile.idn),\n    \tfield(\"uuid\", normalizedProfile.uuid),\n\t\tfield(\"userTypeUAE\", normalizedProfile.userType),\n\t\tfield(\"nationalityAR\", normalizedProfile.nationalityAR),\n\t\tfield(\"cn\", normalizedProfile.displayName),\n        field(\"sn\", normalizedProfile.familyName),\n        field(\"adxUaePassEmail\", normalizedProfile.email),\n\t\tfield(\"adxUaePassMobile\", normalizedProfile.mobile),\n        field(\"gender\", normalizedProfile.gender),\n        field(\"nationalityEN\", normalizedProfile.nationalityEN),\n        field(\"adxUserType\", \"UAEPASS\")))\n}\n\nlogger.error(\"Identity is: \" + managedUser)\nreturn managedUser"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/e109347e-fde7-460a-bf12-6ca0409a7da2",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "e109347e-fde7-460a-bf12-6ca0409a7da2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=e109347e-fde7-460a-bf12-6ca0409a7da2,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

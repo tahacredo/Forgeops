@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/7a76031d-4006-4e17-b712-172e63a2d483",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Put UAE PASS Attributes into Object Attributes",
+    "script": "objectAttributes = sharedState.get(\"objectAttributes\");\nobjectAttributes.put(\"userName\", sharedState.get(\"userName\"));\nobjectAttributes.put(\"givenName\", sharedState.get(\"givenName\"));\nobjectAttributes.put(\"firstnameAR\", sharedState.get(\"firstnameAR\"));\nobjectAttributes.put(\"fullnameAR\", sharedState.get(\"fullnameAR\"));\nobjectAttributes.put(\"lastnameAR\", sharedState.get(\"lastnameAR\"));\nobjectAttributes.put(\"emiratesID\", sharedState.get(\"emiratesID\"));\nobjectAttributes.put(\"uuid\", sharedState.get(\"uuid\"));\nobjectAttributes.put(\"userTypeUAE\", sharedState.get(\"userTypeUAE\"));\nobjectAttributes.put(\"nationalityAR\", sharedState.get(\"nationalityAR\"));\nobjectAttributes.put(\"cn\", sharedState.get(\"cn\"));\nobjectAttributes.put(\"sn\", sharedState.get(\"sn\"));\nobjectAttributes.put(\"adxUaePassEmail\", sharedState.get(\"adxUaePassEmail\"));\nobjectAttributes.put(\"adxUaePassMobile\", sharedState.get(\"adxUaePassMobile\"));\nobjectAttributes.put(\"gender\", sharedState.get(\"gender\"));\nobjectAttributes.put(\"nationalityEN\", sharedState.get(\"nationalityEN\"));\nobjectAttributes.put(\"adxUserType\", sharedState.get(\"adxUserType\"));  \n\n\nlogger.error(\"In first script: \" + objectAttributes);\n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/7a76031d-4006-4e17-b712-172e63a2d483",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "7a76031d-4006-4e17-b712-172e63a2d483"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=7a76031d-4006-4e17-b712-172e63a2d483,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

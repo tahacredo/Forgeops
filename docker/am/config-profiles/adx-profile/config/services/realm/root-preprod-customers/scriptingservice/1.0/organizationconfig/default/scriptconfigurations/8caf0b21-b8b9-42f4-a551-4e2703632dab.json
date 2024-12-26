@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/8caf0b21-b8b9-42f4-a551-4e2703632dab",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Fill mandatory profile details v2",
+    "script": "objectAttributes = sharedState.get(\"objectAttributes\");\nmail = objectAttributes.get(\"mail\");\n\nuserType = objectAttributes.get(\"adxUserType\");\nsharedState.put(\"registeredUserType\", userType);\n\nvar adxUserType = \"RegisteredUsers-\" + userType;\n\nsharedState.put(\"adxOtpInvalidCount\", \"0\");\nsharedState.put(\"adxOtpIterationCount\", \"0\");\nsharedState.put(\"adxOtpLock\", \"false\");\nsharedState.put(\"adxOtpLockExpiryTime\", \"0\");\nsharedState.put(\"adxResendOtpInvalidCount\", \"0\");\nsharedState.put(\"adxResendOtpIterationCount\", \"0\");\n\nif (mail) {  \n objectAttributes.put(\"givenName\", mail);\n objectAttributes.put(\"sn\", mail);\n objectAttributes.put(\"adxUserType\", adxUserType);\n} \n\nlogger.error(objectAttributes);\n\nsharedState.put(\"objectAttributes\", objectAttributes);\n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/8caf0b21-b8b9-42f4-a551-4e2703632dab",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "8caf0b21-b8b9-42f4-a551-4e2703632dab"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=8caf0b21-b8b9-42f4-a551-4e2703632dab,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

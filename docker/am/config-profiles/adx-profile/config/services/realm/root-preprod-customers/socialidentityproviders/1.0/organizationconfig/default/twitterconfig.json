@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/twitterConfig",
+    "_type": {
+      "_id": "SocialIdentityProviders",
+      "collection": false,
+      "name": "SocialIdentityProviders"
+    }
+  },
+  "metadata": {
+    "entityId": "default/twitterConfig",
+    "entityType": "SocialIdentityProviders",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "twitterConfig"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "twitterConfig",
+    "uid": "ou=twitterConfig,ou=default,ou=OrganizationConfig,ou=1.0,ou=SocialIdentityProviders,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

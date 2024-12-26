@@ -1,0 +1,360 @@
+{
+  "data": {
+    "_id": "default/Register-FRUI",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "c94dab35-82b3-4d2a-9620-88152f9308c4",
+    "identityResource": "managed/user",
+    "nodes": {
+      "0cb71ca5-11cd-4c0a-b0b8-51b01e761f09": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Message Handler",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1504,
+        "y": 700.7666625976562
+      },
+      "11d6d794-f89b-41ee-8b37-445a980b68c2": {
+        "connections": {
+          "cancel": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "create": "42a8c832-407b-4a9c-a1ec-c652812c3e86"
+        },
+        "displayName": "Script: Confirm User Creation",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1392.4545440673828,
+        "y": 0
+      },
+      "253110f0-324c-4d22-9499-46c76980b2c3": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "a2fb88ec-fbd0-46da-8775-113689afd586"
+        },
+        "displayName": "Tree: Email OTP",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 800,
+        "y": 162.015625
+      },
+      "275220ea-1282-49b9-b73f-cdc036394859": {
+        "connections": {
+          "true": "e42b53e4-9519-4047-bf03-0dd2052da15e"
+        },
+        "displayName": "Script: Set UAEPASS attrs",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 73,
+        "y": 113.76666259765625
+      },
+      "2c01cc86-391c-436b-a528-a242ed44aa62": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Failure",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 2323,
+        "y": 213.76666259765625
+      },
+      "36536d7c-98a7-4e09-aa75-51483e239f67": {
+        "connections": {
+          "false": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 2330,
+        "y": 64.76666259765625
+      },
+      "3709911c-3f59-4a18-97db-224b6d87e497": {
+        "connections": {
+          "true": "c56dad10-5e6c-44ad-9c51-042b232c291c"
+        },
+        "displayName": "Script: Fill profile details",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 526,
+        "y": 676.2666625976562
+      },
+      "3ce036ef-f624-4e58-b2c9-26b2c0e03cef": {
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Script: Set skip",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 762,
+        "y": 592.7666625976562
+      },
+      "42a8c832-407b-4a9c-a1ec-c652812c3e86": {
+        "connections": {
+          "true": "ed74d5fe-96e6-4b78-8667-12e8c6ccb1ff"
+        },
+        "displayName": "Script: Set LastActivityDate",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1618,
+        "y": 46.76666259765625
+      },
+      "469e381e-6ce6-4b56-a1af-84c431bf2afe": {
+        "connections": {
+          "true": "253110f0-324c-4d22-9499-46c76980b2c3"
+        },
+        "displayName": "Script: Replace userName with Mail",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 580,
+        "y": 72.16667175292969
+      },
+      "5225aee7-b105-4831-b181-cb3b7a97d198": {
+        "connections": {
+          "true": "0cb71ca5-11cd-4c0a-b0b8-51b01e761f09"
+        },
+        "displayName": "Set error msg code",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1262,
+        "y": 748.7666625976562
+      },
+      "54241e34-f531-4f4d-8a47-160135877f07": {
+        "connections": {
+          "outcome": "c56dad10-5e6c-44ad-9c51-042b232c291c"
+        },
+        "displayName": "Page: Migrated UAE PASS",
+        "nodeType": "PageNode",
+        "x": 307,
+        "y": 333.76666259765625
+      },
+      "5e95a030-5edc-4b26-ab97-a13315233a8d": {
+        "connections": {
+          "true": "54241e34-f531-4f4d-8a47-160135877f07"
+        },
+        "displayName": "Script: Set UAEPASS attrs",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 58,
+        "y": 562.7666625976562
+      },
+      "67583bea-1509-4e35-b814-e3dc8b70d35f": {
+        "connections": {
+          "true": "0cb71ca5-11cd-4c0a-b0b8-51b01e761f09"
+        },
+        "displayName": "Scripted Decision",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1551,
+        "y": 851.7666625976562
+      },
+      "6e4edfde-bac3-440f-9fd0-6dce2c8b80fe": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 776,
+        "y": 457.76666259765625
+      },
+      "7cdf9eb4-4ced-4b04-8b6e-e01ee53eed12": {
+        "connections": {
+          "guest": "9cddbe4d-2c09-42ad-9e0a-70d71e92a954",
+          "other": "11d6d794-f89b-41ee-8b37-445a980b68c2"
+        },
+        "displayName": "Scripted Decision",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1211,
+        "y": 199.015625
+      },
+      "85e33fea-2cd4-4176-8b48-189fc70d94dc": {
+        "connections": {
+          "true": "eb482f34-cab5-49a6-91d4-4a5120125887"
+        },
+        "displayName": "Script: Set Password",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 534,
+        "y": 264.015625
+      },
+      "9cddbe4d-2c09-42ad-9e0a-70d71e92a954": {
+        "connections": {
+          "created": "11d6d794-f89b-41ee-8b37-445a980b68c2",
+          "error": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Scripted Decision",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1453,
+        "y": 212.015625
+      },
+      "a0718d8a-56ee-4eb6-a0ff-a846d5864eb1": {
+        "connections": {
+          "true": "f73c0561-c7fc-432b-8c6f-2afd25458be8"
+        },
+        "displayName": "Script: Log patch",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 2091,
+        "y": 190.76666259765625
+      },
+      "a2fb88ec-fbd0-46da-8775-113689afd586": {
+        "connections": {
+          "false": "7cdf9eb4-4ced-4b04-8b6e-e01ee53eed12",
+          "true": "da02929c-e268-443b-a73a-d79ea0b8e2b3"
+        },
+        "displayName": "Script: Send SMS OTP?",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 955,
+        "y": 43.16667175292969
+      },
+      "b0e7a404-81be-49cf-9dfb-3df76af6ba90": {
+        "connections": {
+          "true": "bf29cf65-4dc9-478b-b022-e0a8208c27eb"
+        },
+        "displayName": "Msg: Account already exists",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 758,
+        "y": 317.76666259765625
+      },
+      "b19de2a1-065b-46c6-ac87-858f406b1a94": {
+        "connections": {
+          "CREATED": "f73c0561-c7fc-432b-8c6f-2afd25458be8",
+          "FAILURE": "2c01cc86-391c-436b-a528-a242ed44aa62"
+        },
+        "displayName": "Create Object",
+        "nodeType": "CreateObjectNode",
+        "x": 2055,
+        "y": 18.5
+      },
+      "bf29cf65-4dc9-478b-b022-e0a8208c27eb": {
+        "connections": {
+          "true": "c94dab35-82b3-4d2a-9620-88152f9308c4"
+        },
+        "displayName": "Script: Clear Pwd",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1017,
+        "y": 381.76666259765625
+      },
+      "c50a2c56-be2d-4e80-ad78-21e39588ef73": {
+        "connections": {
+          "FAILURE": "2c01cc86-391c-436b-a528-a242ed44aa62",
+          "PATCHED": "a0718d8a-56ee-4eb6-a0ff-a846d5864eb1"
+        },
+        "displayName": "Patch Migrated User",
+        "nodeType": "PatchObjectNode",
+        "x": 1884,
+        "y": 192.1666717529297
+      },
+      "c56dad10-5e6c-44ad-9c51-042b232c291c": {
+        "connections": {
+          "false": "85e33fea-2cd4-4176-8b48-189fc70d94dc",
+          "true": "b0e7a404-81be-49cf-9dfb-3df76af6ba90"
+        },
+        "displayName": "Identify Existing User",
+        "nodeType": "IdentifyExistingUserNode",
+        "x": 543,
+        "y": 349.5
+      },
+      "c94dab35-82b3-4d2a-9620-88152f9308c4": {
+        "connections": {
+          "Guest": "f051586d-c936-4a46-bb31-9e66a14949e3",
+          "Migrated-UAEPASS": "5e95a030-5edc-4b26-ab97-a13315233a8d",
+          "UAEPASS": "275220ea-1282-49b9-b73f-cdc036394859"
+        },
+        "displayName": "Script: Check User Type",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 66,
+        "y": 328.3333282470703
+      },
+      "d3bb7dd0-22a8-4cfb-b53f-a39d4747c973": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 2315,
+        "y": 313.76666259765625
+      },
+      "da02929c-e268-443b-a73a-d79ea0b8e2b3": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "7cdf9eb4-4ced-4b04-8b6e-e01ee53eed12"
+        },
+        "displayName": "Tree: SMS OTP",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 1166,
+        "y": 47.015625
+      },
+      "e42b53e4-9519-4047-bf03-0dd2052da15e": {
+        "connections": {
+          "outcome": "c56dad10-5e6c-44ad-9c51-042b232c291c"
+        },
+        "displayName": "Page: UAE PASS",
+        "nodeType": "PageNode",
+        "x": 302,
+        "y": 127
+      },
+      "eb482f34-cab5-49a6-91d4-4a5120125887": {
+        "connections": {
+          "true": "469e381e-6ce6-4b56-a1af-84c431bf2afe"
+        },
+        "displayName": "Script: altLogin true",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 524,
+        "y": 168.015625
+      },
+      "ed74d5fe-96e6-4b78-8667-12e8c6ccb1ff": {
+        "connections": {
+          "create": "b19de2a1-065b-46c6-ac87-858f406b1a94",
+          "patch": "c50a2c56-be2d-4e80-ad78-21e39588ef73"
+        },
+        "displayName": "Scripted Decision",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1863,
+        "y": 19.76666259765625
+      },
+      "f051586d-c936-4a46-bb31-9e66a14949e3": {
+        "connections": {
+          "outcome": "3709911c-3f59-4a18-97db-224b6d87e497"
+        },
+        "displayName": "Page: Guest",
+        "nodeType": "PageNode",
+        "x": 307,
+        "y": 600.3333282470703
+      },
+      "f73c0561-c7fc-432b-8c6f-2afd25458be8": {
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Msg: Success",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 2329,
+        "y": 0
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 2713,
+        "y": 43
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 2481,
+        "y": 733
+      },
+      "startNode": {
+        "x": 26,
+        "y": 208
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/Register-FRUI",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "Register-FRUI"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=Register-FRUI,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

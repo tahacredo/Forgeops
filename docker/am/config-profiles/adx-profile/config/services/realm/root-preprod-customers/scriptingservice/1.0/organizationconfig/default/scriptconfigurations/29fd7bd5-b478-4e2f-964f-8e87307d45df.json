@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/29fd7bd5-b478-4e2f-964f-8e87307d45df",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Email and SMS OTP - Message 911 - 912",
+    "script": "var fr = JavaImporter(\n    org.forgerock.openam.auth.node.api,\n    javax.security.auth.callback.TextOutputCallback,\n    javax.security.auth.callback.ConfirmationCallback,\n    java.util.ArrayList,\n    org.forgerock.json.JsonValue,\n    java.lang.Integer\n);\n\nlogger.error(\"header: \" + requestHeaders.get(\"Accept-Language\"));\n\nwith (fr) {\n    var cbList = ArrayList();\n    var jsonMessage = {};\n\n    var acceptLanguageHeader = requestHeaders.get(\"Accept-Language\");\n\n    if (acceptLanguageHeader !== null && acceptLanguageHeader.get(0) == \"ar\") {\n        jsonMessage.msg = \".\u0631\u0645\u0632 \u0627\u0644\u062a\u062d\u0642\u0642 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d. \u0627\u0644\u0631\u062c\u0627\u0621 \u0627\u0644\u0645\u062d\u0627\u0648\u0644\u0629 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649\";\n        jsonMessage.code = 912;\n    } else {\n        jsonMessage.msg = \"Incorrect OTP. Please try again.\";\n        jsonMessage.code = 911;\n    }\n  \n    jsonMessage.code = Integer.valueOf(jsonMessage.code);\n  \n    if (callbacks.isEmpty()) {\n        logger.error(\"callback empty start\");\n        cbList.add(new TextOutputCallback(0, JsonValue.json(jsonMessage)));\n        cbList.add(new ConfirmationCallback(\" \", 0, [\"Yes\", \"No\"], 1));\n        action = Action.send(cbList).build();\n        logger.error(\"callback empty end\");\n    } else {\n    outcome = \"true\";\n}\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/29fd7bd5-b478-4e2f-964f-8e87307d45df",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "29fd7bd5-b478-4e2f-964f-8e87307d45df"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=29fd7bd5-b478-4e2f-964f-8e87307d45df,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

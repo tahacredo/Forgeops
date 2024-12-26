@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/d264febc-b823-4636-b6ed-84e4396ef860",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Register - Check OTP Lock Expiry Time v2",
+    "script": "  var email = sharedState.get(\"username\");\n  var currentTimeStamp = new Date().getTime();\n  var lockExpiryTime = sharedState.get(\"adxOtpLockExpiryTime\")\n  \n  if (currentTimeStamp < lockExpiryTime) {\n            outcome = \"locked\";\n  } else {  \n          sharedState.put(\"adxOtpLock\", \"false\")\n          outcome = \"unlocked\";\n  }"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/d264febc-b823-4636-b6ed-84e4396ef860",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "d264febc-b823-4636-b6ed-84e4396ef860"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=d264febc-b823-4636-b6ed-84e4396ef860,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

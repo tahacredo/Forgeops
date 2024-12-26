@@ -1,0 +1,34 @@
+{
+  "data": {
+    "_id": "default/e42b53e4-9519-4047-bf03-0dd2052da15e",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "c7163b42-ab82-4631-a97b-94eef958eb27:AttributeCollectorNode:Attribute Collector",
+      "364bb664-bd14-4e8c-b45a-875fa5af39b9:ValidatedPasswordNode:Platform Password"
+    ],
+    "pageDescription": {},
+    "pageHeader": {
+      "en": "UAE PASS Alternative Account Registration"
+    },
+    "stage": "{\"ValidatedCreatePasswordCallback\":[{\"id\":\"b54affdc-d9db-4c21-b2b3-eba16a2ae883\",\"confirmPassword\":true},{\"id\":\"ccfb5f21-3c4b-4e20-9cce-cb21a36214ff\",\"confirmPassword\":true}]}"
+  },
+  "metadata": {
+    "entityId": "default/e42b53e4-9519-4047-bf03-0dd2052da15e",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "e42b53e4-9519-4047-bf03-0dd2052da15e"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=e42b53e4-9519-4047-bf03-0dd2052da15e,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/16df40d8-4205-40e1-a01c-06edcfa39a26",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "615e6e0d-de3a-48c1-ad10-ba04740ec885:AttributeCollectorNode:Attribute Collector",
+      "f20134e3-0ccf-4570-b844-5090b9d4ec34:AttributeCollectorNode:Attribute Collector",
+      "77464e54-1a94-4215-863d-cb3fcc3542eb:ValidatedPasswordNode:Platform Password"
+    ],
+    "pageDescription": {},
+    "pageHeader": {
+      "en": "Guest User Registration"
+    },
+    "stage": "{\"ValidatedCreatePasswordCallback\":[{\"id\":\"77464e54-1a94-4215-863d-cb3fcc3542eb\",\"confirmPassword\":true}]}"
+  },
+  "metadata": {
+    "entityId": "default/16df40d8-4205-40e1-a01c-06edcfa39a26",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "16df40d8-4205-40e1-a01c-06edcfa39a26"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=16df40d8-4205-40e1-a01c-06edcfa39a26,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

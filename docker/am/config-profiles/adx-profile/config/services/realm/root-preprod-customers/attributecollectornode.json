@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "AttributeCollectorNode",
+    "_type": {
+      "_id": "AttributeCollectorNode",
+      "collection": false,
+      "name": "AttributeCollectorNode"
+    }
+  },
+  "metadata": {
+    "entityId": "AttributeCollectorNode",
+    "entityType": "AttributeCollectorNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "AttributeCollectorNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=AttributeCollectorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

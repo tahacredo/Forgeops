@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "QueryFilterDecisionNode",
+      "collection": false,
+      "name": "QueryFilterDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "QueryFilterDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=QueryFilterDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

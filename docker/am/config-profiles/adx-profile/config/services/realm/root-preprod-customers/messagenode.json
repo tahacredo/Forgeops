@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "MessageNode",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    }
+  },
+  "metadata": {
+    "entityId": "MessageNode",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "MessageNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/googleConfig",
+    "_type": {
+      "_id": "SocialIdentityProviders",
+      "collection": false,
+      "name": "SocialIdentityProviders"
+    }
+  },
+  "metadata": {
+    "entityId": "default/googleConfig",
+    "entityType": "SocialIdentityProviders",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "googleConfig"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "googleConfig",
+    "uid": "ou=googleConfig,ou=default,ou=OrganizationConfig,ou=1.0,ou=SocialIdentityProviders,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

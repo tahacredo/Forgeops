@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "CreateObjectNode",
+    "_type": {
+      "_id": "CreateObjectNode",
+      "collection": false,
+      "name": "CreateObjectNode"
+    }
+  },
+  "metadata": {
+    "entityId": "CreateObjectNode",
+    "entityType": "CreateObjectNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "CreateObjectNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=CreateObjectNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

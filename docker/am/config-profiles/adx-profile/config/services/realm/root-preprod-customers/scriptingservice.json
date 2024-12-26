@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "ScriptingService",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    }
+  },
+  "metadata": {
+    "entityId": "ScriptingService",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "ScriptingService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

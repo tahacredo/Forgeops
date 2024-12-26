@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/9d796f66-40ba-483c-a73c-06d13ae45d24",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Check if skip is true",
+    "script": "if (sharedState.get(\"Skip\")) {\n outcome = \"true\"; \n} else {\n outcome = \"false\";\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/9d796f66-40ba-483c-a73c-06d13ae45d24",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "9d796f66-40ba-483c-a73c-06d13ae45d24"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=9d796f66-40ba-483c-a73c-06d13ae45d24,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

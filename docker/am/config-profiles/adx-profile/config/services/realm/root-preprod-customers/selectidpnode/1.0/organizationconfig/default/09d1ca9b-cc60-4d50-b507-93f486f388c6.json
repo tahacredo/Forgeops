@@ -1,0 +1,32 @@
+{
+  "data": {
+    "_id": "default/09d1ca9b-cc60-4d50-b507-93f486f388c6",
+    "_type": {
+      "_id": "SelectIdPNode",
+      "collection": false,
+      "name": "SelectIdPNode"
+    },
+    "filteredProviders": [
+      "UAEPASS-Mobile"
+    ],
+    "identityAttribute": "mail",
+    "includeLocalAuthentication": false,
+    "offerOnlyExisting": false,
+    "passwordAttribute": "password"
+  },
+  "metadata": {
+    "entityId": "default/09d1ca9b-cc60-4d50-b507-93f486f388c6",
+    "entityType": "SelectIdPNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "09d1ca9b-cc60-4d50-b507-93f486f388c6"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=09d1ca9b-cc60-4d50-b507-93f486f388c6,ou=default,ou=OrganizationConfig,ou=1.0,ou=SelectIdPNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

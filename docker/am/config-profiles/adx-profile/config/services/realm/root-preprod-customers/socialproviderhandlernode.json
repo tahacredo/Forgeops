@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "SocialProviderHandlerNode",
+    "_type": {
+      "_id": "SocialProviderHandlerNode",
+      "collection": false,
+      "name": "SocialProviderHandlerNode"
+    }
+  },
+  "metadata": {
+    "entityId": "SocialProviderHandlerNode",
+    "entityType": "SocialProviderHandlerNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "SocialProviderHandlerNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=SocialProviderHandlerNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

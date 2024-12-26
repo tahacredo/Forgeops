@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/0f0904e6-1da3-4cdb-9abf-0d2545016fab",
+    "_type": {
+      "_id": "AttributePresentDecisionNode",
+      "collection": false,
+      "name": "AttributePresentDecisionNode"
+    },
+    "identityAttribute": "userName",
+    "presentAttribute": "password"
+  },
+  "metadata": {
+    "entityId": "default/0f0904e6-1da3-4cdb-9abf-0d2545016fab",
+    "entityType": "AttributePresentDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "0f0904e6-1da3-4cdb-9abf-0d2545016fab"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=0f0904e6-1da3-4cdb-9abf-0d2545016fab,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributePresentDecisionNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

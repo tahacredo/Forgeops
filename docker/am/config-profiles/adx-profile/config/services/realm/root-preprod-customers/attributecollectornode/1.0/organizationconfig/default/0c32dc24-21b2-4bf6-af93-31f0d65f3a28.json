@@ -1,0 +1,32 @@
+{
+  "data": {
+    "_id": "default/0c32dc24-21b2-4bf6-af93-31f0d65f3a28",
+    "_type": {
+      "_id": "AttributeCollectorNode",
+      "collection": false,
+      "name": "AttributeCollectorNode"
+    },
+    "attributesToCollect": [
+      "mail",
+      "telephoneNumber"
+    ],
+    "identityAttribute": "userName",
+    "required": true,
+    "validateInputs": true
+  },
+  "metadata": {
+    "entityId": "default/0c32dc24-21b2-4bf6-af93-31f0d65f3a28",
+    "entityType": "AttributeCollectorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "0c32dc24-21b2-4bf6-af93-31f0d65f3a28"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=0c32dc24-21b2-4bf6-af93-31f0d65f3a28,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributeCollectorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

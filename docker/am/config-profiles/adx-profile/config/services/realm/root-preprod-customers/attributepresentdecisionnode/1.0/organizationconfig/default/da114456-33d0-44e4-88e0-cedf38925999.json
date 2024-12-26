@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/da114456-33d0-44e4-88e0-cedf38925999",
+    "_type": {
+      "_id": "AttributePresentDecisionNode",
+      "collection": false,
+      "name": "AttributePresentDecisionNode"
+    },
+    "identityAttribute": "userName",
+    "presentAttribute": "telephoneNumber"
+  },
+  "metadata": {
+    "entityId": "default/da114456-33d0-44e4-88e0-cedf38925999",
+    "entityType": "AttributePresentDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "da114456-33d0-44e4-88e0-cedf38925999"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=da114456-33d0-44e4-88e0-cedf38925999,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributePresentDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

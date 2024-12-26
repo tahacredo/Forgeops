@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/93fe62d7-d7f7-4e96-957b-f3227f46ec25",
+    "_type": {
+      "_id": "AccountActiveDecisionNode",
+      "collection": false,
+      "name": "AccountActiveDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default/93fe62d7-d7f7-4e96-957b-f3227f46ec25",
+    "entityType": "AccountActiveDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "93fe62d7-d7f7-4e96-957b-f3227f46ec25"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=93fe62d7-d7f7-4e96-957b-f3227f46ec25,ou=default,ou=OrganizationConfig,ou=1.0,ou=AccountActiveDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

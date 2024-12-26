@@ -1,0 +1,200 @@
+{
+  "data": {
+    "_id": "default/TEST-UAEPASS-V2-preprodV2",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "3c2bef9d-1fef-4d09-90a0-7d08158fbecc",
+    "identityResource": "managed/user",
+    "nodes": {
+      "019438ea-5e3c-4a26-964b-7126d879491e": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Tree: Alternative Acc Registration",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 1684,
+        "y": 368.26666259765625
+      },
+      "1d7ea39a-8273-43a7-a9fe-ad7de409ba1a": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Account locked",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 917,
+        "y": 259.015625
+      },
+      "296acb5c-50bd-43a8-a1cf-00fe34c9d0e4": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Unverified Account",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1024,
+        "y": 634.7666625976562
+      },
+      "2dedb078-da67-4400-9bf9-602140ce0a27": {
+        "connections": {
+          "false": "5c2effd2-1192-4204-819a-f438597adf65",
+          "true": "98f1c561-2d8c-4cad-bd98-f5fc0e8bc5ec"
+        },
+        "displayName": "Identify Existing User",
+        "nodeType": "IdentifyExistingUserNode",
+        "x": 614,
+        "y": 243.015625
+      },
+      "2f6fdffa-f416-4341-9845-9b63193e3674": {
+        "connections": {
+          "FAILURE": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "PATCHED": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Patch Object",
+        "nodeType": "PatchObjectNode",
+        "x": 1642,
+        "y": 20
+      },
+      "3c2bef9d-1fef-4d09-90a0-7d08158fbecc": {
+        "connections": {
+          "socialAuthentication": "93b7e399-9fa7-42fb-b526-4323969ee34b"
+        },
+        "displayName": "Select Identity Provider",
+        "nodeType": "SelectIdPNode",
+        "x": 121,
+        "y": 268.015625
+      },
+      "3fa0e07a-8f97-4ef7-ba2d-ae4d182218cc": {
+        "connections": {
+          "Login": "653bfd8b-8999-4545-a70d-d53b7ced597f",
+          "Register": "98cb212a-3504-45c6-aabe-451a771250f0",
+          "Register Choice": "98cb212a-3504-45c6-aabe-451a771250f0"
+        },
+        "displayName": "Script: Evaluation",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 927,
+        "y": 37.76666259765625
+      },
+      "5c2effd2-1192-4204-819a-f438597adf65": {
+        "connections": {
+          "false": "296acb5c-50bd-43a8-a1cf-00fe34c9d0e4",
+          "true": "e7c4d915-9076-4197-9973-fb97570cf06a"
+        },
+        "displayName": "Script: Is SOP2/3?",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 807,
+        "y": 379.90625
+      },
+      "61a916a4-5da2-4339-88c5-04b4584400db": {
+        "connections": {
+          "true": "019438ea-5e3c-4a26-964b-7126d879491e"
+        },
+        "displayName": "Script: Set fromUaePassTree",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1419,
+        "y": 406.1666717529297
+      },
+      "653bfd8b-8999-4545-a70d-d53b7ced597f": {
+        "connections": {
+          "true": "2f6fdffa-f416-4341-9845-9b63193e3674"
+        },
+        "displayName": "Script: Set LastActivity",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1421,
+        "y": 44.76666259765625
+      },
+      "6cfdeb0d-4dc3-426d-be61-9e13d7a2f861": {
+        "connections": {
+          "true": "61a916a4-5da2-4339-88c5-04b4584400db"
+        },
+        "displayName": "Script: To Patch",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1365,
+        "y": 201.76666259765625
+      },
+      "93b7e399-9fa7-42fb-b526-4323969ee34b": {
+        "connections": {
+          "ACCOUNT_EXISTS": "2dedb078-da67-4400-9bf9-602140ce0a27",
+          "NO_ACCOUNT": "2dedb078-da67-4400-9bf9-602140ce0a27"
+        },
+        "displayName": "Social Provider Handler Node",
+        "nodeType": "SocialProviderHandlerNode",
+        "x": 340,
+        "y": 232.015625
+      },
+      "98cb212a-3504-45c6-aabe-451a771250f0": {
+        "connections": {
+          "Register": "6cfdeb0d-4dc3-426d-be61-9e13d7a2f861",
+          "Skip": "653bfd8b-8999-4545-a70d-d53b7ced597f"
+        },
+        "displayName": "Script: Choice",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1129,
+        "y": 102.015625
+      },
+      "98f1c561-2d8c-4cad-bd98-f5fc0e8bc5ec": {
+        "connections": {
+          "false": "1d7ea39a-8273-43a7-a9fe-ad7de409ba1a",
+          "true": "3fa0e07a-8f97-4ef7-ba2d-ae4d182218cc"
+        },
+        "displayName": "Account Active Decision",
+        "nodeType": "AccountActiveDecisionNode",
+        "x": 688,
+        "y": 81.015625
+      },
+      "a8af765b-7ed3-4993-b19a-31e18ce65a40": {
+        "connections": {
+          "true": "61a916a4-5da2-4339-88c5-04b4584400db"
+        },
+        "displayName": "Script: Send JWT",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1215,
+        "y": 406.015625
+      },
+      "e7c4d915-9076-4197-9973-fb97570cf06a": {
+        "connections": {
+          "true": "a8af765b-7ed3-4993-b19a-31e18ce65a40"
+        },
+        "displayName": "Script: Generate JWT",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1007,
+        "y": 407.015625
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 1897,
+        "y": 23
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 2166,
+        "y": 496
+      },
+      "startNode": {
+        "x": 28,
+        "y": 267
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/TEST-UAEPASS-V2-preprodV2",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "TEST-UAEPASS-V2-preprodV2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=TEST-UAEPASS-V2-preprodV2,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

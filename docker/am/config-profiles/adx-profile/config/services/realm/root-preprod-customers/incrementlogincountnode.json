@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "IncrementLoginCountNode",
+    "_type": {
+      "_id": "IncrementLoginCountNode",
+      "collection": false,
+      "name": "IncrementLoginCountNode"
+    }
+  },
+  "metadata": {
+    "entityId": "IncrementLoginCountNode",
+    "entityType": "IncrementLoginCountNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "IncrementLoginCountNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=IncrementLoginCountNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/0ebfe408-24cf-4e71-954c-fc6c8e2f7cfb",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Set fromUaePassTree to true",
+    "script": "sharedState.put(\"fromUaePassTree\", true);\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/0ebfe408-24cf-4e71-954c-fc6c8e2f7cfb",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "0ebfe408-24cf-4e71-954c-fc6c8e2f7cfb"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=0ebfe408-24cf-4e71-954c-fc6c8e2f7cfb,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

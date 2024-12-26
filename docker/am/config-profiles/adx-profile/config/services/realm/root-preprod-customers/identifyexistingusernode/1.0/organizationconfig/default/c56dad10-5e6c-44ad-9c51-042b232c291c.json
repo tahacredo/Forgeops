@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/c56dad10-5e6c-44ad-9c51-042b232c291c",
+    "_type": {
+      "_id": "IdentifyExistingUserNode",
+      "collection": false,
+      "name": "IdentifyExistingUserNode"
+    },
+    "identifier": "userName",
+    "identityAttribute": "mail"
+  },
+  "metadata": {
+    "entityId": "default/c56dad10-5e6c-44ad-9c51-042b232c291c",
+    "entityType": "IdentifyExistingUserNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "c56dad10-5e6c-44ad-9c51-042b232c291c"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=c56dad10-5e6c-44ad-9c51-042b232c291c,ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

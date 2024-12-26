@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/af3c7550-d8af-4162-bd84-12cd1da9fff7",
+    "_type": {
+      "_id": "RetryLimitDecisionNode",
+      "collection": false,
+      "name": "RetryLimitDecisionNode"
+    },
+    "incrementUserAttributeOnFailure": true,
+    "retryLimit": 4
+  },
+  "metadata": {
+    "entityId": "default/af3c7550-d8af-4162-bd84-12cd1da9fff7",
+    "entityType": "RetryLimitDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "af3c7550-d8af-4162-bd84-12cd1da9fff7"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=af3c7550-d8af-4162-bd84-12cd1da9fff7,ou=default,ou=OrganizationConfig,ou=1.0,ou=RetryLimitDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

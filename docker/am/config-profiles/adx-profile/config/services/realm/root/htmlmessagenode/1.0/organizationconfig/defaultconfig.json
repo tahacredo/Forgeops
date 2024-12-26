@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "HTMLMessageNode",
+      "collection": false,
+      "name": "HTMLMessageNode"
+    }
+  },
+  "metadata": {
+    "entityId": "defaultconfig",
+    "entityType": "HTMLMessageNode",
+    "objectClass": [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "defaultconfig"
+    ],
+    "pathParams": {},
+    "realm": "/",
+    "sunServiceID": null,
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=HTMLMessageNode,ou=services,ou=am-config"
+  }
+}

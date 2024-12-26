@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/55f669d2-8849-4a5f-9fb8-fca28fe857a7",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Create RegisteredUser in CRM",
+    "script": "var objectAttributes = sharedState.get(\"objectAttributes\");\nvar userName = objectAttributes.userName;\nvar email = objectAttributes.mail;\nvar phoneNumber = objectAttributes.telephoneNumber;\nvar userType = sharedState.get(\"registeredUserType\");\n\nvar httpMethod = \"POST\";\nvar url = \"https://apigateway-preprod.adx.ae/adx/investors/forgerock/1.0/registered-user\";\nvar apiKey = secrets.getGenericSecret(\"scripted.node.eip.api.key\").getAsUtf8();\nvar channelId = \"Forgerock\";\n\nvar response;\n\ntry {\nvar request = new org.forgerock.http.protocol.Request();\nrequest.setMethod(httpMethod);\nrequest.setUri(url);\nrequest.getHeaders().add(\"adx-Gateway-APIKey\", apiKey);\nrequest.getHeaders().add(\"Channel-ID\", channelId);\nrequest.getHeaders().add(\"Content-Type\", \"application/json\");\n\nvar requestBodyJson = {\n    \"user\": {\n        \"userName\": userName,\n        \"email\": email,\n        \"userType\": userType\n    }\n};\n\nif (phoneNumber) {\n    requestBodyJson.user.phoneNumber = phoneNumber;\n}\n\nlogger.error(\"request: \" + JSON.stringify(requestBodyJson));  \n  \nrequest.setEntity(requestBodyJson);\n\nresponse = httpClient.send(request).get();\n\nlogger.error(\"CRM HTTP Response: \" + response.getEntity().getString());\n  \n  if (response.getStatus().getCode() === 200) {\n    logger.error(email + \" has been successfully created in CRM.\");\n    outcome = \"created\";\n} else  {\n    logger.error(\"Failed to create user \" + email + \" in CRM. HTTP response: \" +  response.getStatus());\n    logger.error(\"request bestest2 : \" + JSON.stringify(requestBodyJson));  \n    sharedState.put(\"errorMessage\", \"Internal Server Error\");\n    outcome = \"error\";\n}\n  \n} catch (e) {\n  logger.error(\"Exception: \" + e);\n  sharedState.put(\"errorMessage\", \"Failure\");\n  outcome = \"error\";\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/55f669d2-8849-4a5f-9fb8-fca28fe857a7",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "55f669d2-8849-4a5f-9fb8-fca28fe857a7"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=55f669d2-8849-4a5f-9fb8-fca28fe857a7,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

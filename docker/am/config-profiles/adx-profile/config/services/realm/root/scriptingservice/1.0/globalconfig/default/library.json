@@ -1,0 +1,28 @@
+{
+  "data": {
+    "_id": "default/LIBRARY",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "defaultScript": "6c49bebe-3a62-11ed-a261-0242ac120002",
+    "i18nKey": "script-type-16",
+    "languages": [
+      "JAVASCRIPT"
+    ]
+  },
+  "metadata": {
+    "entityId": "default/LIBRARY",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "ou": null,
+    "pathParams": {},
+    "realm": null,
+    "sunServiceID": "scriptContext",
+    "uid": "ou=LIBRARY,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config"
+  }
+}

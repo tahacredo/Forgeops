@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/a474b4f2-44b6-488a-8291-204799d35792",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    },
+    "message": {
+      "ar": ".\u0631\u0645\u0632 \u0627\u0644\u062a\u062d\u0642\u0642 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d. \u0627\u0644\u0631\u062c\u0627\u0621 \u0627\u0644\u0645\u062d\u0627\u0648\u0644\u0629 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649",
+      "en": "Incorrect OTP. Please try again."
+    },
+    "messageNo": {},
+    "messageYes": {}
+  },
+  "metadata": {
+    "entityId": "default/a474b4f2-44b6-488a-8291-204799d35792",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "a474b4f2-44b6-488a-8291-204799d35792"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=a474b4f2-44b6-488a-8291-204799d35792,ou=default,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "data": {
+    "_id": "default/Register_Email_OTP v2",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "6d3f1866-8a51-42cd-85e6-164e62d81fc0",
+    "identityResource": "managed/user",
+    "nodes": {
+      "1c57efe2-5f42-485a-b6d5-365ec624357b": {
+        "connections": {
+          "true": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d"
+        },
+        "displayName": "Msg: OTP Expired",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1030,
+        "y": 104.76666259765625
+      },
+      "2b8d0195-f95c-41f5-b6bc-acbf93a88456": {
+        "connections": {
+          "false": "31cfb531-2d7c-4eae-a1db-ccb513bad114",
+          "true": "31cfb531-2d7c-4eae-a1db-ccb513bad114"
+        },
+        "displayName": "Msg: Maximum Resend Tries",
+        "nodeType": "MessageNode",
+        "x": 738,
+        "y": 828.015625
+      },
+      "2dc36d43-a38c-4a9b-a9a9-4af05887bb17": {
+        "connections": {
+          "true": "31cfb531-2d7c-4eae-a1db-ccb513bad114"
+        },
+        "displayName": "Msg: Maximum Resend Tries",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 725,
+        "y": 702.7666625976562
+      },
+      "31cfb531-2d7c-4eae-a1db-ccb513bad114": {
+        "connections": {
+          "locked": "2dc36d43-a38c-4a9b-a9a9-4af05887bb17",
+          "unlocked": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d"
+        },
+        "displayName": "Script: OTP Locked?",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 624,
+        "y": 426.015625
+      },
+      "328a0e70-dbdc-484d-99cf-d4f85e2b643b": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Maximum Validation Tries",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1031,
+        "y": 324.76666259765625
+      },
+      "43a70f17-73d5-4f9d-9917-7e77a053a5c1": {
+        "connections": {
+          "true": "974a9b68-a66c-4abd-be2c-05d8d53723bf"
+        },
+        "displayName": "Script: Generate OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 299,
+        "y": 190.015625
+      },
+      "68fa3528-0d80-4d21-98bf-9a4eafe8a067": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Maximum Validation Tries",
+        "nodeType": "MessageNode",
+        "x": 1029,
+        "y": 387.015625
+      },
+      "6d3f1866-8a51-42cd-85e6-164e62d81fc0": {
+        "connections": {
+          "false": "43a70f17-73d5-4f9d-9917-7e77a053a5c1",
+          "true": "2dc36d43-a38c-4a9b-a9a9-4af05887bb17"
+        },
+        "displayName": "Script: Check OTP Lock",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 119,
+        "y": 251.015625
+      },
+      "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d": {
+        "connections": {
+          "expired": "1c57efe2-5f42-485a-b6d5-365ec624357b",
+          "invalid": "fc9a6729-1d84-4135-9a7b-f4424a5a1412",
+          "maxTries": "2dc36d43-a38c-4a9b-a9a9-4af05887bb17",
+          "resend": "43a70f17-73d5-4f9d-9917-7e77a053a5c1",
+          "restart": "328a0e70-dbdc-484d-99cf-d4f85e2b643b",
+          "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Script: Validate OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 755,
+        "y": 170.015625
+      },
+      "974a9b68-a66c-4abd-be2c-05d8d53723bf": {
+        "connections": {
+          "outcome": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d"
+        },
+        "displayName": "OTP HTML Email Sender",
+        "nodeType": "HtmlOtpSenderNode",
+        "x": 508,
+        "y": 139.76666259765625
+      },
+      "dd6a7201-a37d-4a37-8bcf-beab9a64f76b": {
+        "connections": {
+          "false": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d",
+          "true": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d"
+        },
+        "displayName": "Msg: Incorrect OTP",
+        "nodeType": "MessageNode",
+        "x": 1038,
+        "y": 647.015625
+      },
+      "fc9a6729-1d84-4135-9a7b-f4424a5a1412": {
+        "connections": {
+          "true": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d"
+        },
+        "displayName": "Msg: Incorrect OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1039,
+        "y": 570.7666625976562
+      },
+      "ff09e737-2851-4f7b-a160-522294be7983": {
+        "connections": {
+          "false": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d",
+          "true": "6df05dc7-dff1-4f0c-aa5f-a94b29406c1d"
+        },
+        "displayName": "Msg: OTP Expired",
+        "nodeType": "MessageNode",
+        "x": 1039,
+        "y": 198.015625
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 1304,
+        "y": 143
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 1337,
+        "y": 388
+      },
+      "startNode": {
+        "x": 50,
+        "y": 250
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/Register_Email_OTP v2",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "Register_Email_OTP v2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=Register_Email_OTP v2,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

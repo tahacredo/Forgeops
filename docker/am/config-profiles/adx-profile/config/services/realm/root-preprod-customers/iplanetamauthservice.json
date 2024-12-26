@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "iPlanetAMAuthService",
+    "_type": {
+      "_id": "iPlanetAMAuthService",
+      "collection": false,
+      "name": "iPlanetAMAuthService"
+    }
+  },
+  "metadata": {
+    "entityId": "iPlanetAMAuthService",
+    "entityType": "iPlanetAMAuthService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "iPlanetAMAuthService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=iPlanetAMAuthService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

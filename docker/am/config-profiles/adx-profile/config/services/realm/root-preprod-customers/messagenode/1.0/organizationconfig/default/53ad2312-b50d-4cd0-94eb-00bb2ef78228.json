@@ -1,0 +1,28 @@
+{
+  "data": {
+    "_id": "default/53ad2312-b50d-4cd0-94eb-00bb2ef78228",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    },
+    "message": {},
+    "messageNo": {},
+    "messageYes": {}
+  },
+  "metadata": {
+    "entityId": "default/53ad2312-b50d-4cd0-94eb-00bb2ef78228",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "53ad2312-b50d-4cd0-94eb-00bb2ef78228"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=53ad2312-b50d-4cd0-94eb-00bb2ef78228,ou=default,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

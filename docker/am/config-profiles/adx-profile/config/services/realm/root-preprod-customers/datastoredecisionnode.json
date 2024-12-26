@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "DataStoreDecisionNode",
+    "_type": {
+      "_id": "DataStoreDecisionNode",
+      "collection": false,
+      "name": "DataStoreDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "DataStoreDecisionNode",
+    "entityType": "DataStoreDecisionNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "DataStoreDecisionNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=DataStoreDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

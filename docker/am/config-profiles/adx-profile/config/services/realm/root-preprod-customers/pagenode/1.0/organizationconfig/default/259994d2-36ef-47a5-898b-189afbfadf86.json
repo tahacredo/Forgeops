@@ -1,0 +1,33 @@
+{
+  "data": {
+    "_id": "default/259994d2-36ef-47a5-898b-189afbfadf86",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "d4a25d9b-c6fe-4635-9d1e-a913d5299292:ValidatedPasswordNode:New Password"
+    ],
+    "pageDescription": {},
+    "pageHeader": {
+      "en": "New Password"
+    },
+    "stage": "{\"ValidatedCreatePasswordCallback\":[{\"id\":\"d4a25d9b-c6fe-4635-9d1e-a913d5299292\",\"confirmPassword\":true}]}"
+  },
+  "metadata": {
+    "entityId": "default/259994d2-36ef-47a5-898b-189afbfadf86",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "259994d2-36ef-47a5-898b-189afbfadf86"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=259994d2-36ef-47a5-898b-189afbfadf86,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

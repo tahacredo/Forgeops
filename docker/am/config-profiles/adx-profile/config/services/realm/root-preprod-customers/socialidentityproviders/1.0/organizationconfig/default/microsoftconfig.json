@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/microsoftConfig",
+    "_type": {
+      "_id": "SocialIdentityProviders",
+      "collection": false,
+      "name": "SocialIdentityProviders"
+    }
+  },
+  "metadata": {
+    "entityId": "default/microsoftConfig",
+    "entityType": "SocialIdentityProviders",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "microsoftConfig"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "microsoftConfig",
+    "uid": "ou=microsoftConfig,ou=default,ou=OrganizationConfig,ou=1.0,ou=SocialIdentityProviders,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

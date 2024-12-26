@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/c8db97dc-ddaf-45e2-8abe-9e43bcde0445",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "collection": false,
+      "name": "InnerTreeEvaluatorNode"
+    },
+    "tree": "Register v2"
+  },
+  "metadata": {
+    "entityId": "default/c8db97dc-ddaf-45e2-8abe-9e43bcde0445",
+    "entityType": "InnerTreeEvaluatorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "c8db97dc-ddaf-45e2-8abe-9e43bcde0445"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=c8db97dc-ddaf-45e2-8abe-9e43bcde0445,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/97327076-122f-418e-80cd-df1eda55c05a",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Send UAE PASS emiratesID, username, telephoneNumber",
+    "script": "var fr = JavaImporter(org.forgerock.openam.auth.node.api, javax.security.auth.callback.TextOutputCallback, java.util.ArrayList, org.forgerock.json.JsonValue)\n\nwith (fr) {\n  \n  var cbList = ArrayList();\n  \n  var username = sharedState.get(\"_id\");\n  \n  var emiratesID = idRepository.getAttribute(username, \"emiratesID\").iterator().next();\n  var mobile = idRepository.getAttribute(username, \"adxUaePassMobile\").iterator().next();\n  var uid = idRepository.getAttribute(username, \"uid\").iterator().next();\n\n  var json = JsonValue.json({ \"emiratesID\": emiratesID, \"phoneNumber\": mobile, \"username\": uid });\n\n\n  if (callbacks.isEmpty()) {\n          logger.error(\"callback empty start\");\n          cbList.add(new TextOutputCallback(0, json));\n          action = Action.send(cbList).build();\n       \t logger.error(\"callback empty end\");\n  } \n  \n    outcome = \"true\";\n  \n}\n"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/97327076-122f-418e-80cd-df1eda55c05a",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "97327076-122f-418e-80cd-df1eda55c05a"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=97327076-122f-418e-80cd-df1eda55c05a,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

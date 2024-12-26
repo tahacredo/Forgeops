@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/linkedInConfig",
+    "_type": {
+      "_id": "SocialIdentityProviders",
+      "collection": false,
+      "name": "SocialIdentityProviders"
+    }
+  },
+  "metadata": {
+    "entityId": "default/linkedInConfig",
+    "entityType": "SocialIdentityProviders",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "linkedInConfig"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "linkedInConfig",
+    "uid": "ou=linkedInConfig,ou=default,ou=OrganizationConfig,ou=1.0,ou=SocialIdentityProviders,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

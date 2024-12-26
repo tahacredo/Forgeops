@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/2014d2cb-2c1a-4db4-b8ee-99d459648f2b",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "1b8497ec-a906-4dd1-8d74-88a1833af98b:UsernameCollectorNode:Username Collector",
+      "50f28c0e-aafa-41fd-9928-7d0ea1bb5587:PasswordCollectorNode:Password Collector"
+    ],
+    "pageDescription": {},
+    "pageHeader": {}
+  },
+  "metadata": {
+    "entityId": "default/2014d2cb-2c1a-4db4-b8ee-99d459648f2b",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "2014d2cb-2c1a-4db4-b8ee-99d459648f2b"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=2014d2cb-2c1a-4db4-b8ee-99d459648f2b,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

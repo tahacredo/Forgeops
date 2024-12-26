@@ -1,0 +1,178 @@
+{
+  "heap": [
+      {
+          "name": "404Handler",
+          "type": "StaticResponseHandler",
+          "config": {
+              "status": 200,
+              "reason": "Page not found",
+              "entity": "${read('/opt/forgerock/tomcat/webapps/ROOT/error/404.html')}",
+              "headers": {
+                  "content-type": [
+                      "text/html"
+                  ]
+              }
+          }
+      },
+      {
+          "name": "503Handler",
+          "type": "StaticResponseHandler",
+          "config": {
+              "status": 200,
+              "reason": "Generic error",
+              "entity": "${read('/opt/forgerock/tomcat/webapps/ROOT/error/503.html')}",
+              "headers": {
+                  "content-type": [
+                      "text/html"
+                  ]
+              }
+          }
+      },
+      {
+          "name": "FailureHandler",
+          "type": "StaticResponseHandler",
+          "config": {
+              "status": 200,
+              "reason": "SERVICE UNAVAILABLE",
+              "entity": "${read('/opt/forgerock/tomcat/webapps/ROOT/error/genericError.html')}",
+              "headers": {
+                  "content-type": [
+                      "text/html"
+                  ]
+              }
+          }
+      },
+      {
+          "name": "ChainHandler",
+          "type": "Chain",
+          "config": {
+              "soTimeout": "30 seconds",
+              "connectionTimeout": "30 seconds",
+              "filters": [
+                  {
+                      "type": "HeaderFilter",
+                      "config": {
+                          "messageType": "REQUEST",
+                          "add": {
+                              "X-Forwarded-For": [
+                                  "${contexts.client.remoteAddress}"
+                              ]
+                          }
+                      }
+                  },
+                  {
+                      "type": "ConditionalFilter",
+                      "config": {
+                           "condition": "${find(request.uri.path, '^/auth/json/realms(/root/realms)?/preprod-Customers/authenticate') or find(request.uri.path, '^/auth/json/realms(/root/realms)?/Customers/authenticate')}",
+                          "delegate": {
+                              "type": "ScriptableFilter",
+                              "config": {
+                                  "type": "application/x-groovy",
+                                  "file": "decryption.groovy"
+                              }
+                          }
+                      }
+                  },
+                  {
+                      "name": "SwitchFilter",
+                      "type": "SwitchFilter",
+                      "config": {
+                          "onResponse": [
+                              {
+                                  "condition": "${response.status.code == 404}",
+                                  "handler": "404Handler"
+                              },
+                              {
+                                  "condition": "${response.status.code == 502 or response.status.code == 503}",
+                                  "handler": "503Handler"
+                              },
+                              {
+                                  "condition": "${response.status.code == 500}",
+                                  "handler": "FailureHandler"
+                              }
+                          ]
+                      }
+                  }
+              ],
+              "handler": {
+                  "name": "CaptureClientHandler",
+                  "type": "ClientHandler",
+                  "config": {
+                      "soTimeout": "30 seconds",
+                      "connectionTimeout": "30 seconds"
+                  },
+                  "capture": "all"
+              }
+          }
+      }
+  ],
+  "handler": {
+      "type": "DispatchHandler",
+      "config": {
+          "bindings": [
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'http' and (matches(request.uri.path, '^/auth')  and not matches(request.uri.path, '^/auth/json/serverinfo/version') )}",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://am:80/"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/auth') and not matches(request.uri.path, '^/auth/json/serverinfo/version')) }",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://am:80/"
+              },
+               {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'http' and (matches(request.uri.path, '^/platform') and not matches(request.uri.path, '^/auth/json/serverinfo/version') )}",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://admin-ui:8080/"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/platform') and not matches(request.uri.path, '^/auth/json/serverinfo/version')) }",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://admin-ui:8080/"
+              },
+              {
+                "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'http' and (matches(request.uri.path, '^/enduser') and not matches(request.uri.path, '^/auth/json/serverinfo/version') )}",
+                "handler": "ChainHandler",
+                "baseURI": "http://end-user-ui:8080/"
+            },
+            {
+                "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/enduser') and not matches(request.uri.path, '^/auth/json/serverinfo/version')) }",
+                "handler": "ChainHandler",
+                "baseURI": "http://end-user-ui:8080/"
+            },
+
+            {
+                "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'http' and (matches(request.uri.path, '^/am/XUI') and not matches(request.uri.path, '^/auth/json/serverinfo/version') )}",
+                "handler": "ChainHandler",
+                "baseURI": "http://login-ui:8080/"
+            },
+            {
+                "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/am/XUI') and not matches(request.uri.path, '^/auth/json/serverinfo/version')) }",
+                "handler": "ChainHandler",
+                "baseURI": "http://login-ui:8080/"
+            },
+
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/auth/json/serverinfo/version')) }",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://am:80/xyz"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'http' and (matches(request.uri.path, '^/admin') or matches(request.uri.path, '^/openidm') or matches(request.uri.path, '^/openicf') or matches(request.uri.path, '^/upload') or matches(request.uri.path, '^/export'))}",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://idm:80/"
+              },
+              {
+                  "condition": "${request.uri.host == 'adx.example.com' and request.uri.scheme == 'https' and (matches(request.uri.path, '^/admin') or matches(request.uri.path, '^/openidm') or matches(request.uri.path, '^/openicf') or matches(request.uri.path, '^/upload') or matches(request.uri.path, '^/export') ) }",
+                  "handler": "ChainHandler",
+                  "baseURI": "http://idm:80/"
+              },
+              {
+                  "handler": "ChainHandler",
+                  "baseURI": "http://am:80"
+              }
+          ]
+      }
+  },
+  "condition": "${find(request.uri.path, '^/') and not matches(request.uri.path, '^/user/create') and not matches(request.uri.path, '^/user/update') and not matches(request.uri.path, '^/preproduser/create') }"
+}

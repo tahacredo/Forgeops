@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "collection": false,
+      "name": "ChoiceCollectorNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "ChoiceCollectorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=ChoiceCollectorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

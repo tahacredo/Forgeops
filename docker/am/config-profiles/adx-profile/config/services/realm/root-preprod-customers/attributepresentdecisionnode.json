@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "AttributePresentDecisionNode",
+    "_type": {
+      "_id": "AttributePresentDecisionNode",
+      "collection": false,
+      "name": "AttributePresentDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "AttributePresentDecisionNode",
+    "entityType": "AttributePresentDecisionNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "AttributePresentDecisionNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=AttributePresentDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

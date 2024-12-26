@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "QueryFilterDecisionNode",
+    "_type": {
+      "_id": "QueryFilterDecisionNode",
+      "collection": false,
+      "name": "QueryFilterDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "QueryFilterDecisionNode",
+    "entityType": "QueryFilterDecisionNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "QueryFilterDecisionNode"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=QueryFilterDecisionNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

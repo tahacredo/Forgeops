@@ -1,0 +1,30 @@
+{
+  "data": {
+    "_id": "default/efb6e01a-3922-4f6b-9b9a-1e75317b3de8",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    },
+    "message": {
+      "en": "You are not eligible to access this service. Your account is either not upgraded or you have a visitor account. Please contact 800ADX to access the services."
+    },
+    "messageNo": {},
+    "messageYes": {}
+  },
+  "metadata": {
+    "entityId": "default/efb6e01a-3922-4f6b-9b9a-1e75317b3de8",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "efb6e01a-3922-4f6b-9b9a-1e75317b3de8"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=efb6e01a-3922-4f6b-9b9a-1e75317b3de8,ou=default,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

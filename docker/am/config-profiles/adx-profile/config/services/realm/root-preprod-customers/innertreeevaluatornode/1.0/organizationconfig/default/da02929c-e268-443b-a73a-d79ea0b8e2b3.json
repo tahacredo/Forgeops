@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/da02929c-e268-443b-a73a-d79ea0b8e2b3",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "collection": false,
+      "name": "InnerTreeEvaluatorNode"
+    },
+    "tree": "SMS_OTP v2"
+  },
+  "metadata": {
+    "entityId": "default/da02929c-e268-443b-a73a-d79ea0b8e2b3",
+    "entityType": "InnerTreeEvaluatorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "da02929c-e268-443b-a73a-d79ea0b8e2b3"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=da02929c-e268-443b-a73a-d79ea0b8e2b3,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

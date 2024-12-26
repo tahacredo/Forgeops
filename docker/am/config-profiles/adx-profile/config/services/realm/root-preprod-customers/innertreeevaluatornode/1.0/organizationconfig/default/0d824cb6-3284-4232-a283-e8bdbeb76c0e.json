@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/0d824cb6-3284-4232-a283-e8bdbeb76c0e",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "collection": false,
+      "name": "InnerTreeEvaluatorNode"
+    },
+    "tree": "ResetPwd_SMS_OTP v2"
+  },
+  "metadata": {
+    "entityId": "default/0d824cb6-3284-4232-a283-e8bdbeb76c0e",
+    "entityType": "InnerTreeEvaluatorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "0d824cb6-3284-4232-a283-e8bdbeb76c0e"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=0d824cb6-3284-4232-a283-e8bdbeb76c0e,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

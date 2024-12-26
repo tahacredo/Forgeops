@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "amDataStoreService",
+      "collection": false,
+      "name": "amDataStoreService"
+    },
+    "applicationDataStoreId": "application-store",
+    "policyDataStoreId": "policy-store"
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "amDataStoreService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=amDataStoreService,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/84300d86-d80a-4dba-a67f-97bf4cb93b66",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Clear Password",
+    "script": "if (!sharedState.get(\"isMigratedInvestor\")) {\n  nodeState.remove(\"_id\");\n  sharedState.remove(\"_id\");\n}\n\nobjectAttributes = sharedState.get(\"objectAttributes\");\nobjectAttributes.put(\"telephoneNumber\", \"\");\nobjectAttributes.put(\"mail\", \"\");\n\nif (sharedState.get(\"isGuest\")) {\n  objectAttributes.put(\"adxUserType\", \"\");\n}\n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/84300d86-d80a-4dba-a67f-97bf4cb93b66",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "84300d86-d80a-4dba-a67f-97bf4cb93b66"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=84300d86-d80a-4dba-a67f-97bf4cb93b66,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

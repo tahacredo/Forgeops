@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "InnerTreeEvaluatorNode",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "collection": false,
+      "name": "InnerTreeEvaluatorNode"
+    }
+  },
+  "metadata": {
+    "entityId": "InnerTreeEvaluatorNode",
+    "entityType": "InnerTreeEvaluatorNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "InnerTreeEvaluatorNode"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=InnerTreeEvaluatorNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

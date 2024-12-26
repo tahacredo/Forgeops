@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/1b8497ec-a906-4dd1-8d74-88a1833af98b",
+    "_type": {
+      "_id": "UsernameCollectorNode",
+      "collection": false,
+      "name": "UsernameCollectorNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default/1b8497ec-a906-4dd1-8d74-88a1833af98b",
+    "entityType": "UsernameCollectorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "1b8497ec-a906-4dd1-8d74-88a1833af98b"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=1b8497ec-a906-4dd1-8d74-88a1833af98b,ou=default,ou=OrganizationConfig,ou=1.0,ou=UsernameCollectorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/b60044cd-38e7-425f-af5f-e699f6eda25c",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Replace userName with Mail",
+    "script": "var messages = \"Debugger\"\nmessages = messages.concat(\" | sharedState: \", sharedState)\nlogger.error(messages);\n\nobjectAttributes = sharedState.get(\"objectAttributes\");\nmail = objectAttributes.get(\"mail\");\n\nif (mail) {  \n objectAttributes.put(\"userName\", mail);\n sharedState.put(\"username\", mail);\n} \n\nlogger.error(objectAttributes);\n\nsharedState.put(\"objectAttributes\", objectAttributes);\n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/b60044cd-38e7-425f-af5f-e699f6eda25c",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "b60044cd-38e7-425f-af5f-e699f6eda25c"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=b60044cd-38e7-425f-af5f-e699f6eda25c,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

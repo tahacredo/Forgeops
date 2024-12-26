@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/Privileges/CacheAdmin",
+    "_type": {
+      "_id": "sunAMDelegationService",
+      "collection": false,
+      "name": "sunAMDelegationService"
+    },
+    "listOfPermissions": [
+      "CacheAdmin"
+    ]
+  },
+  "metadata": {
+    "entityId": "default/Privileges/CacheAdmin",
+    "entityType": "sunAMDelegationService",
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "ou": null,
+    "pathParams": {},
+    "realm": null,
+    "sunServiceID": "Privilege",
+    "uid": "ou=CacheAdmin,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config"
+  }
+}

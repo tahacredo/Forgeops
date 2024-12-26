@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/36536d7c-98a7-4e09-aa75-51483e239f67",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    },
+    "message": {
+      "ar": ".\u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0646\u0627\u062c\u062d",
+      "en": "Registration successful."
+    },
+    "messageNo": {},
+    "messageYes": {}
+  },
+  "metadata": {
+    "entityId": "default/36536d7c-98a7-4e09-aa75-51483e239f67",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "36536d7c-98a7-4e09-aa75-51483e239f67"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=36536d7c-98a7-4e09-aa75-51483e239f67,ou=default,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

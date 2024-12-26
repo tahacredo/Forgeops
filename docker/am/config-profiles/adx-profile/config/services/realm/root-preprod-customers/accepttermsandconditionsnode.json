@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "AcceptTermsAndConditionsNode",
+    "_type": {
+      "_id": "AcceptTermsAndConditionsNode",
+      "collection": false,
+      "name": "AcceptTermsAndConditionsNode"
+    }
+  },
+  "metadata": {
+    "entityId": "AcceptTermsAndConditionsNode",
+    "entityType": "AcceptTermsAndConditionsNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "AcceptTermsAndConditionsNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=AcceptTermsAndConditionsNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

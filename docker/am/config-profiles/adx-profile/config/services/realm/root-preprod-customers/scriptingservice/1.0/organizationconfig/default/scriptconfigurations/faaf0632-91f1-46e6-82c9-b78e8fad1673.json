@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/faaf0632-91f1-46e6-82c9-b78e8fad1673",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Send UAE PASS emiratesID, email, and mobile number",
+    "script": "var fr = JavaImporter(\n  org.forgerock.openam.auth.node.api,\n  javax.security.auth.callback.TextOutputCallback,\n  java.util.ArrayList,\n  java.lang.Integer,\n  org.forgerock.json.JsonValue)\n\nwith(fr) {\n  \n  var cbList = ArrayList();\n  \n  objectAttributes = sharedState.get(\"objectAttributes\");\n  \n  var emiratesID = sharedState.get(\"emiratesID\");\n  var adxUaePassEmail = sharedState.get(\"adxUaePassEmail\");\n  var adxUaePassMobile = sharedState.get(\"adxUaePassMobile\");\n\n  var jsonMessage = {\n  \"eid\": emiratesID,\n  \"email\": adxUaePassEmail,\n  \"phoneNumber\": adxUaePassMobile,\n  \"code\": 927\n  };\n  \n  jsonMessage.code = Integer.valueOf(jsonMessage.code);\n  \n  if (callbacks.isEmpty()) {\n          logger.error(\"callback empty start\");\n          cbList.add(new TextOutputCallback(0, JsonValue.json(jsonMessage)));\n          action = Action.send(cbList).build();\n       \t logger.error(\"callback empty end\");\n  } \n  \n    outcome = \"true\";\n  \n}\n"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/faaf0632-91f1-46e6-82c9-b78e8fad1673",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "faaf0632-91f1-46e6-82c9-b78e8fad1673"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=faaf0632-91f1-46e6-82c9-b78e8fad1673,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

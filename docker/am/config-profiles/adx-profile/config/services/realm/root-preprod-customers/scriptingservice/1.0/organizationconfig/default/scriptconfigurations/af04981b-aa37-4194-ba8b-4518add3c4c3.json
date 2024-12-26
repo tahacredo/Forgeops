@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/af04981b-aa37-4194-ba8b-4518add3c4c3",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "SOCIAL_IDP_PROFILE_TRANSFORMATION",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "GROOVY",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "UAE PASS Normalization",
+    "script": "/*\n * Copyright 2020 ForgeRock AS. All Rights Reserved\n *\n * Use of this code requires a commercial software license with ForgeRock AS.\n * or with one of its affiliates. All use shall be exclusively subject\n * to such license between the licensee and ForgeRock AS.\n */\n\n/* Default Social Identity Provider Profile Transformation script to use as a template for new scripts */\n\nimport static org.forgerock.json.JsonValue.field\nimport static org.forgerock.json.JsonValue.json\nimport static org.forgerock.json.JsonValue.object\n\nif (rawProfile.userType.asString() == \"SOP1\") {\n  \n  return json(object(\n        field(\"username\", rawProfile.uuid),\n        field(\"userType\", rawProfile.userType),\n        field(\"nationalityAR\", rawProfile.nationalityAR),\n        field(\"givenName\", rawProfile.firstnameEN),\n \t\tfield(\"displayName\", rawProfile.fullnameEN),\n        field(\"familyName\", rawProfile.lastnameEN),\n\t\tfield(\"email\", rawProfile.email),\n  \t\tfield(\"mobile\", rawProfile.mobile),\n\t\tfield(\"gender\", rawProfile.gender),\n\t\tfield(\"nationalityEN\", rawProfile.nationalityEN)))\n} else {\n  logger.error(\"DEBUG: first name = \" + rawProfile.firstnameAR)\n  logger.error(\"DEBUG: last name = \" + rawProfile.lastnameAR)\n  logger.error(\"DEBUG: nationality = \" + rawProfile.nationalityEN)\n    return json(object(\n        field(\"username\", rawProfile.uuid),\n        field(\"givenName\", rawProfile.firstnameEN),\n        field(\"firstnameAR\", rawProfile.firstnameAR),\n        field(\"fullnameAR\", rawProfile.fullnameAR),\n        field(\"lastnameAR\", rawProfile.lastnameAR),\n        field(\"idn\", rawProfile.idn),\n      \tfield(\"uuid\", rawProfile.uuid),\n        field(\"userType\", rawProfile.userType),\n        field(\"nationalityAR\", rawProfile.nationalityAR),\n \t\tfield(\"displayName\", rawProfile.fullnameEN),\n        field(\"familyName\", rawProfile.lastnameEN),\n\t\tfield(\"email\", rawProfile.email),\n  \t\tfield(\"mobile\", rawProfile.mobile),\n\t\tfield(\"gender\", rawProfile.gender),\n\t\tfield(\"nationalityEN\", rawProfile.nationalityEN)))\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/af04981b-aa37-4194-ba8b-4518add3c4c3",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "af04981b-aa37-4194-ba8b-4518add3c4c3"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=af04981b-aa37-4194-ba8b-4518add3c4c3,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

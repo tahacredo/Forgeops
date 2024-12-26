@@ -1,0 +1,303 @@
+{
+  "data": {
+    "_id": "default/FRUI-TEST-UAEPASS-V2",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "acffb7f7-fb4d-4bb1-a020-49a3de538297",
+    "identityResource": "managed/user",
+    "nodes": {
+      "114f5cd8-d531-4002-af58-fe2c49fd3068": {
+        "connections": {
+          "FAILURE": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "PATCHED": "6f20ed59-cf35-4ea0-aa48-d0062d53187e"
+        },
+        "displayName": "Patch Object",
+        "nodeType": "PatchObjectNode",
+        "x": 1533,
+        "y": 87
+      },
+      "19dddd1e-1711-4bfa-ad3b-73e8dd3d95a9": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Unverified Account",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1058,
+        "y": 464.76666259765625
+      },
+      "21bc6f2a-c735-4a95-aa27-f0c2a727c3d3": {
+        "connections": {
+          "true": "86129474-a636-463c-9957-c6b764ada631"
+        },
+        "displayName": "Scripted Decision",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1060,
+        "y": 233.76666259765625
+      },
+      "2d1c1bff-0bdd-4de4-aa06-923c8ac6b07d": {
+        "connections": {
+          "true": "bad39a39-b5ef-4771-b578-89f5d444dd38"
+        },
+        "displayName": "Script: Send eid, mail, mobile",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1049,
+        "y": 361.76666259765625
+      },
+      "4bf4d9ca-c801-40d6-92f0-67a5fecfeef4": {
+        "connections": {
+          "Register": "21bc6f2a-c735-4a95-aa27-f0c2a727c3d3",
+          "Skip": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Choice Collector",
+        "nodeType": "ChoiceCollectorNode",
+        "x": 1128,
+        "y": 116.015625
+      },
+      "53ad2312-b50d-4cd0-94eb-00bb2ef78228": {
+        "connections": {},
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 820,
+        "y": 186.015625
+      },
+      "626c9dbc-7a3e-42a5-9253-bacf50588ca2": {
+        "connections": {
+          "false": "fbf0c620-b769-4a6c-b4c7-d0c3d33869f1",
+          "true": "fbf0c620-b769-4a6c-b4c7-d0c3d33869f1"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 191,
+        "y": 321.015625
+      },
+      "6f20ed59-cf35-4ea0-aa48-d0062d53187e": {
+        "connections": {
+          "false": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 1741,
+        "y": 91.015625
+      },
+      "75346429-510d-488d-b8d1-f35f8b3ec46c": {
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Scripted Decision",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1552,
+        "y": 12.015625
+      },
+      "7752013d-1304-4513-9599-029db0f07c72": {
+        "connections": {
+          "true": "bad39a39-b5ef-4771-b578-89f5d444dd38"
+        },
+        "displayName": "Script: Send eid, uid, mobile",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1302,
+        "y": 274.76666259765625
+      },
+      "78822d9c-f580-43bf-89e1-1816a9d77a38": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Soft Launch",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1305,
+        "y": 101.015625
+      },
+      "790ed1ab-1350-4fc6-897e-b6de00a1bdd6": {
+        "connections": {
+          "true": "114f5cd8-d531-4002-af58-fe2c49fd3068"
+        },
+        "displayName": "Script: Set LastActivity",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1287,
+        "y": 9.76666259765625
+      },
+      "7b215e43-c229-4f7c-89d6-0e2c7f00a7c2": {
+        "connections": {
+          "Login": "790ed1ab-1350-4fc6-897e-b6de00a1bdd6",
+          "Register": "86129474-a636-463c-9957-c6b764ada631",
+          "Register Choice": "4bf4d9ca-c801-40d6-92f0-67a5fecfeef4"
+        },
+        "displayName": "Script: User Type Evaluator",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 859,
+        "y": 9
+      },
+      "86129474-a636-463c-9957-c6b764ada631": {
+        "connections": {
+          "true": "7752013d-1304-4513-9599-029db0f07c72"
+        },
+        "displayName": "Script: To Patch",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1060,
+        "y": 295.76666259765625
+      },
+      "87d7c57a-f9fd-47e3-916f-e689c0d31fb1": {
+        "connections": {
+          "ACCOUNT_EXISTS": "fbf0c620-b769-4a6c-b4c7-d0c3d33869f1",
+          "NO_ACCOUNT": "fbf0c620-b769-4a6c-b4c7-d0c3d33869f1"
+        },
+        "displayName": "Social Provider Handler Node",
+        "nodeType": "SocialProviderHandlerNode",
+        "x": 295,
+        "y": 96
+      },
+      "a32ace64-9a5b-4965-80a5-8424eb36d738": {
+        "connections": {
+          "false": "19dddd1e-1711-4bfa-ad3b-73e8dd3d95a9",
+          "true": "2d1c1bff-0bdd-4de4-aa06-923c8ac6b07d"
+        },
+        "displayName": "Script: Is SOP2/3?",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 839,
+        "y": 325.90625
+      },
+      "acffb7f7-fb4d-4bb1-a020-49a3de538297": {
+        "connections": {
+          "socialAuthentication": "87d7c57a-f9fd-47e3-916f-e689c0d31fb1"
+        },
+        "displayName": "Select Identity Provider",
+        "nodeType": "SelectIdPNode",
+        "x": 146,
+        "y": 220.015625
+      },
+      "bad39a39-b5ef-4771-b578-89f5d444dd38": {
+        "connections": {
+          "true": "f5c8a8b7-b3f7-4bad-92f2-7b00cb1167c8"
+        },
+        "displayName": "Script: Set isUAEPassUser true",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1297,
+        "y": 371.1666717529297
+      },
+      "cf6a4464-881b-428e-bf6f-e570fb6fc4f0": {
+        "connections": {
+          "false": "78822d9c-f580-43bf-89e1-1816a9d77a38",
+          "true": "7b215e43-c229-4f7c-89d6-0e2c7f00a7c2"
+        },
+        "displayName": "Is Soft Launch User",
+        "nodeType": "AttributeValueDecisionNode",
+        "x": 581,
+        "y": 13
+      },
+      "e3804dd4-51ba-42e1-a2ed-e43f39994f43": {
+        "connections": {
+          "false": "7b215e43-c229-4f7c-89d6-0e2c7f00a7c2",
+          "true": "7b215e43-c229-4f7c-89d6-0e2c7f00a7c2"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 535,
+        "y": 60.015625
+      },
+      "e4737055-a0eb-42c4-be8d-aa6de3a7ac1f": {
+        "connections": {
+          "false": "e5aa69ed-d670-42dd-bd32-04f6534c94d6"
+        },
+        "displayName": "LDAP Query Node",
+        "nodeType": "LdapQueryNode",
+        "x": 187,
+        "y": 627
+      },
+      "e5aa69ed-d670-42dd-bd32-04f6534c94d6": {
+        "connections": {
+          "true": "a32ace64-9a5b-4965-80a5-8424eb36d738"
+        },
+        "displayName": "Log Node",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 549,
+        "y": 571
+      },
+      "e85446d1-1ff0-42b0-b11d-785ccf2a05d5": {
+        "connections": {
+          "false": "fbf0c620-b769-4a6c-b4c7-d0c3d33869f1",
+          "true": "7b215e43-c229-4f7c-89d6-0e2c7f00a7c2"
+        },
+        "displayName": "Identify Existing User",
+        "nodeType": "IdentifyExistingUserNode",
+        "x": 310,
+        "y": 481.015625
+      },
+      "efb6e01a-3922-4f6b-9b9a-1e75317b3de8": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Unverified Account",
+        "nodeType": "MessageNode",
+        "x": 1054,
+        "y": 596.90625
+      },
+      "f59190c9-6ef9-42b6-ac4d-adae84234365": {
+        "connections": {
+          "false": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "true": "114f5cd8-d531-4002-af58-fe2c49fd3068"
+        },
+        "displayName": "Script: Skip?",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1814,
+        "y": 248.015625
+      },
+      "f5c8a8b7-b3f7-4bad-92f2-7b00cb1167c8": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "f59190c9-6ef9-42b6-ac4d-adae84234365"
+        },
+        "displayName": "Tree: Alternative Acc Registration",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 1562,
+        "y": 347.26666259765625
+      },
+      "fbf0c620-b769-4a6c-b4c7-d0c3d33869f1": {
+        "connections": {
+          "false": "a32ace64-9a5b-4965-80a5-8424eb36d738",
+          "true": "7b215e43-c229-4f7c-89d6-0e2c7f00a7c2"
+        },
+        "displayName": "Identify Existing User",
+        "nodeType": "IdentifyExistingUserNode",
+        "x": 545,
+        "y": 203.015625
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 2012,
+        "y": 34
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 1875,
+        "y": 592
+      },
+      "startNode": {
+        "x": 50,
+        "y": 250
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/FRUI-TEST-UAEPASS-V2",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "FRUI-TEST-UAEPASS-V2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=FRUI-TEST-UAEPASS-V2,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

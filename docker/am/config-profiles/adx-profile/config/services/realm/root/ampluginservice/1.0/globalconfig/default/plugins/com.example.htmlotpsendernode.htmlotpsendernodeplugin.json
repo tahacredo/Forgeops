@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/plugins/com.example.htmlOtpSenderNode.HtmlOtpSenderNodePlugin",
+    "_type": {
+      "_id": "amPluginService",
+      "collection": false,
+      "name": "amPluginService"
+    },
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "entityId": "default/plugins/com.example.htmlOtpSenderNode.HtmlOtpSenderNodePlugin",
+    "entityType": "amPluginService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "com.example.htmlOtpSenderNode.HtmlOtpSenderNodePlugin"
+    ],
+    "pathParams": {},
+    "realm": null,
+    "sunServiceID": "plugin",
+    "uid": "ou=com.example.htmlOtpSenderNode.HtmlOtpSenderNodePlugin,ou=plugins,ou=default,ou=GlobalConfig,ou=1.0,ou=amPluginService,ou=services,ou=am-config"
+  }
+}

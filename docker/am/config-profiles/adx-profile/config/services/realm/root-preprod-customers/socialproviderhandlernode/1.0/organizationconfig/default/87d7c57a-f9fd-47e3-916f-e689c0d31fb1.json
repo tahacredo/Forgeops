@@ -1,0 +1,28 @@
+{
+  "data": {
+    "_id": "default/87d7c57a-f9fd-47e3-916f-e689c0d31fb1",
+    "_type": {
+      "_id": "SocialProviderHandlerNode",
+      "collection": false,
+      "name": "SocialProviderHandlerNode"
+    },
+    "clientType": "BROWSER",
+    "script": "e109347e-fde7-460a-bf12-6ca0409a7da2",
+    "usernameAttribute": "userName"
+  },
+  "metadata": {
+    "entityId": "default/87d7c57a-f9fd-47e3-916f-e689c0d31fb1",
+    "entityType": "SocialProviderHandlerNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "87d7c57a-f9fd-47e3-916f-e689c0d31fb1"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=87d7c57a-f9fd-47e3-916f-e689c0d31fb1,ou=default,ou=OrganizationConfig,ou=1.0,ou=SocialProviderHandlerNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

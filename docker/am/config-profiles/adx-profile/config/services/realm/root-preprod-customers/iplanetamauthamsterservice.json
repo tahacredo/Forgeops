@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "iPlanetAMAuthAmsterService",
+    "_type": {
+      "_id": "iPlanetAMAuthAmsterService",
+      "collection": false,
+      "name": "iPlanetAMAuthAmsterService"
+    }
+  },
+  "metadata": {
+    "entityId": "iPlanetAMAuthAmsterService",
+    "entityType": "iPlanetAMAuthAmsterService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "iPlanetAMAuthAmsterService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=iPlanetAMAuthAmsterService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/8a2cf990-16a5-420d-a458-f57bb33bdb17",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    },
+    "message": {
+      "ar": ".\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645 \u063a\u064a\u0631 \u0645\u0633\u062c\u0644. \u0627\u0644\u0631\u062c\u0627\u0621 \u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0648\u0638\u064a\u0641\u0629 \u0627\u0644\u062a\u0633\u062c\u064a\u0644",
+      "en": "You're not a registered user. Please sign up using the \"Sign up\" option."
+    },
+    "messageNo": {},
+    "messageYes": {}
+  },
+  "metadata": {
+    "entityId": "default/8a2cf990-16a5-420d-a458-f57bb33bdb17",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "8a2cf990-16a5-420d-a458-f57bb33bdb17"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=8a2cf990-16a5-420d-a458-f57bb33bdb17,ou=default,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

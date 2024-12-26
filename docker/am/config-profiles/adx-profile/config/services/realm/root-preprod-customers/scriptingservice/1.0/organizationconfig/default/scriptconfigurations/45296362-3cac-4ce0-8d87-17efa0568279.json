@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/45296362-3cac-4ce0-8d87-17efa0568279",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Register - Check OTP Lock v2",
+    "script": "  var email = sharedState.get(\"username\");\n\n  objectAttributes = sharedState.get(\"objectAttributes\");\n  sharedState.put(\"emailAddress\", objectAttributes.mail);\n\n  var currentTimeStamp = new Date().getTime();\n    \n  var lockExpiryTime = sharedState.get(\"adxOtpLockExpiryTime\")\n    \n  var isOtpLocked = sharedState.get(\"adxOtpLock\")\n  \n  if (isOtpLocked === \"true\" && currentTimeStamp < lockExpiryTime) {\n   outcome = \"true\"; \n  } else {\n   sharedState.put(\"adxOtpLock\", \"false\");\n   outcome = \"false\";\n  }\n  "
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/45296362-3cac-4ce0-8d87-17efa0568279",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "45296362-3cac-4ce0-8d87-17efa0568279"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=45296362-3cac-4ce0-8d87-17efa0568279,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -13,7 +13,7 @@ spec:
         app: ig
     spec:
       securityContext:
-        runAsUser: 11111
+        runAsUser: 0
         runAsGroup: 0
       containers:
       - name: ig

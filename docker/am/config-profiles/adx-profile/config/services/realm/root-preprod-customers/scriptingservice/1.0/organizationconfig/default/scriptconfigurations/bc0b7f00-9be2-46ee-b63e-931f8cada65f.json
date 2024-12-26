@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/bc0b7f00-9be2-46ee-b63e-931f8cada65f",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "ChangePassword - Message 925 - 926",
+    "script": "var fr = JavaImporter(\n    org.forgerock.openam.auth.node.api,\n    javax.security.auth.callback.TextOutputCallback,\n    javax.security.auth.callback.ConfirmationCallback,\n    java.util.ArrayList,\n    org.forgerock.json.JsonValue,\n    java.lang.Integer\n);\n\nlogger.error(\"header: \" + requestHeaders.get(\"Accept-Language\"));\n\nwith (fr) {\n    var cbList = ArrayList();\n    var jsonMessage = {};\n\n    var acceptLanguageHeader = requestHeaders.get(\"Accept-Language\");\n\n    if (acceptLanguageHeader !== null && acceptLanguageHeader.get(0) == \"ar\") {\n        jsonMessage.msg = \".\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0627\u0644\u062d\u0627\u0644\u064a\u0629 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629\u060c \u0644\u0645 \u064a\u062a\u0645 \u062a\u063a\u064a\u064a\u0631 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\";\n        jsonMessage.code = 926;\n    } else {\n        jsonMessage.msg = \"Your current password is incorrect, the password was not changed.\";\n        jsonMessage.code = 925;\n    }\n  \n    jsonMessage.code = Integer.valueOf(jsonMessage.code);\n\n    if (callbacks.isEmpty()) {\n        logger.error(\"callback empty start\");\n        cbList.add(new TextOutputCallback(0, JsonValue.json(jsonMessage)));\n        cbList.add(new ConfirmationCallback(\" \", 0, [\"Yes\", \"No\"], 1));\n        action = Action.send(cbList).build();\n        logger.error(\"callback empty end\");\n    } else {\n    outcome = \"true\";\n}\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/bc0b7f00-9be2-46ee-b63e-931f8cada65f",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "bc0b7f00-9be2-46ee-b63e-931f8cada65f"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=bc0b7f00-9be2-46ee-b63e-931f8cada65f,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

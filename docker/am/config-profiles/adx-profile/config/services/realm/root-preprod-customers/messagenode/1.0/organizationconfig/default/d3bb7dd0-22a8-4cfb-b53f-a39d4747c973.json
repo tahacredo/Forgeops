@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/d3bb7dd0-22a8-4cfb-b53f-a39d4747c973",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    },
+    "message": {
+      "ar": ".\u0641\u0634\u0644\u062a \u0639\u0645\u0644\u064a\u0629 \u0627\u0644\u062a\u0633\u062c\u064a\u0644. \u064a\u0631\u062c\u0649 \u0627\u0644\u0645\u062d\u0627\u0648\u0644\u0629 \u0645\u0631\u0629 \u0623\u062e\u0631\u0649 \u0641\u064a \u0628\u0636\u0639 \u062f\u0642\u0627\u0626\u0642",
+      "en": "Registration unsuccessful, please try again after a few minutes."
+    },
+    "messageNo": {},
+    "messageYes": {}
+  },
+  "metadata": {
+    "entityId": "default/d3bb7dd0-22a8-4cfb-b53f-a39d4747c973",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "d3bb7dd0-22a8-4cfb-b53f-a39d4747c973"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=d3bb7dd0-22a8-4cfb-b53f-a39d4747c973,ou=default,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

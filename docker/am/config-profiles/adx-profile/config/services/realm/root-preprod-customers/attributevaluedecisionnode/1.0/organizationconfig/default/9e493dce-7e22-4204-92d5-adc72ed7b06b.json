@@ -1,0 +1,29 @@
+{
+  "data": {
+    "_id": "default/9e493dce-7e22-4204-92d5-adc72ed7b06b",
+    "_type": {
+      "_id": "AttributeValueDecisionNode",
+      "collection": false,
+      "name": "AttributeValueDecisionNode"
+    },
+    "comparisonAttribute": "adxUserType",
+    "comparisonOperation": "EQUALS",
+    "comparisonValue": "UAEPASS",
+    "identityAttribute": "userName"
+  },
+  "metadata": {
+    "entityId": "default/9e493dce-7e22-4204-92d5-adc72ed7b06b",
+    "entityType": "AttributeValueDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "9e493dce-7e22-4204-92d5-adc72ed7b06b"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=9e493dce-7e22-4204-92d5-adc72ed7b06b,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributeValueDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

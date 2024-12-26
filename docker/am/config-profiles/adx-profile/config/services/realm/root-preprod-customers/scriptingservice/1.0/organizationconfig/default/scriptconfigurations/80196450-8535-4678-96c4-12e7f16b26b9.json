@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/80196450-8535-4678-96c4-12e7f16b26b9",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Send JWT w/eid, mobile, username for migrated uae pass user",
+    "script": "var fr = JavaImporter(org.forgerock.openam.auth.node.api, javax.security.auth.callback.TextOutputCallback, java.util.ArrayList, org.forgerock.json.JsonValue)\n\nwith (fr) {\n  \n  var cbList = ArrayList();\n  \n  var signedJwt = sharedState.get(\"signedJwt\");\n\n  var json = JsonValue.json({ \"jwt\": signedJwt });\n\n\n  if (callbacks.isEmpty()) {\n          logger.error(\"callback empty start\");\n          cbList.add(new TextOutputCallback(0, json));\n          action = Action.send(cbList).build();\n       \t logger.error(\"callback empty end\");\n  } \n  \n    outcome = \"true\";\n  \n}\n"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/80196450-8535-4678-96c4-12e7f16b26b9",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "80196450-8535-4678-96c4-12e7f16b26b9"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=80196450-8535-4678-96c4-12e7f16b26b9,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

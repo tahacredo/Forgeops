@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/3909c465-6a24-4620-b53d-845ae28a010c",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Create or Patch?",
+    "script": "var decision = sharedState.get(\"toPatch\");\n\nvar emiratesID = sharedState.get(\"emiratesID\");\n\nobjectAttributes = sharedState.get(\"objectAttributes\");\nobjectAttributes.put(\"emiratesID\", emiratesID);\n\nlogger.error(\"in create or patch \" + sharedState.get(\"objectAttributes\"));\nlogger.error(\"patch decision: \" + decision + \" EID:\" + emiratesID);\n\nif (decision === \"TRUE\") {\n outcome = \"patch\"; \n} else {\noutcome = \"create\";\nobjectAttributes.put(\"adxIsMigrated\", \"FALSE\");  \n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/3909c465-6a24-4620-b53d-845ae28a010c",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "3909c465-6a24-4620-b53d-845ae28a010c"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=3909c465-6a24-4620-b53d-845ae28a010c,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

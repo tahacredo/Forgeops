@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "iPlanetAMAuthOATHService",
+    "_type": {
+      "_id": "iPlanetAMAuthOATHService",
+      "collection": false,
+      "name": "iPlanetAMAuthOATHService"
+    }
+  },
+  "metadata": {
+    "entityId": "iPlanetAMAuthOATHService",
+    "entityType": "iPlanetAMAuthOATHService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "iPlanetAMAuthOATHService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=iPlanetAMAuthOATHService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

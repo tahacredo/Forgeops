@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/373fe135-0a34-44cd-9c0c-0e16a436647d",
+    "_type": {
+      "_id": "PatchObjectNode",
+      "collection": false,
+      "name": "PatchObjectNode"
+    },
+    "identityAttribute": "userName",
+    "identityResource": "managed/user",
+    "ignoredFields": [
+      "userName"
+    ],
+    "patchAsObject": false
+  },
+  "metadata": {
+    "entityId": "default/373fe135-0a34-44cd-9c0c-0e16a436647d",
+    "entityType": "PatchObjectNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "373fe135-0a34-44cd-9c0c-0e16a436647d"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=373fe135-0a34-44cd-9c0c-0e16a436647d,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

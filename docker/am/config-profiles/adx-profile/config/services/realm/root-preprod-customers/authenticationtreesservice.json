@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "authenticationTreesService",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    }
+  },
+  "metadata": {
+    "entityId": "authenticationTreesService",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "authenticationTreesService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

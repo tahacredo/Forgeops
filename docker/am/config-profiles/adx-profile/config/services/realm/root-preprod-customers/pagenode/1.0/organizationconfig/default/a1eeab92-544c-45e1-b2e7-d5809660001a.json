@@ -1,0 +1,34 @@
+{
+  "data": {
+    "_id": "default/a1eeab92-544c-45e1-b2e7-d5809660001a",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "0c32dc24-21b2-4bf6-af93-31f0d65f3a28:AttributeCollectorNode:Attribute Collector",
+      "5f3113ae-648a-4fa1-8628-59b3bed72c2f:ValidatedPasswordNode:Platform Password"
+    ],
+    "pageDescription": {},
+    "pageHeader": {
+      "en": "Alternative Login Registration"
+    },
+    "stage": "{\"ValidatedCreatePasswordCallback\":[{\"id\":\"b54affdc-d9db-4c21-b2b3-eba16a2ae883\",\"confirmPassword\":true},{\"id\":\"ccfb5f21-3c4b-4e20-9cce-cb21a36214ff\",\"confirmPassword\":true}]}"
+  },
+  "metadata": {
+    "entityId": "default/a1eeab92-544c-45e1-b2e7-d5809660001a",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "a1eeab92-544c-45e1-b2e7-d5809660001a"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=a1eeab92-544c-45e1-b2e7-d5809660001a,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

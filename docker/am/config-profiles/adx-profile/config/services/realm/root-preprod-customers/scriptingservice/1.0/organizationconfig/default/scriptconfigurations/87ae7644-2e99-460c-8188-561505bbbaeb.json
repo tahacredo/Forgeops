@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/87ae7644-2e99-460c-8188-561505bbbaeb",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "SMS OTP?",
+    "script": "objectAttributes = sharedState.get(\"objectAttributes\");\ntelephoneNumber = objectAttributes.get(\"telephoneNumber\");\n\nobjectAttributes.put(\"adxIsEmailVerified\", \"TRUE\");\n\nsharedState.put(\"objectAttributes\", objectAttributes);\n\n\nif (telephoneNumber) {\n  outcome = \"true\";\n} else {\n  objectAttributes.put(\"telephoneNumber\", null);\n  sharedState.put(\"objectAttributes\", objectAttributes);\n\n  outcome = \"false\";\n}\n"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/87ae7644-2e99-460c-8188-561505bbbaeb",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "87ae7644-2e99-460c-8188-561505bbbaeb"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=87ae7644-2e99-460c-8188-561505bbbaeb,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

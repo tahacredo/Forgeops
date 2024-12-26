@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "ValidatedUsernameNode",
+    "_type": {
+      "_id": "ValidatedUsernameNode",
+      "collection": false,
+      "name": "ValidatedUsernameNode"
+    }
+  },
+  "metadata": {
+    "entityId": "ValidatedUsernameNode",
+    "entityType": "ValidatedUsernameNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "ValidatedUsernameNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=ValidatedUsernameNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

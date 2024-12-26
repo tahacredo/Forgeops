@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/cdfcf4ca-1382-4af1-94b0-7ef43a760413",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Print sharedState",
+    "script": "var fr = JavaImporter(\n    org.forgerock.openam.auth.node.api.Action,\n    javax.security.auth.callback.TextOutputCallback\n)\nvar messages = \"Debugger\"\nmessages = messages.concat(\" | sharedState: \", sharedState)\n\nlogger.error(messages)\n\n// if (messages.length && callbacks.isEmpty()) {\n//     action = fr.Action.send(\n//         new fr.TextOutputCallback(\n//             fr.TextOutputCallback.ERROR,\n//             messages\n//         )\n//     ).build()\n// } else {\n//     action = fr.Action.goTo(\"true\").build()\n// }\n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/cdfcf4ca-1382-4af1-94b0-7ef43a760413",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "cdfcf4ca-1382-4af1-94b0-7ef43a760413"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=cdfcf4ca-1382-4af1-94b0-7ef43a760413,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/2dc36d43-a38c-4a9b-a9a9-4af05887bb17",
+    "_type": {
+      "_id": "ScriptedDecisionNode",
+      "collection": false,
+      "name": "ScriptedDecisionNode"
+    },
+    "inputs": [
+      "*"
+    ],
+    "outcomes": [
+      "true"
+    ],
+    "outputs": [
+      "*"
+    ],
+    "script": "de8ee015-6c22-49f1-9987-f878a4c0e9b5"
+  },
+  "metadata": {
+    "entityId": "default/2dc36d43-a38c-4a9b-a9a9-4af05887bb17",
+    "entityType": "ScriptedDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "2dc36d43-a38c-4a9b-a9a9-4af05887bb17"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=2dc36d43-a38c-4a9b-a9a9-4af05887bb17,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptedDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "PatchObjectNode",
+    "_type": {
+      "_id": "PatchObjectNode",
+      "collection": false,
+      "name": "PatchObjectNode"
+    }
+  },
+  "metadata": {
+    "entityId": "PatchObjectNode",
+    "entityType": "PatchObjectNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "PatchObjectNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=PatchObjectNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

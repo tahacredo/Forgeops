@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/31bda289-da93-463d-89ce-f497c8ffdbc5",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "d2c02a04-9fe3-4f81-b0f0-5764609b185b:ValidatedPasswordNode:Platform Password"
+    ],
+    "pageDescription": {
+      "en": "Provide the new Password"
+    },
+    "pageHeader": {
+      "en": "Reset Password"
+    },
+    "stage": "{\"ValidatedCreatePasswordCallback\":[{\"id\":\"342f0ba3-5b23-492b-949e-19842ac0dd26\",\"confirmPassword\":true},{\"id\":\"ae88aac8-d242-4fc8-96ea-42f2cd216145\",\"confirmPassword\":true},{\"id\":\"d2c02a04-9fe3-4f81-b0f0-5764609b185b\",\"confirmPassword\":true}]}"
+  },
+  "metadata": {
+    "entityId": "default/31bda289-da93-463d-89ce-f497c8ffdbc5",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "31bda289-da93-463d-89ce-f497c8ffdbc5"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=31bda289-da93-463d-89ce-f497c8ffdbc5,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

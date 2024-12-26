@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "LoginCountDecisionNode",
+    "_type": {
+      "_id": "LoginCountDecisionNode",
+      "collection": false,
+      "name": "LoginCountDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "LoginCountDecisionNode",
+    "entityType": "LoginCountDecisionNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "LoginCountDecisionNode"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=LoginCountDecisionNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

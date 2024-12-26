@@ -1,0 +1,36 @@
+{
+  "data": {
+    "_id": "default/114f5cd8-d531-4002-af58-fe2c49fd3068",
+    "_type": {
+      "_id": "PatchObjectNode",
+      "collection": false,
+      "name": "PatchObjectNode"
+    },
+    "identityAttribute": "userName",
+    "identityResource": "managed/user",
+    "ignoredFields": [
+      "telephoneNumber",
+      "mail",
+      "adxUserType",
+      "aliasList",
+      "gender",
+      "userName"
+    ],
+    "patchAsObject": false
+  },
+  "metadata": {
+    "entityId": "default/114f5cd8-d531-4002-af58-fe2c49fd3068",
+    "entityType": "PatchObjectNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "114f5cd8-d531-4002-af58-fe2c49fd3068"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=114f5cd8-d531-4002-af58-fe2c49fd3068,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

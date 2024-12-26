@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/e143a7fe-b1d6-4f29-ab43-8f472e45e1d2",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "GROOVY",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Generate JWT for Alternate Login",
+    "script": "import org.forgerock.json.jose.jws.JwsHeader\nimport org.forgerock.json.jose.jws.JwsAlgorithm\nimport org.forgerock.json.jose.jws.SignedJwt\nimport org.forgerock.json.jose.jws.SigningManager\nimport org.forgerock.security.keystore.KeyStoreBuilder\nimport org.forgerock.security.keystore.KeyStoreManager\nimport org.forgerock.secrets.keys.SigningKey \nimport java.util.UUID; \nimport java.time.Instant; \nimport org.forgerock.json.jose.builders.JwtClaimsSetBuilder; \nimport javax.crypto.Cipher;\nimport javax.crypto.spec.OAEPParameterSpec;\nimport java.security.spec.MGF1ParameterSpec;\nimport javax.crypto.spec.PSource;\nimport java.security.*;\nimport java.security.spec.*;\nimport java.nio.file.*;\n\ndef encrypt(value, eipPublicKey) {\n  try {\nbyte[] valueAsBytes = value.getBytes();\nOAEPParameterSpec oaepParams = new OAEPParameterSpec(\"SHA-256\", \"MGF1\", new MGF1ParameterSpec(\"SHA-256\"), PSource.PSpecified.DEFAULT);\nCipher cipher = Cipher.getInstance(\"RSA/ECB/OAEPPadding\");\ncipher.init(Cipher.ENCRYPT_MODE, eipPublicKey, oaepParams);\ncipher.update(valueAsBytes);\nbyte[] encryptedValue = cipher.doFinal();\t \n    return Base64.getEncoder().encodeToString(encryptedValue);\n  } catch (Exception e) {\n    \n  }\n}\n\ndef storepassPath = '/app/forgerock/install/am-config/security/secrets/default/.storepass'; \ndef storepass = new File(storepassPath).getText('UTF-8'); \ndef keystoreType = \"JCEKS\"; \ndef jceksFilePath = \"/app/forgerock/install/am-config/security/keystores/preprod/preprodkeystore.jceks\"; \ndef signingKeyAlias = \"adxpreprodjwtsigningkey\"; \ndef eipPublicKeyFileName = '/app/forgerock/install/am-config/security/keys/preprod/eip-publicKey.der';\n\ndef builder = new KeyStoreBuilder(); \nbuilder.withKeyStoreFile(jceksFilePath)\n    .withKeyStoreType(keystoreType)\n    .withPassword(storepass); \n    \ndef keystore = builder.build(); \nkeyStoreManager = new KeyStoreManager(keystore); \nsigningKey = keyStoreManager.getPrivateKey(signingKeyAlias, storepass); \n\nbyte[] keyBytes = Files.readAllBytes(Paths.get(eipPublicKeyFileName));\nX509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);\nKeyFactory kf = KeyFactory.getInstance(\"RSA\");\neipPublicKey = kf.generatePublic(spec);\n\ndef eid;\ndef adxUaePassMobile;\ndef adxUaePassEmail;\n\nobjectAttributes = sharedState.get(\"objectAttributes\");\nadxUaePassEmail = objectAttributes.get(\"mail\");\neid = objectAttributes.get(\"emiratesID\");\nadxUaePassMobile = objectAttributes.get(\"telephoneNumber\");\n\ndef encryptedEidB64 = encrypt(eid, eipPublicKey);\ndef encryptedmobileNumberB64 = encrypt(adxUaePassMobile, eipPublicKey);\ndef encryptedEmailB64 = encrypt(adxUaePassEmail, eipPublicKey);\n\n// Create JWS header section\nJwsHeader header = new JwsHeader();\nheader.setAlgorithm(JwsAlgorithm.RS256); \nheader.setKeyId(\"6t3mR7//kX22KHSHbuW/HglDAlY=\");\n\n// Set claims\ndef now = Instant.now();\ndef claimsBuilder = new JwtClaimsSetBuilder();\n\nclaimsBuilder\n    .iss(\"https://sso.adx.ae:443/auth/oauth2/realms/root/realms/preprod-Customers\")\n    .sub(encryptedEidB64)\n    .aud([\"eip-onboard\"])\n    .exp(Date.from(now.plusSeconds(600)))\n    .iat(Date.from(now))\n    .jti(UUID.randomUUID().toString())\n\t.claim(\"mob\", encryptedmobileNumberB64)\n\t.claim(\"email\", encryptedEmailB64);\n\ndef jwtClaimsSet = claimsBuilder.build();\n\n// Sign the token\ndef signingManager = new SigningManager();\n\ndef signingHandler = signingManager.newRsaSigningHandler(signingKey);\n\n// Create signed JWT\ndef signedJwt = new SignedJwt(header, jwtClaimsSet, signingHandler);\n// String representation\ndef jwt = signedJwt.build();\n\nsharedState.put(\"signedJwt\", jwt); \n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/e143a7fe-b1d6-4f29-ab43-8f472e45e1d2",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "e143a7fe-b1d6-4f29-ab43-8f472e45e1d2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=e143a7fe-b1d6-4f29-ab43-8f472e45e1d2,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

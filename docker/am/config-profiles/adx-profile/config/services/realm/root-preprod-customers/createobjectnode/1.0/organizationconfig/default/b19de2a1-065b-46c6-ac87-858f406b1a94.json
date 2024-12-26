@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/b19de2a1-065b-46c6-ac87-858f406b1a94",
+    "_type": {
+      "_id": "CreateObjectNode",
+      "collection": false,
+      "name": "CreateObjectNode"
+    },
+    "identityResource": "managed/user"
+  },
+  "metadata": {
+    "entityId": "default/b19de2a1-065b-46c6-ac87-858f406b1a94",
+    "entityType": "CreateObjectNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "b19de2a1-065b-46c6-ac87-858f406b1a94"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=b19de2a1-065b-46c6-ac87-858f406b1a94,ou=default,ou=OrganizationConfig,ou=1.0,ou=CreateObjectNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

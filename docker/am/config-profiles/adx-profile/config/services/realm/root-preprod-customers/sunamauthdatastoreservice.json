@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "sunAMAuthDataStoreService",
+    "_type": {
+      "_id": "sunAMAuthDataStoreService",
+      "collection": false,
+      "name": "sunAMAuthDataStoreService"
+    }
+  },
+  "metadata": {
+    "entityId": "sunAMAuthDataStoreService",
+    "entityType": "sunAMAuthDataStoreService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "sunAMAuthDataStoreService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=sunAMAuthDataStoreService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

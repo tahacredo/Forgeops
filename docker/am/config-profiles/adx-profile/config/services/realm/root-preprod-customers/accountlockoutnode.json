@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "AccountLockoutNode",
+    "_type": {
+      "_id": "AccountLockoutNode",
+      "collection": false,
+      "name": "AccountLockoutNode"
+    }
+  },
+  "metadata": {
+    "entityId": "AccountLockoutNode",
+    "entityType": "AccountLockoutNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "AccountLockoutNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=AccountLockoutNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

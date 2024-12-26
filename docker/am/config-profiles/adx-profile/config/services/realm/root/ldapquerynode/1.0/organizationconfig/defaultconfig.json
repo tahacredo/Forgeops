@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "LdapQueryNode",
+      "collection": false,
+      "name": "LdapQueryNode"
+    }
+  },
+  "metadata": {
+    "entityId": "defaultconfig",
+    "entityType": "LdapQueryNode",
+    "objectClass": [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "defaultconfig"
+    ],
+    "pathParams": {},
+    "realm": "/",
+    "sunServiceID": null,
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=LdapQueryNode,ou=services,ou=am-config"
+  }
+}

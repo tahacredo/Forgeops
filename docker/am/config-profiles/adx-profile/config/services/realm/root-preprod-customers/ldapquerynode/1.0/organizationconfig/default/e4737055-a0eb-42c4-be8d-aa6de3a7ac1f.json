@@ -1,0 +1,48 @@
+{
+  "data": {
+    "_id": "default/e4737055-a0eb-42c4-be8d-aa6de3a7ac1f",
+    "_type": {
+      "_id": "LdapQueryNode",
+      "collection": false,
+      "name": "LdapQueryNode"
+    },
+    "accountSearchBaseDn": [
+      "ou=preprod,ou=identities"
+    ],
+    "adminDn": "uid=admin",
+    "attributesToSave": [],
+    "heartbeatInterval": 10,
+    "heartbeatTimeUnit": "SECONDS",
+    "ldapConnectionMode": "LDAPS",
+    "ldapOperationsTimeout": 0,
+    "primaryServers": [
+      "cfgids1.adx.ae:636"
+    ],
+    "saveToSharedState": false,
+    "searchFilterAttributes": [
+      "emiratesID"
+    ],
+    "searchScope": "SUBTREE",
+    "secondaryServers": [
+      "cfgids2.adx.ae:636",
+      "cfgids3.adx.ae:636"
+    ],
+    "trustAllServerCertificates": true,
+    "userProfileAttribute": "emiratesID"
+  },
+  "metadata": {
+    "entityId": "default/e4737055-a0eb-42c4-be8d-aa6de3a7ac1f",
+    "entityType": "LdapQueryNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "e4737055-a0eb-42c4-be8d-aa6de3a7ac1f"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=e4737055-a0eb-42c4-be8d-aa6de3a7ac1f,ou=default,ou=OrganizationConfig,ou=1.0,ou=LdapQueryNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

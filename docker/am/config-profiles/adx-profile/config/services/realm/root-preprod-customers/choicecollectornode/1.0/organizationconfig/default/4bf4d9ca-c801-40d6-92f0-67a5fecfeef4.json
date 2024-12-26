@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/4bf4d9ca-c801-40d6-92f0-67a5fecfeef4",
+    "_type": {
+      "_id": "ChoiceCollectorNode",
+      "collection": false,
+      "name": "ChoiceCollectorNode"
+    },
+    "choices": [
+      "Register",
+      "Skip"
+    ],
+    "defaultChoice": "Skip",
+    "prompt": "This user does not have an alternative local account. Register or skip?"
+  },
+  "metadata": {
+    "entityId": "default/4bf4d9ca-c801-40d6-92f0-67a5fecfeef4",
+    "entityType": "ChoiceCollectorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "4bf4d9ca-c801-40d6-92f0-67a5fecfeef4"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=4bf4d9ca-c801-40d6-92f0-67a5fecfeef4,ou=default,ou=OrganizationConfig,ou=1.0,ou=ChoiceCollectorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "data": {
+    "_id": "default/Login-TEST-V2",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "2014d2cb-2c1a-4db4-b8ee-99d459648f2b",
+    "identityResource": "managed/user",
+    "nodes": {
+      "059895e8-c001-4b1f-aa44-f2c5e47ef931": {
+        "connections": {
+          "false": "0f8a0a43-8998-463a-9028-4192c2dfdbe1",
+          "true": "8ed3d7f9-08d6-478b-b9ff-8c3e56824b59"
+        },
+        "displayName": "Identify Existing User",
+        "nodeType": "IdentifyExistingUserNode",
+        "x": 403,
+        "y": 250.5
+      },
+      "0f8a0a43-8998-463a-9028-4192c2dfdbe1": {
+        "connections": {
+          "true": "2014d2cb-2c1a-4db4-b8ee-99d459648f2b"
+        },
+        "displayName": "Msg: Incorrect credentials",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1063,
+        "y": 659.7666625976562
+      },
+      "1271846e-101a-4998-a022-1c46303d1a91": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Soft Launch",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 735,
+        "y": 266.015625
+      },
+      "2014d2cb-2c1a-4db4-b8ee-99d459648f2b": {
+        "connections": {
+          "outcome": "059895e8-c001-4b1f-aa44-f2c5e47ef931"
+        },
+        "displayName": "Page Node",
+        "nodeType": "PageNode",
+        "x": 158,
+        "y": 124
+      },
+      "219bbc99-f578-4da1-9912-f940572ace65": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Account Locked",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1810,
+        "y": 374.76666259765625
+      },
+      "57995d61-cf94-4602-a94b-e8fc2b9ec5db": {
+        "connections": {
+          "true": "ec7ea5e4-eaf8-40ab-8025-965bfc464af6"
+        },
+        "displayName": "Script: Set adxIsEmailVerified to ture",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1742,
+        "y": 41.76666259765625
+      },
+      "6dc83784-88de-4882-8bbd-6110c5ca8c84": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "57995d61-cf94-4602-a94b-e8fc2b9ec5db"
+        },
+        "displayName": "Tree: Email OTP",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 1502,
+        "y": 38.76666259765625
+      },
+      "8221e77d-ec45-499b-a1f3-753aff5e83e5": {
+        "connections": {
+          "false": "1271846e-101a-4998-a022-1c46303d1a91",
+          "true": "8ed3d7f9-08d6-478b-b9ff-8c3e56824b59"
+        },
+        "displayName": "Is Soft Launch user",
+        "nodeType": "AttributeValueDecisionNode",
+        "x": 465,
+        "y": 117.015625
+      },
+      "8ed3d7f9-08d6-478b-b9ff-8c3e56824b59": {
+        "connections": {
+          "false": "219bbc99-f578-4da1-9912-f940572ace65",
+          "true": "a3049536-9102-409d-aad5-c99ddb51d42a"
+        },
+        "displayName": "Account Active Decision",
+        "nodeType": "AccountActiveDecisionNode",
+        "x": 731,
+        "y": 80.015625
+      },
+      "9e493dce-7e22-4204-92d5-adc72ed7b06b": {
+        "connections": {
+          "false": "af3c7550-d8af-4162-bd84-12cd1da9fff7",
+          "true": "fed8fb05-3df7-4240-8ea3-aa20f3d41a81"
+        },
+        "displayName": "is UAEPASS User?",
+        "nodeType": "AttributeValueDecisionNode",
+        "x": 979.7999877929688,
+        "y": 206.22499084472656
+      },
+      "a3049536-9102-409d-aad5-c99ddb51d42a": {
+        "connections": {
+          "false": "9e493dce-7e22-4204-92d5-adc72ed7b06b",
+          "true": "a96a7a31-723b-4bfe-8e95-4a47ae401e70"
+        },
+        "displayName": "Data Store Decision",
+        "nodeType": "DataStoreDecisionNode",
+        "x": 975,
+        "y": 82
+      },
+      "a96a7a31-723b-4bfe-8e95-4a47ae401e70": {
+        "connections": {
+          "false": "ec7ea5e4-eaf8-40ab-8025-965bfc464af6",
+          "true": "6dc83784-88de-4882-8bbd-6110c5ca8c84"
+        },
+        "displayName": "Script: Is Unverified User?",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1218,
+        "y": 35.76666259765625
+      },
+      "af3c7550-d8af-4162-bd84-12cd1da9fff7": {
+        "connections": {
+          "Reject": "d07c3203-b0e3-4bbe-8d40-4cf9aed8dd82",
+          "Retry": "0f8a0a43-8998-463a-9028-4192c2dfdbe1"
+        },
+        "displayName": "Retry Limit Decision",
+        "nodeType": "RetryLimitDecisionNode",
+        "x": 1211,
+        "y": 337.015625
+      },
+      "b70d1c07-92c1-4ee4-9c80-feaa8c651b2a": {
+        "connections": {
+          "FAILURE": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "PATCHED": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Patch Object",
+        "nodeType": "PatchObjectNode",
+        "x": 2060,
+        "y": 34.76666259765625
+      },
+      "bfcc9b5b-0a6e-4eeb-8c74-5795e6166693": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Account Locked",
+        "nodeType": "MessageNode",
+        "x": 1991,
+        "y": 655
+      },
+      "c979e339-dc24-4e32-9a14-5f6c090acd40": {
+        "connections": {
+          "false": "0f8a0a43-8998-463a-9028-4192c2dfdbe1",
+          "true": "af3c7550-d8af-4162-bd84-12cd1da9fff7"
+        },
+        "displayName": "AltLogin enabled?",
+        "nodeType": "AttributeValueDecisionNode",
+        "x": 972.7999877929688,
+        "y": 462.22499084472656
+      },
+      "d07c3203-b0e3-4bbe-8d40-4cf9aed8dd82": {
+        "connections": {
+          "outcome": "219bbc99-f578-4da1-9912-f940572ace65"
+        },
+        "displayName": "Account Lockout",
+        "nodeType": "AccountLockoutNode",
+        "x": 1512,
+        "y": 415.015625
+      },
+      "ec7ea5e4-eaf8-40ab-8025-965bfc464af6": {
+        "connections": {
+          "true": "b70d1c07-92c1-4ee4-9c80-feaa8c651b2a"
+        },
+        "displayName": "Script: Set Login and Activity Date",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1874,
+        "y": 160.76666259765625
+      },
+      "fb2c1df8-136b-4842-b479-da178a5185e4": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Time Check and Block",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 555,
+        "y": 719.3333282470703
+      },
+      "fed8fb05-3df7-4240-8ea3-aa20f3d41a81": {
+        "connections": {
+          "false": "af3c7550-d8af-4162-bd84-12cd1da9fff7",
+          "true": "c979e339-dc24-4e32-9a14-5f6c090acd40"
+        },
+        "displayName": "Is Migrated?",
+        "nodeType": "AttributeValueDecisionNode",
+        "x": 976.7999877929688,
+        "y": 325.22499084472656
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 2322,
+        "y": 67.83333333333331
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 2276,
+        "y": 332
+      },
+      "startNode": {
+        "x": 42,
+        "y": 260
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/Login-TEST-V2",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "Login-TEST-V2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=Login-TEST-V2,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/ca45d899-ba86-40c4-8827-da80d7686b77",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "NEW-TEST-Generate OTP",
+    "script": "var fr = JavaImporter(\n  org.forgerock.json.JsonValue\n )\n\nfunction generateOTP() {\n  var otp = Math.floor(1000 + Math.random() * 9000).toString();\n  return otp;\n}\n\nfunction generateTimeStamp() {\n var currentTimeStamp = new Date().getTime(); \n logger.error(\"current time in ms: \" + currentTimeStamp);\n return currentTimeStamp;\n}\n\nvar oneTimePassword = generateOTP();\nsharedState.put(\"oneTimePassword\", oneTimePassword);\n\nvar timestamp = generateTimeStamp();\nsharedState.put(\"timeStamp\", timestamp);\n\noutcome=\"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/ca45d899-ba86-40c4-8827-da80d7686b77",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "ca45d899-ba86-40c4-8827-da80d7686b77"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=ca45d899-ba86-40c4-8827-da80d7686b77,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

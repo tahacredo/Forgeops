@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "amDataStoreService",
+    "_type": {
+      "_id": "amDataStoreService",
+      "collection": false,
+      "name": "amDataStoreService"
+    }
+  },
+  "metadata": {
+    "entityId": "amDataStoreService",
+    "entityType": "amDataStoreService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "amDataStoreService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=amDataStoreService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

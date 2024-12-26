@@ -16,7 +16,7 @@ setup-profile --profile ${CONFIG} \
  && setup-profile --profile ${AM_IDENTITY_STORE} \
                   --set am-identity-store/amIdentityStoreAdminPassword:password \
  && setup-profile  --profile ${IDM_REPO} \
-                  --set idm-repo/domain:forgerock.io \
+                  --set idm-repo/domain:adx.ae \
  && setup-profile --profile ${AM_CTS} \
                   --set am-cts/tokenExpirationPolicy:ds \
                   --set am-cts/amCtsAdminPassword:password \

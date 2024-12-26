@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "AttributeValueDecisionNode",
+    "_type": {
+      "_id": "AttributeValueDecisionNode",
+      "collection": false,
+      "name": "AttributeValueDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "AttributeValueDecisionNode",
+    "entityType": "AttributeValueDecisionNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "AttributeValueDecisionNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=AttributeValueDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

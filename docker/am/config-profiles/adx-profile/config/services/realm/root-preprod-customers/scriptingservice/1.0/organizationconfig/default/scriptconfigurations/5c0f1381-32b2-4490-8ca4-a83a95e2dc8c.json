@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/5c0f1381-32b2-4490-8ca4-a83a95e2dc8c",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Set Email OTP Pre-req",
+    "script": "var email = sharedState.get(\"_id\");\n\nidRepository.setAttribute(email, \"adxOtpInvalidCount\", [\"0\"]);\nidRepository.setAttribute(email, \"adxResendOtpInvalidCount\", [\"0\"]);\nidRepository.setAttribute(email, \"adxOtpIterationCount\", [\"0\"]);\nidRepository.setAttribute(email, \"adxResendOtpIterationCount\", [\"0\"]);\n\n\nlogger.error(\"getting attributes\");\n\nvar otpInvalidCount = idRepository.getAttribute(email, \"adxOtpInvalidCount\").toString()\nvar otpMaxTries = idRepository.getAttribute(email, \"adxOtpIterationCount\").toString()\nvar otpLock = idRepository.getAttribute(email, \"adxOtpLock\").toString()\n\n\nlogger.error(otpInvalidCount + \" \" + otpMaxTries + \" \"  + otpLock);\n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/5c0f1381-32b2-4490-8ca4-a83a95e2dc8c",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "5c0f1381-32b2-4490-8ca4-a83a95e2dc8c"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=5c0f1381-32b2-4490-8ca4-a83a95e2dc8c,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

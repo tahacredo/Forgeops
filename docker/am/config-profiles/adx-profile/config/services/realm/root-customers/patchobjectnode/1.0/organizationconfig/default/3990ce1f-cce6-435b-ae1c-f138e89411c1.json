@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/3990ce1f-cce6-435b-ae1c-f138e89411c1",
+    "_type": {
+      "_id": "PatchObjectNode",
+      "collection": false,
+      "name": "PatchObjectNode"
+    },
+    "identityAttribute": "userName",
+    "identityResource": "managed/user",
+    "ignoredFields": [
+      "userName"
+    ],
+    "patchAsObject": false
+  },
+  "metadata": {
+    "entityId": "default/3990ce1f-cce6-435b-ae1c-f138e89411c1",
+    "entityType": "PatchObjectNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "3990ce1f-cce6-435b-ae1c-f138e89411c1"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=3990ce1f-cce6-435b-ae1c-f138e89411c1,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

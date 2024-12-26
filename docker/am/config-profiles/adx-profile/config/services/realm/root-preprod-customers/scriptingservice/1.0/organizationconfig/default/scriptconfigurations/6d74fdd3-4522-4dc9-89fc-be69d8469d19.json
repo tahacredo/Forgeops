@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/6d74fdd3-4522-4dc9-89fc-be69d8469d19",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "ResetPassword - Message 932 - 933",
+    "script": "var fr = JavaImporter(\n    org.forgerock.openam.auth.node.api,\n    javax.security.auth.callback.TextOutputCallback,\n    javax.security.auth.callback.ConfirmationCallback,\n    java.util.ArrayList,\n    org.forgerock.json.JsonValue,\n    java.lang.Integer  \n);\n\nlogger.error(\"header: \" + requestHeaders.get(\"Accept-Language\"));\n\nwith (fr) {\n    var cbList = ArrayList();\n    var jsonMessage = {};\n\n    var acceptLanguageHeader = requestHeaders.get(\"Accept-Language\");\n\n    if (acceptLanguageHeader !== null && acceptLanguageHeader.get(0) == \"ar\") {\n        jsonMessage.msg = \"\u064a\u0631\u062c\u0649 \u0625\u0639\u062f\u0627\u062f \u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0627\u0644\u062e\u0627\u0635\u0629 \u0628\u0643.\";\n        jsonMessage.code = 933;\n    } else {\n        jsonMessage.msg = \"Please set up your login credentials.\";\n        jsonMessage.code = 932;\n    }\n  \n    jsonMessage.code = Integer.valueOf(jsonMessage.code);\n\n    if (callbacks.isEmpty()) {\n        logger.error(\"callback empty start\");\n        cbList.add(new TextOutputCallback(0, JsonValue.json(jsonMessage)));\n        cbList.add(new ConfirmationCallback(\" \", 0, [\"Yes\", \"No\"], 1));\n        action = Action.send(cbList).build();\n        logger.error(\"callback empty end\");\n    } else {\n    outcome = \"true\";\n}\n}\n"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/6d74fdd3-4522-4dc9-89fc-be69d8469d19",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "6d74fdd3-4522-4dc9-89fc-be69d8469d19"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=6d74fdd3-4522-4dc9-89fc-be69d8469d19,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

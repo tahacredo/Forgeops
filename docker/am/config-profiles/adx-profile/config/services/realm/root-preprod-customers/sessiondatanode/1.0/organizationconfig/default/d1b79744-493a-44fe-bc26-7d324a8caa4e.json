@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/d1b79744-493a-44fe-bc26-7d324a8caa4e",
+    "_type": {
+      "_id": "SessionDataNode",
+      "collection": false,
+      "name": "SessionDataNode"
+    },
+    "sessionDataKey": "UserToken",
+    "sharedStateKey": "userName"
+  },
+  "metadata": {
+    "entityId": "default/d1b79744-493a-44fe-bc26-7d324a8caa4e",
+    "entityType": "SessionDataNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "d1b79744-493a-44fe-bc26-7d324a8caa4e"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=d1b79744-493a-44fe-bc26-7d324a8caa4e,ou=default,ou=OrganizationConfig,ou=1.0,ou=SessionDataNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

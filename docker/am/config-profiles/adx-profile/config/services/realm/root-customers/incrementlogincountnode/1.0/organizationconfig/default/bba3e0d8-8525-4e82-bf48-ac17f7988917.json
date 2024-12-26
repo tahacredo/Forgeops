@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/bba3e0d8-8525-4e82-bf48-ac17f7988917",
+    "_type": {
+      "_id": "IncrementLoginCountNode",
+      "collection": false,
+      "name": "IncrementLoginCountNode"
+    },
+    "identityAttribute": "userName"
+  },
+  "metadata": {
+    "entityId": "default/bba3e0d8-8525-4e82-bf48-ac17f7988917",
+    "entityType": "IncrementLoginCountNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "bba3e0d8-8525-4e82-bf48-ac17f7988917"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=bba3e0d8-8525-4e82-bf48-ac17f7988917,ou=default,ou=OrganizationConfig,ou=1.0,ou=IncrementLoginCountNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "iPlanetAMAuthOATHService",
+      "collection": false,
+      "name": "iPlanetAMAuthOATHService"
+    },
+    "authenticationLevel": 0
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "iPlanetAMAuthOATHService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOATHService,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/309aafc5-2f79-48b4-9678-9d45ccf7eea7",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Check OTP Lock v2",
+    "script": "var username = sharedState.get(\"_id\");\n\ntry {\n\n  var currentTimeStamp = new Date().getTime();\n\n  var lockExpiryTimeArr = idRepository.getAttribute(username, \"adxOtpLockExpiryTime\");\n  var isOtpLockedArr = idRepository.getAttribute(username, \"adxOtpLock\");\n  var emailArr = idRepository.getAttribute(username, \"mail\");\n\n  if (lockExpiryTimeArr === null || lockExpiryTimeArr.isEmpty()) {\n    throw new Error(\"lockExpiryTime value is missing for user: \" + username);\n  }\n\n  var lockExpiryTime = idRepository.getAttribute(username, \"adxOtpLockExpiryTime\").iterator().next();\n\n  if (isOtpLockedArr === null || isOtpLockedArr.isEmpty()) {\n    throw new Error(\"isOtpLocked value is missing for user: \" + username);\n  }\n\n  var isOtpLocked = idRepository.getAttribute(username, \"adxOtpLock\").iterator().next();\n\n  if (emailArr === null || emailArr.isEmpty()) {\n    throw new Error(\"mail value is missing for user: \" + username);\n  }\n\n  var email = idRepository.getAttribute(username, \"mail\").iterator().next();\n\n  sharedState.put(\"emailAddress\", email);\n\n  if (isOtpLocked === \"true\" && currentTimeStamp < lockExpiryTime) {\n  outcome = \"true\"; \n  } else {\n  idRepository.setAttribute(username, \"adxOtpLock\", [\"false\"]);\n  outcome = \"false\";\n  }\n\n} catch (e) {\n    outcome = \"error\";\n    logger.error(e.message);\n    throw e;\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/309aafc5-2f79-48b4-9678-9d45ccf7eea7",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "309aafc5-2f79-48b4-9678-9d45ccf7eea7"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=309aafc5-2f79-48b4-9678-9d45ccf7eea7,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "EmailSuspendNode",
+    "_type": {
+      "_id": "EmailSuspendNode",
+      "collection": false,
+      "name": "EmailSuspendNode"
+    }
+  },
+  "metadata": {
+    "entityId": "EmailSuspendNode",
+    "entityType": "EmailSuspendNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "EmailSuspendNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=EmailSuspendNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

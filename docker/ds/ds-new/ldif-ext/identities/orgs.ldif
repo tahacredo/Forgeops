@@ -26,6 +26,16 @@ objectClass: top
 objectClass: organizationalUnit
 ou: people
 
+dn: ou=adx-employee,ou=identities
+objectClass: top
+objectClass: organizationalUnit
+ou: adx-employee
+
+dn: ou=preprod,ou=identities
+objectClass: top
+objectClass: organizationalUnit
+ou: preprod
+
 dn: ou=teammembermeta,o=root,ou=identities
 objectClass: top
 objectClass: organizationalUnit

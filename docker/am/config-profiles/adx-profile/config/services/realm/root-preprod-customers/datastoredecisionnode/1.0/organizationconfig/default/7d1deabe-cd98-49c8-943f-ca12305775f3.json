@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/7d1deabe-cd98-49c8-943f-ca12305775f3",
+    "_type": {
+      "_id": "DataStoreDecisionNode",
+      "collection": false,
+      "name": "DataStoreDecisionNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default/7d1deabe-cd98-49c8-943f-ca12305775f3",
+    "entityType": "DataStoreDecisionNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "7d1deabe-cd98-49c8-943f-ca12305775f3"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=7d1deabe-cd98-49c8-943f-ca12305775f3,ou=default,ou=OrganizationConfig,ou=1.0,ou=DataStoreDecisionNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

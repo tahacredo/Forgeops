@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "iPlanetAMAuthLDAPService",
+    "_type": {
+      "_id": "iPlanetAMAuthLDAPService",
+      "collection": false,
+      "name": "iPlanetAMAuthLDAPService"
+    }
+  },
+  "metadata": {
+    "entityId": "iPlanetAMAuthLDAPService",
+    "entityType": "iPlanetAMAuthLDAPService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "iPlanetAMAuthLDAPService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=iPlanetAMAuthLDAPService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

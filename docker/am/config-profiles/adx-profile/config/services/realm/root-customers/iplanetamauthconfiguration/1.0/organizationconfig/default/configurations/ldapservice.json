@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/Configurations/ldapService",
+    "_type": {
+      "_id": "iPlanetAMAuthConfiguration",
+      "collection": false,
+      "name": "iPlanetAMAuthConfiguration"
+    },
+    "authChainConfiguration": "<AttributeValuePair><Value>DataStore REQUIRED </Value></AttributeValuePair>"
+  },
+  "metadata": {
+    "entityId": "default/Configurations/ldapService",
+    "entityType": "iPlanetAMAuthConfiguration",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "ldapService"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": "NamedConfiguration",
+    "uid": "ou=ldapService,ou=Configurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

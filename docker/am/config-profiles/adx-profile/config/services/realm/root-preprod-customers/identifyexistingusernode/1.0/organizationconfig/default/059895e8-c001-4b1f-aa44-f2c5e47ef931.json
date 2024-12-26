@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/059895e8-c001-4b1f-aa44-f2c5e47ef931",
+    "_type": {
+      "_id": "IdentifyExistingUserNode",
+      "collection": false,
+      "name": "IdentifyExistingUserNode"
+    },
+    "identifier": "userName",
+    "identityAttribute": "userName"
+  },
+  "metadata": {
+    "entityId": "default/059895e8-c001-4b1f-aa44-f2c5e47ef931",
+    "entityType": "IdentifyExistingUserNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "059895e8-c001-4b1f-aa44-f2c5e47ef931"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=059895e8-c001-4b1f-aa44-f2c5e47ef931,ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

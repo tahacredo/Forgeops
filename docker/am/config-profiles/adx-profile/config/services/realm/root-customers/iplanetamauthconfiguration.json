@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "iPlanetAMAuthConfiguration",
+    "_type": {
+      "_id": "iPlanetAMAuthConfiguration",
+      "collection": false,
+      "name": "iPlanetAMAuthConfiguration"
+    }
+  },
+  "metadata": {
+    "entityId": "iPlanetAMAuthConfiguration",
+    "entityType": "iPlanetAMAuthConfiguration",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "iPlanetAMAuthConfiguration"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=iPlanetAMAuthConfiguration,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

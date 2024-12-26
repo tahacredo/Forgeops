@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "LdapQueryNode",
+    "_type": {
+      "_id": "LdapQueryNode",
+      "collection": false,
+      "name": "LdapQueryNode"
+    }
+  },
+  "metadata": {
+    "entityId": "LdapQueryNode",
+    "entityType": "LdapQueryNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "LdapQueryNode"
+    ],
+    "pathParams": {},
+    "realm": "/",
+    "sunServiceID": null,
+    "uid": "ou=LdapQueryNode,ou=services,ou=am-config"
+  }
+}

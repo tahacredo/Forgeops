@@ -1,0 +1,34 @@
+{
+  "data": {
+    "_id": "default/5e2a7c95-94af-4b23-8724-deb13853726a",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "9f1e8d94-4922-481b-9e14-212b66548900:AttributeCollectorNode:Attribute Collector"
+    ],
+    "pageDescription": {
+      "en": "Enter your email address or <a href=\"#/service/Login\">Sign in</a>"
+    },
+    "pageHeader": {
+      "en": "Forgotten Username"
+    }
+  },
+  "metadata": {
+    "entityId": "default/5e2a7c95-94af-4b23-8724-deb13853726a",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "5e2a7c95-94af-4b23-8724-deb13853726a"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=5e2a7c95-94af-4b23-8724-deb13853726a,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

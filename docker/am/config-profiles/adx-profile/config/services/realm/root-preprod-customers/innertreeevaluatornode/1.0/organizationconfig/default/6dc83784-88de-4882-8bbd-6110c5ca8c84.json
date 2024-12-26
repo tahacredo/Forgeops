@@ -1,0 +1,26 @@
+{
+  "data": {
+    "_id": "default/6dc83784-88de-4882-8bbd-6110c5ca8c84",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "collection": false,
+      "name": "InnerTreeEvaluatorNode"
+    },
+    "tree": "Email_OTP v2"
+  },
+  "metadata": {
+    "entityId": "default/6dc83784-88de-4882-8bbd-6110c5ca8c84",
+    "entityType": "InnerTreeEvaluatorNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "6dc83784-88de-4882-8bbd-6110c5ca8c84"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=6dc83784-88de-4882-8bbd-6110c5ca8c84,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

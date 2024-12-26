@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/da83572b-4589-45e8-a205-ed4c07f2aa61",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "User Type Evaluator",
+    "script": "var username = sharedState.get(\"_id\");\n//sharedState.put(\"username\", username);\n//objAttrs.put(\"userName\", username);\n\ntry {\n    var adxUserType = idRepository.getAttribute(username, \"adxUserType\").iterator().next();\n    var adxIsMigrated = idRepository.getAttribute(username, \"adxIsMigrated\").iterator().next();\n    var adxIsAltLogin = idRepository.getAttribute(username, \"adxIsAltLogin\").iterator().next();\n\n    if (adxUserType === \"UAEPASS\") {\n        if (adxIsMigrated === \"FALSE\") {\n            outcome = \"Login\";\n        } else if (adxIsMigrated === \"TRUE\" && adxIsAltLogin === \"TRUE\") {\n            outcome = \"Login\";\n        } else if (adxIsMigrated === \"TRUE\" && adxIsAltLogin === \"FALSE\") {\n            outcome = \"Register Choice\";\n        }\n    } else if (adxUserType === \"NON-OSS\") {\n        if (adxIsAltLogin === \"TRUE\") {\n            outcome = \"Login\";\n        } else if (adxIsMigrated === \"TRUE\" && adxIsAltLogin === \"FALSE\") {\n            outcome = \"Register Choice\";\n        } else if (adxIsMigrated === \"FALSE\" && adxIsAltLogin === \"FALSE\") {\n            sharedState.put(\"toRegister\", true);\n            outcome = \"Register\";\n        }\n    }\n} catch (e) {\n    logger.error(\"Error in script: \" + e);\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/da83572b-4589-45e8-a205-ed4c07f2aa61",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "da83572b-4589-45e8-a205-ed4c07f2aa61"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=da83572b-4589-45e8-a205-ed4c07f2aa61,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "sunAMAuthHOTPService",
+    "_type": {
+      "_id": "sunAMAuthHOTPService",
+      "collection": false,
+      "name": "sunAMAuthHOTPService"
+    }
+  },
+  "metadata": {
+    "entityId": "sunAMAuthHOTPService",
+    "entityType": "sunAMAuthHOTPService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "sunAMAuthHOTPService"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=sunAMAuthHOTPService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

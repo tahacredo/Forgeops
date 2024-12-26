@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/28cea029-33bc-4702-8531-451d72b88334",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "NEW-Send SMS",
+    "script": "var objectAttributes = sharedState.get(\"objectAttributes\");\nvar mobileNumber = objectAttributes.telephoneNumber;\nvar oneTimePassword = sharedState.get(\"oneTimePasswordSMS\");\n\nvar httpMethod = \"POST\";\nvar url = \"https://lzzkzr.api.infobip.com/sms/2/text/advanced\";\nvar apiKey = secrets.getGenericSecret(\"scripted.node.infobip.api.key\").getAsUtf8();\n\nvar response;\n\ntry {\nvar request = new org.forgerock.http.protocol.Request();\nrequest.setMethod(httpMethod);\nrequest.setUri(url);\nrequest.getHeaders().add(\"Authorization\", apiKey);\nrequest.getHeaders().add(\"Content-Type\", \"application/json\");\nrequest.getHeaders().add(\"Accept\", \"application/json\");\n\nvar requestBodyJson = {\n  \"messages\": [\n    {\n     \"destinations\": [\n        {\n          \"to\": mobileNumber\n        }\n      ],\n      \"from\": \"ADX\",\n      \"text\": \"Dear ADX Customer, your OTP (One Time Password) is \" + oneTimePassword + \", valid for 90 seconds. Do not share your OTP with anyone. If not initiated by you, please call 800239 or email us at info@adx.ae.\"\n    }\n  ]\n};\n\nrequest.setEntity(requestBodyJson);\n\nresponse = httpClient.send(request).get();\n  \n} catch (e) {\n  logger.error(\"Unable to call SMS endpoint. Exception: \" + e);\n  outcome = \"error\";\n}\n\nlogger.error(\"http response: \" + response.getStatus() + \", Body: \" + response.getEntity().getString());\n\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/28cea029-33bc-4702-8531-451d72b88334",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "28cea029-33bc-4702-8531-451d72b88334"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=28cea029-33bc-4702-8531-451d72b88334,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

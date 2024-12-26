@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "HtmlOtpSenderNode",
+    "_type": {
+      "_id": "HtmlOtpSenderNode",
+      "collection": false,
+      "name": "HtmlOtpSenderNode"
+    }
+  },
+  "metadata": {
+    "entityId": "HtmlOtpSenderNode",
+    "entityType": "HtmlOtpSenderNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "HtmlOtpSenderNode"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": null,
+    "uid": "ou=HtmlOtpSenderNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

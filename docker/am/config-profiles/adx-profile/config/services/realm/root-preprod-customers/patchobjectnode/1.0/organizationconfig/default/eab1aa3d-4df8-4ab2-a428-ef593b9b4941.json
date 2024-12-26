@@ -1,0 +1,31 @@
+{
+  "data": {
+    "_id": "default/eab1aa3d-4df8-4ab2-a428-ef593b9b4941",
+    "_type": {
+      "_id": "PatchObjectNode",
+      "collection": false,
+      "name": "PatchObjectNode"
+    },
+    "identityAttribute": "emiratesID",
+    "identityResource": "managed/user",
+    "ignoredFields": [
+      "adxUserType"
+    ],
+    "patchAsObject": false
+  },
+  "metadata": {
+    "entityId": "default/eab1aa3d-4df8-4ab2-a428-ef593b9b4941",
+    "entityType": "PatchObjectNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "eab1aa3d-4df8-4ab2-a428-ef593b9b4941"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=eab1aa3d-4df8-4ab2-a428-ef593b9b4941,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

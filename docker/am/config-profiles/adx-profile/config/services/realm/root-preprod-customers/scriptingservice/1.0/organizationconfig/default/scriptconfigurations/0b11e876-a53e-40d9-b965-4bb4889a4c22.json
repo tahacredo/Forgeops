@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/0b11e876-a53e-40d9-b965-4bb4889a4c22",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Update Investor in CRM",
+    "script": "var objectAttributes = sharedState.get(\"objectAttributes\");\nvar _id = sharedState.get(\"_id\");\n\ntry {\n\nif (!_id) {\n    throw new Error(\"User ID is missing!\");\n}\n\n/*\n Get required attributes \n*/\n  logger.error(\"Update investor script enter 1\");\n\n// adxUaePassMobile from user profile\nvar adxUaePassMobile = \"\";\nvar adxUaePassMobileIdRepo = idRepository.getAttribute(_id, \"adxUaePassMobile\");\n\nif (adxUaePassMobileIdRepo !== null && !adxUaePassMobileIdRepo.isEmpty()) {\n    adxUaePassMobile = adxUaePassMobileIdRepo.iterator().next();\n}\n\n// telephoneNumber from shared state\nvar telephoneNumber = objectAttributes.telephoneNumber;\n\n// emiratesID from user profile\nvar emiratesIDIdRepo = idRepository.getAttribute(_id, \"emiratesID\");\n\nif (emiratesIDIdRepo === null || emiratesIDIdRepo.isEmpty()) {\n    throw new Error(\"EmiratesID is missing for user: \" + _id);\n}\n\nvar emiratesID = emiratesIDIdRepo.iterator().next();\n\n// mail from user shared state\nvar mail = objectAttributes.mail;\n\nlogger.error(\"Update investor script enter 2\");\n\n// Validate required fields\nif (!telephoneNumber || !emiratesID || !mail) {\n    logger.error(\"Missing required attributes for user: \" + _id);\n    sharedState.put(\"errorMessage\", \"Missing required user attributes\");\n    outcome = \"error\";\n    throw new Error(\"Missing required user attributes\");\n}\n\n// API configuration\nvar httpMethod = \"POST\";\nvar url = \"https://apigateway-preprod.adx.ae/adx/crm/1.0/service/alternate/account\"\nvar apiKey = secrets.getGenericSecret(\"scripted.node.eip.api.key\").getAsUtf8();\nvar channelId = \"Forgerock\";\n\n// Prepare request\nvar request = new org.forgerock.http.protocol.Request();\nrequest.setMethod(httpMethod);\nrequest.setUri(url);\nrequest.getHeaders().add(\"adx-Gateway-APIKey\", apiKey);\nrequest.getHeaders().add(\"Channel-ID\", channelId);\nrequest.getHeaders().add(\"Content-Type\", \"application/json\");\n\nvar requestBodyJson = {\n\t\"oldPhoneNumber\": adxUaePassMobile,\n    \"newPhoneNumber\": telephoneNumber,\n    \"investorNumber\": emiratesID,\n    \"newUsername\": mail\n};\n\nlogger.error(\"CRM Update Request for user \" + _id + \": \" + JSON.stringify(requestBodyJson));\n\nrequest.setEntity(requestBodyJson);\n\n// Send request and handle response\nvar response = httpClient.send(request).get();\nvar responseBody = response.getEntity().getString();\n\nlogger.error(\"CRM HTTP Response: \" + responseBody);\n\nif (response.getStatus().getCode() === 200) {\n    logger.error(mail + \" has been successfully updated in CRM.\");\n    outcome = \"updated\";\n} else  {\n    logger.error(\"Failed to update user \" + mail + \" in CRM. HTTP response: \" +  response.getStatus());\n    sharedState.put(\"errorMessage\", \"F\");\n    outcome = \"error\";\n}\n\n} catch (e) {\n    logger.error(\"CRM update failed for user \" + _id + \": \" + e);\n    sharedState.put(\"errorMessage\", \"Failure\");\n    outcome = \"error\";\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/0b11e876-a53e-40d9-b965-4bb4889a4c22",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "0b11e876-a53e-40d9-b965-4bb4889a4c22"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=0b11e876-a53e-40d9-b965-4bb4889a4c22,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

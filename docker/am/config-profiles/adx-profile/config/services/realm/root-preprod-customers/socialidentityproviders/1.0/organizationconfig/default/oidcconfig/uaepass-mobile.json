@@ -1,0 +1,57 @@
+{
+  "data": {
+    "_id": "default/oidcConfig/UAEPASS-Mobile",
+    "_type": {
+      "_id": "SocialIdentityProviders",
+      "collection": false,
+      "name": "SocialIdentityProviders"
+    },
+    "acrValues": [],
+    "authenticationIdKey": "sub",
+    "authorizationEndpoint": "https://stg-id.uaepass.ae/idshub/authorize?acr_values=urn:safelayer:tws:policies:authentication:level:low",
+    "clientAuthenticationMethod": "CLIENT_SECRET_BASIC",
+    "clientId": "CHANGE ME",
+    "clientSecret": "AQICy2QIpQ9pGZ1lJbUdACX+AW69++ScQOsF",
+    "enabled": false,
+    "encryptJwtRequestParameter": false,
+    "encryptedIdTokens": false,
+    "introspectEndpoint": "https://stg-id.uaepass.ae/idshub/introspect",
+    "issuer": "null",
+    "issuerComparisonCheckType": "EXACT",
+    "jwksUriEndpoint": "",
+    "jwtEncryptionAlgorithm": "NONE",
+    "jwtEncryptionMethod": "NONE",
+    "jwtRequestParameterOption": "NONE",
+    "jwtSigningAlgorithm": "NONE",
+    "pkceMethod": "S256",
+    "privateKeyJwtExpTime": 600,
+    "redirectURI": "https://adxwebpreprod.adx.ae/validatelogin",
+    "responseMode": "DEFAULT",
+    "revocationCheckOptions": [],
+    "scopeDelimiter": " ",
+    "scopes": [
+      "openid",
+      "urn:uae:digitalid:profile:general"
+    ],
+    "tokenEndpoint": "https://stg-id.uaepass.ae/idshub/token",
+    "transform": "af04981b-aa37-4194-ba8b-4518add3c4c3",
+    "uiConfig": {},
+    "useCustomTrustStore": false,
+    "userInfoEndpoint": "https://stg-id.uaepass.ae/idshub/userinfo"
+  },
+  "metadata": {
+    "entityId": "default/oidcConfig/UAEPASS-Mobile",
+    "entityType": "SocialIdentityProviders",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "UAEPASS-Mobile"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=UAEPASS-Mobile,ou=oidcConfig,ou=default,ou=OrganizationConfig,ou=1.0,ou=SocialIdentityProviders,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

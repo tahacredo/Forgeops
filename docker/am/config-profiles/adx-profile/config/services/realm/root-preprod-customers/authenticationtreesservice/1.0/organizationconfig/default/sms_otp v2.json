@@ -1,0 +1,186 @@
+{
+  "data": {
+    "_id": "default/SMS_OTP v2",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "2ee98454-a220-426c-bf69-09de38033f5f",
+    "identityResource": "managed/user",
+    "nodes": {
+      "12411b11-6fa2-4d50-ad56-52ddc6b53ad6": {
+        "connections": {
+          "true": "16dbcf09-c536-4c7d-a9bd-66eb3954791a"
+        },
+        "displayName": "Generate OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 424,
+        "y": 89.5
+      },
+      "16dbcf09-c536-4c7d-a9bd-66eb3954791a": {
+        "connections": {
+          "error": "2f49cca4-7d22-44be-b028-5a0aba13a90a",
+          "true": "527821d8-e8f3-4359-9c11-7bd374259487"
+        },
+        "displayName": "Send SMS",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 634,
+        "y": 105.5
+      },
+      "2ee98454-a220-426c-bf69-09de38033f5f": {
+        "connections": {
+          "false": "12411b11-6fa2-4d50-ad56-52ddc6b53ad6",
+          "true": "bf8e00ef-bfed-45bc-9065-a8444515da03"
+        },
+        "displayName": "Script: Check OTP Lock",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 203,
+        "y": 179.015625
+      },
+      "2f49cca4-7d22-44be-b028-5a0aba13a90a": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 1079,
+        "y": 802
+      },
+      "527821d8-e8f3-4359-9c11-7bd374259487": {
+        "connections": {
+          "expired": "f6b88db5-c364-4a4e-a829-9a2843258a35",
+          "invalid": "675d9811-e98e-4210-b9f3-b0927c74ba66",
+          "maxTries": "bf8e00ef-bfed-45bc-9065-a8444515da03",
+          "resend": "12411b11-6fa2-4d50-ad56-52ddc6b53ad6",
+          "restart": "ffae2118-4513-48be-ab4f-86b178422815",
+          "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Validate SMS OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 862,
+        "y": 91.5
+      },
+      "675d9811-e98e-4210-b9f3-b0927c74ba66": {
+        "connections": {
+          "true": "527821d8-e8f3-4359-9c11-7bd374259487"
+        },
+        "displayName": "Msg: Incorrect OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1067,
+        "y": 516.015625
+      },
+      "8ca31d5b-63a7-4ee0-bbeb-435e0bb3a6d0": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Maximum Validation Tries",
+        "nodeType": "MessageNode",
+        "x": 1078,
+        "y": 367.015625
+      },
+      "8f512215-b21e-488b-9ddc-096e31127c79": {
+        "connections": {
+          "false": "527821d8-e8f3-4359-9c11-7bd374259487",
+          "true": "527821d8-e8f3-4359-9c11-7bd374259487"
+        },
+        "displayName": "Msg: Incorrect OTP",
+        "nodeType": "MessageNode",
+        "x": 1056,
+        "y": 599.015625
+      },
+      "bf8e00ef-bfed-45bc-9065-a8444515da03": {
+        "connections": {
+          "true": "d25e78b5-9d9f-4fa2-a0f0-903b75680fa7"
+        },
+        "displayName": "Msg: Maximum Resend Tries",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 628,
+        "y": 530.015625
+      },
+      "c39de36a-ad83-4366-a79b-98362a58f1dd": {
+        "connections": {
+          "false": "527821d8-e8f3-4359-9c11-7bd374259487",
+          "true": "527821d8-e8f3-4359-9c11-7bd374259487"
+        },
+        "displayName": "Msg: OTP Expired",
+        "nodeType": "MessageNode",
+        "x": 1106,
+        "y": 178.015625
+      },
+      "d25e78b5-9d9f-4fa2-a0f0-903b75680fa7": {
+        "connections": {
+          "locked": "bf8e00ef-bfed-45bc-9065-a8444515da03",
+          "unlocked": "527821d8-e8f3-4359-9c11-7bd374259487"
+        },
+        "displayName": "Script: Check OTP Expiry Time",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 620,
+        "y": 307.015625
+      },
+      "d7d7c3c9-cdff-41bd-87f2-6e0215faa21d": {
+        "connections": {
+          "false": "d25e78b5-9d9f-4fa2-a0f0-903b75680fa7",
+          "true": "d25e78b5-9d9f-4fa2-a0f0-903b75680fa7"
+        },
+        "displayName": "Msg: Maximum Resend Tries",
+        "nodeType": "MessageNode",
+        "x": 555,
+        "y": 806.015625
+      },
+      "f6b88db5-c364-4a4e-a829-9a2843258a35": {
+        "connections": {
+          "true": "527821d8-e8f3-4359-9c11-7bd374259487"
+        },
+        "displayName": "Msg: OTP Expired",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1104,
+        "y": 94.015625
+      },
+      "ffae2118-4513-48be-ab4f-86b178422815": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Maximum Validation Tries",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1088,
+        "y": 294.015625
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 1493,
+        "y": 49.33333333333333
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 1519,
+        "y": 404.66666666666663
+      },
+      "startNode": {
+        "x": 70,
+        "y": 190
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/SMS_OTP v2",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "SMS_OTP v2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=SMS_OTP v2,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

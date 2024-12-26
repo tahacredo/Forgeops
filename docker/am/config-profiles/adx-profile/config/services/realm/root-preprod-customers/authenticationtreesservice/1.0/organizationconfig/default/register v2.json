@@ -1,0 +1,331 @@
+{
+  "data": {
+    "_id": "default/Register v2",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "b8d34bfc-f722-42d1-b72d-cf8e5f5af346",
+    "identityResource": "managed/user",
+    "nodes": {
+      "0372fb52-54eb-4024-bbf3-55c053b83aa5": {
+        "connections": {
+          "false": "b0c12ab5-b681-48f6-bc4c-d09f95abcc61",
+          "true": "276d1a7a-1eb0-46f0-9ba5-d4ec7c0268f5"
+        },
+        "displayName": "Identify Existing User",
+        "nodeType": "IdentifyExistingUserNode",
+        "x": 547,
+        "y": 403.5
+      },
+      "16df40d8-4205-40e1-a01c-06edcfa39a26": {
+        "connections": {
+          "outcome": "c3d4abd3-864c-4f71-97d6-263cae8480bb"
+        },
+        "displayName": "Page: Guest",
+        "nodeType": "PageNode",
+        "x": 309,
+        "y": 532.3333282470703
+      },
+      "276d1a7a-1eb0-46f0-9ba5-d4ec7c0268f5": {
+        "connections": {
+          "true": "a65e01c7-05c3-479a-8a80-a566bc9af5f9"
+        },
+        "displayName": "Msg: Account already exists",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 761,
+        "y": 325.76666259765625
+      },
+      "29fbe1e0-6230-43de-8ec5-e65b4ec55d01": {
+        "connections": {
+          "true": "a1eeab92-544c-45e1-b2e7-d5809660001a"
+        },
+        "displayName": "Script: Set UAEPASS attrs",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 71,
+        "y": 45.723968505859375
+      },
+      "34dd0028-c0a4-4947-a4ad-b87b54443259": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "fab885ef-b8fb-4ee2-b77a-e7959fe3f96b"
+        },
+        "displayName": "Tree: Email OTP",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 800,
+        "y": 162.015625
+      },
+      "3c7450b7-77a0-483f-b32d-fcab9f5ca12f": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Failure",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 2323,
+        "y": 213.76666259765625
+      },
+      "4ad690e8-8d9f-4a0c-873d-ebd88c13a21d": {
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Script: Set skip",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 773,
+        "y": 607.015625
+      },
+      "55920402-a2ae-4648-89e0-7fe7e7e0be12": {
+        "connections": {
+          "true": "fba7890e-5c64-4865-afce-6a4873f6b788"
+        },
+        "displayName": "Script: altLogin true",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 564,
+        "y": 215.015625
+      },
+      "70fdc686-4014-4665-9493-40985e9b70d2": {
+        "connections": {
+          "error": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "updated": "7a90ce2e-3fd6-4e38-af72-df1bf98f8270"
+        },
+        "displayName": "Script: Update Investor in CRM",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1376.272705078125,
+        "y": 344.90625
+      },
+      "71aa1d8b-5e9d-4d6b-8d23-5d1e405eeef5": {
+        "connections": {
+          "create": "88e95739-4b08-4a7a-b9ed-a69cb68387e2",
+          "patch": "eab1aa3d-4df8-4ab2-a428-ef593b9b4941"
+        },
+        "displayName": "Scripted Decision",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1863,
+        "y": 19.76666259765625
+      },
+      "768e505b-23df-48cf-a79f-233d9ba19ad3": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 776,
+        "y": 457.76666259765625
+      },
+      "79ee0e82-e3cb-4b5a-83d4-efd63e05ab61": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "c6ca7af1-c202-4790-9f53-51ee7b8f52ca"
+        },
+        "displayName": "Tree: SMS OTP",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 1132,
+        "y": 43.015625
+      },
+      "7a90ce2e-3fd6-4e38-af72-df1bf98f8270": {
+        "connections": {
+          "cancel": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "create": "f6f65982-fb15-477c-826f-614d1cd4d5d5"
+        },
+        "displayName": "Script: Confirm User Creation",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1363.4545440673828,
+        "y": 32.90625
+      },
+      "8520e98f-3338-48df-906a-351a1d31071c": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Maintenance Banner",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 836.4444580078125,
+        "y": 722.3472137451172
+      },
+      "8814a3a0-7abd-4fd8-b0aa-afe90a1e1dde": {
+        "connections": {
+          "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Msg: Success",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 2331,
+        "y": 57
+      },
+      "88e95739-4b08-4a7a-b9ed-a69cb68387e2": {
+        "connections": {
+          "CREATED": "8814a3a0-7abd-4fd8-b0aa-afe90a1e1dde",
+          "FAILURE": "3c7450b7-77a0-483f-b32d-fcab9f5ca12f"
+        },
+        "displayName": "Create Object",
+        "nodeType": "CreateObjectNode",
+        "x": 2055,
+        "y": 18.5
+      },
+      "a1eeab92-544c-45e1-b2e7-d5809660001a": {
+        "connections": {
+          "outcome": "0372fb52-54eb-4024-bbf3-55c053b83aa5"
+        },
+        "displayName": "Page: Alt Login Reg",
+        "nodeType": "PageNode",
+        "x": 295,
+        "y": 55
+      },
+      "a65e01c7-05c3-479a-8a80-a566bc9af5f9": {
+        "connections": {
+          "true": "b8d34bfc-f722-42d1-b72d-cf8e5f5af346"
+        },
+        "displayName": "Script: Clear attrs",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1036,
+        "y": 382.76666259765625
+      },
+      "aabca9cf-74f4-496c-9221-2a5394c904f0": {
+        "connections": {
+          "true": "e286f821-8c1a-45a0-a841-33c0ab5769d1"
+        },
+        "displayName": "Generate Alternate JWT",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1197,
+        "y": 659.7239685058594
+      },
+      "b0c12ab5-b681-48f6-bc4c-d09f95abcc61": {
+        "connections": {
+          "true": "55920402-a2ae-4648-89e0-7fe7e7e0be12"
+        },
+        "displayName": "Script: Set Password",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 544,
+        "y": 297.015625
+      },
+      "b8d34bfc-f722-42d1-b72d-cf8e5f5af346": {
+        "connections": {
+          "AltLogin": "29fbe1e0-6230-43de-8ec5-e65b4ec55d01",
+          "Guest": "16df40d8-4205-40e1-a01c-06edcfa39a26"
+        },
+        "displayName": "Script: Check User Type",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 10,
+        "y": 408.3333282470703
+      },
+      "c3d4abd3-864c-4f71-97d6-263cae8480bb": {
+        "connections": {
+          "true": "0372fb52-54eb-4024-bbf3-55c053b83aa5"
+        },
+        "displayName": "Script: Fill profile details",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 544,
+        "y": 675.2666625976562
+      },
+      "c6ca7af1-c202-4790-9f53-51ee7b8f52ca": {
+        "connections": {
+          "existing": "70fdc686-4014-4665-9493-40985e9b70d2",
+          "guest": "ccf409c7-2738-4479-9388-4a69a291d43d",
+          "uaepass-onboard": "aabca9cf-74f4-496c-9221-2a5394c904f0"
+        },
+        "displayName": "Script: Evaluation",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1123,
+        "y": 216.015625
+      },
+      "ccf409c7-2738-4479-9388-4a69a291d43d": {
+        "connections": {
+          "created": "7a90ce2e-3fd6-4e38-af72-df1bf98f8270",
+          "error": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Script: Create Guest in CRM",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1363,
+        "y": 209.015625
+      },
+      "e286f821-8c1a-45a0-a841-33c0ab5769d1": {
+        "connections": {
+          "true": "7a90ce2e-3fd6-4e38-af72-df1bf98f8270"
+        },
+        "displayName": "Send Alternate JWT",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1587,
+        "y": 684.7239685058594
+      },
+      "eab1aa3d-4df8-4ab2-a428-ef593b9b4941": {
+        "connections": {
+          "FAILURE": "3c7450b7-77a0-483f-b32d-fcab9f5ca12f",
+          "PATCHED": "f9de4af3-0eec-4d3c-a476-ae5d9d0521a9"
+        },
+        "displayName": "Patch Migrated User",
+        "nodeType": "PatchObjectNode",
+        "x": 1884,
+        "y": 191.1666717529297
+      },
+      "f6f65982-fb15-477c-826f-614d1cd4d5d5": {
+        "connections": {
+          "true": "71aa1d8b-5e9d-4d6b-8d23-5d1e405eeef5"
+        },
+        "displayName": "Script: Set LastActivityDate",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1618,
+        "y": 46.76666259765625
+      },
+      "f9de4af3-0eec-4d3c-a476-ae5d9d0521a9": {
+        "connections": {
+          "true": "8814a3a0-7abd-4fd8-b0aa-afe90a1e1dde"
+        },
+        "displayName": "Script: Log patch",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 2091,
+        "y": 190.76666259765625
+      },
+      "fab885ef-b8fb-4ee2-b77a-e7959fe3f96b": {
+        "connections": {
+          "false": "c6ca7af1-c202-4790-9f53-51ee7b8f52ca",
+          "true": "79ee0e82-e3cb-4b5a-83d4-efd63e05ab61"
+        },
+        "displayName": "Script: Send SMS OTP?",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 912,
+        "y": 39.16667175292969
+      },
+      "fba7890e-5c64-4865-afce-6a4873f6b788": {
+        "connections": {
+          "true": "34dd0028-c0a4-4947-a4ad-b87b54443259"
+        },
+        "displayName": "Script: Replace userName with Mail",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 582,
+        "y": 63.16667175292969
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 2713,
+        "y": 43
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 2495,
+        "y": 730
+      },
+      "startNode": {
+        "x": 13,
+        "y": 171
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/Register v2",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "Register v2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=Register v2,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

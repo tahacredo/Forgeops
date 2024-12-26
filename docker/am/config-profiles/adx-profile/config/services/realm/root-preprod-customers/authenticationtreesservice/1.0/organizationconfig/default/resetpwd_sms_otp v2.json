@@ -1,0 +1,197 @@
+{
+  "data": {
+    "_id": "default/ResetPwd_SMS_OTP v2",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "collection": false,
+      "name": "authenticationTreesService"
+    },
+    "enabled": true,
+    "entryNodeId": "81382c57-4fa0-4108-853b-94b9e63dce43",
+    "identityResource": "managed/user",
+    "nodes": {
+      "10ed9f0b-0ac0-4e58-9035-3499b6ad160b": {
+        "connections": {
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Maximum Validation Tries",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1100,
+        "y": 347.015625
+      },
+      "2453d39b-96cc-471f-ad2e-4537b6bac552": {
+        "connections": {
+          "false": "887945cb-ad9f-4caa-b601-2e61d41a772c",
+          "true": "887945cb-ad9f-4caa-b601-2e61d41a772c"
+        },
+        "displayName": "Msg: Maximum Resend Tries",
+        "nodeType": "MessageNode",
+        "x": 601,
+        "y": 598.015625
+      },
+      "31649237-004f-492c-8f7a-fe46bd39679c": {
+        "connections": {
+          "error": "d3dffff5-66cb-4eab-b8b3-0d5047197f8f",
+          "true": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a"
+        },
+        "displayName": "Send SMS",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 635,
+        "y": 65.5
+      },
+      "740450cf-a7d1-46f4-b61a-7295e50a6771": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 433,
+        "y": 384.5416717529297
+      },
+      "81382c57-4fa0-4108-853b-94b9e63dce43": {
+        "connections": {
+          "error": "740450cf-a7d1-46f4-b61a-7295e50a6771",
+          "false": "be3793b7-4a28-4ed7-a5f8-b33601f35e7e",
+          "true": "ebf7d0a1-8908-44c2-9cde-ff5b56cd2c7c"
+        },
+        "displayName": "Script: Check OTP Lock",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 203,
+        "y": 179.015625
+      },
+      "887945cb-ad9f-4caa-b601-2e61d41a772c": {
+        "connections": {
+          "locked": "ebf7d0a1-8908-44c2-9cde-ff5b56cd2c7c",
+          "unlocked": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a"
+        },
+        "displayName": "Script: Check OTP Expiry Time",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 597,
+        "y": 275.015625
+      },
+      "992b7940-7b65-4176-8e29-90633a4503b1": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Msg: Maximum Validation Tries",
+        "nodeType": "MessageNode",
+        "x": 1093,
+        "y": 418.015625
+      },
+      "a186ca44-2551-49db-b665-fb8472209a4d": {
+        "connections": {
+          "false": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a",
+          "true": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a"
+        },
+        "displayName": "Msg: OTP Expired",
+        "nodeType": "MessageNode",
+        "x": 1105,
+        "y": 177.015625
+      },
+      "a474b4f2-44b6-488a-8291-204799d35792": {
+        "connections": {
+          "false": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a",
+          "true": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a"
+        },
+        "displayName": "Msg: Incorrect OTP",
+        "nodeType": "MessageNode",
+        "x": 1022,
+        "y": 672.015625
+      },
+      "af1ebfb7-b36f-4d8e-95c2-4b7d37b94a3d": {
+        "connections": {
+          "true": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a"
+        },
+        "displayName": "Msg: Incorrect OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1022,
+        "y": 598.015625
+      },
+      "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a": {
+        "connections": {
+          "expired": "e66dfe96-91f4-4160-8385-20057b788b70",
+          "invalid": "af1ebfb7-b36f-4d8e-95c2-4b7d37b94a3d",
+          "maxTries": "ebf7d0a1-8908-44c2-9cde-ff5b56cd2c7c",
+          "resend": "be3793b7-4a28-4ed7-a5f8-b33601f35e7e",
+          "restart": "10ed9f0b-0ac0-4e58-9035-3499b6ad160b",
+          "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName": "Validate SMS OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 878,
+        "y": 92.5
+      },
+      "be3793b7-4a28-4ed7-a5f8-b33601f35e7e": {
+        "connections": {
+          "true": "31649237-004f-492c-8f7a-fe46bd39679c"
+        },
+        "displayName": "Generate OTP",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 424,
+        "y": 89.5
+      },
+      "d3dffff5-66cb-4eab-b8b3-0d5047197f8f": {
+        "connections": {
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a",
+          "true": "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName": "Message Node",
+        "nodeType": "MessageNode",
+        "x": 1019,
+        "y": 787
+      },
+      "e66dfe96-91f4-4160-8385-20057b788b70": {
+        "connections": {
+          "true": "b65e7bc3-ce79-4b2d-9596-acdcc819cc8a"
+        },
+        "displayName": "Msg: OTP Expired",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 1101,
+        "y": 101.015625
+      },
+      "ebf7d0a1-8908-44c2-9cde-ff5b56cd2c7c": {
+        "connections": {
+          "true": "887945cb-ad9f-4caa-b601-2e61d41a772c"
+        },
+        "displayName": "Msg: Maximum Resend Tries",
+        "nodeType": "ScriptedDecisionNode",
+        "x": 617,
+        "y": 519.015625
+      }
+    },
+    "staticNodes": {
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 1718,
+        "y": 91.33333333333333
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 1698,
+        "y": 332.66666666666663
+      },
+      "startNode": {
+        "x": 70,
+        "y": 190
+      }
+    },
+    "uiConfig": {
+      "categories": "[]"
+    }
+  },
+  "metadata": {
+    "entityId": "default/ResetPwd_SMS_OTP v2",
+    "entityType": "authenticationTreesService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "ResetPwd_SMS_OTP v2"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "tree",
+    "uid": "ou=ResetPwd_SMS_OTP v2,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

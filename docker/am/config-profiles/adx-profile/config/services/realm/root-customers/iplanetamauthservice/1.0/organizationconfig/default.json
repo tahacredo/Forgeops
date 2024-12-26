@@ -1,0 +1,40 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "iPlanetAMAuthService",
+      "collection": false,
+      "name": "iPlanetAMAuthService"
+    },
+    "core": {
+      "adminAuthModule": "ldapService",
+      "orgConfig": "ldapService"
+    },
+    "general": {
+      "statelessSessionsEnabled": false
+    },
+    "security": {
+      "addClearSiteDataHeader": true
+    },
+    "userprofile": {
+      "aliasAttributeName": [
+        "uid"
+      ]
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "iPlanetAMAuthService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/d3571308-cc00-4825-b563-c230a60527c8",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Send Confirmation Callback",
+    "script": "var fr = JavaImporter(\n  org.forgerock.openam.auth.node.api,\n  javax.security.auth.callback.ConfirmationCallback,\n  java.util.ArrayList,\n  org.forgerock.json.JsonValue\n)\n\nwith (fr) {\n  \n  \n  objectAttributes = sharedState.get(\"objectAttributes\");\n\n  logger.error(\"in conf callback: \" + objectAttributes);\n  \n var cbList = ArrayList()\n    \n if (callbacks.isEmpty()) {\n\t  \n          logger.error(\"callback empty start\")\n          cbList.add(new ConfirmationCallback(\"Confirm user creation.\", 0, [\"Create\", \"Cancel\"], 1));\n          action = Action.send(cbList).build()\n       \t  logger.error(\"callback empty end\")\n\n  } else {\n        cbk = callbacks.get(0);\n\t\tvar choice = cbk.getSelectedIndex();\n    \tlogger.error(\"Selected choice: \" +  choice);\n    \t\n    if (choice === 0) {\n      \t\toutcome = \"create\";\n\n    } else {\n      \t\toutcome = \"cancel\";\n\n    }\n        \n\n  }\n     \t \n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/d3571308-cc00-4825-b563-c230a60527c8",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "d3571308-cc00-4825-b563-c230a60527c8"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=d3571308-cc00-4825-b563-c230a60527c8,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

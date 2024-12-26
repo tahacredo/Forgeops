@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/2dedb078-da67-4400-9bf9-602140ce0a27",
+    "_type": {
+      "_id": "IdentifyExistingUserNode",
+      "collection": false,
+      "name": "IdentifyExistingUserNode"
+    },
+    "identifier": "userName",
+    "identityAttribute": "emiratesID"
+  },
+  "metadata": {
+    "entityId": "default/2dedb078-da67-4400-9bf9-602140ce0a27",
+    "entityType": "IdentifyExistingUserNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "2dedb078-da67-4400-9bf9-602140ce0a27"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=2dedb078-da67-4400-9bf9-602140ce0a27,ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

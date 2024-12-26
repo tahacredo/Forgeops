@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "KbaCreateNode",
+    "_type": {
+      "_id": "KbaCreateNode",
+      "collection": false,
+      "name": "KbaCreateNode"
+    }
+  },
+  "metadata": {
+    "entityId": "KbaCreateNode",
+    "entityType": "KbaCreateNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "KbaCreateNode"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=KbaCreateNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "sunIdentityRepositoryService",
+    "_type": {
+      "_id": "sunIdentityRepositoryService",
+      "collection": false,
+      "name": "sunIdentityRepositoryService"
+    }
+  },
+  "metadata": {
+    "entityId": "sunIdentityRepositoryService",
+    "entityType": "sunIdentityRepositoryService",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "sunIdentityRepositoryService"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=sunIdentityRepositoryService,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

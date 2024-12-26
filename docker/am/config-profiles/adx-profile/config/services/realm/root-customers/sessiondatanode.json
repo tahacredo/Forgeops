@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "SessionDataNode",
+    "_type": {
+      "_id": "SessionDataNode",
+      "collection": false,
+      "name": "SessionDataNode"
+    }
+  },
+  "metadata": {
+    "entityId": "SessionDataNode",
+    "entityType": "SessionDataNode",
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "ou": [
+      "SessionDataNode"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=SessionDataNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

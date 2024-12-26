@@ -1,0 +1,30 @@
+{
+  "data": {
+    "_id": "default/2f49cca4-7d22-44be-b028-5a0aba13a90a",
+    "_type": {
+      "_id": "MessageNode",
+      "collection": false,
+      "name": "MessageNode"
+    },
+    "message": {
+      "en": "Failure in sending SMS."
+    },
+    "messageNo": {},
+    "messageYes": {}
+  },
+  "metadata": {
+    "entityId": "default/2f49cca4-7d22-44be-b028-5a0aba13a90a",
+    "entityType": "MessageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "2f49cca4-7d22-44be-b028-5a0aba13a90a"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=2f49cca4-7d22-44be-b028-5a0aba13a90a,ou=default,ou=OrganizationConfig,ou=1.0,ou=MessageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

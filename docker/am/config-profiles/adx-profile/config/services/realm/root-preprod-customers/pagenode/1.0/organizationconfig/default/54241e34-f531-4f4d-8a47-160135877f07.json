@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/54241e34-f531-4f4d-8a47-160135877f07",
+    "_type": {
+      "_id": "PageNode",
+      "collection": false,
+      "name": "PageNode"
+    },
+    "nodes": [
+      "e331518f-2c50-4d3c-881f-f0c33fa95ac3:AttributeCollectorNode:Attribute Collector",
+      "7c1c7bcc-6f2f-4531-9752-431af4201538:AttributeCollectorNode:Attribute Collector",
+      "b5941536-260e-4658-a553-fc9cdd01b598:ValidatedPasswordNode:Platform Password"
+    ],
+    "pageDescription": {},
+    "pageHeader": {
+      "en": "Migrated UAE PASS Alternative Registration"
+    },
+    "stage": "{\"ValidatedCreatePasswordCallback\":[{\"id\":\"de14ed98-c9ea-4135-86ff-83e6cc5bc7d7\",\"confirmPassword\":true}]}"
+  },
+  "metadata": {
+    "entityId": "default/54241e34-f531-4f4d-8a47-160135877f07",
+    "entityType": "PageNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "54241e34-f531-4f4d-8a47-160135877f07"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=54241e34-f531-4f4d-8a47-160135877f07,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

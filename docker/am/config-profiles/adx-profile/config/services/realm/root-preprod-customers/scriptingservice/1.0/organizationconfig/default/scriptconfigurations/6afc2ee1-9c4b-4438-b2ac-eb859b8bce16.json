@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/6afc2ee1-9c4b-4438-b2ac-eb859b8bce16",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Set LastActivityDate",
+    "script": "objectAttributes = sharedState.get(\"objectAttributes\");\n\nvar currentDate = new Date();\nvar isoDateString  = currentDate.toISOString();\n\nobjectAttributes.put(\"adxLastActivityDate\", isoDateString);\noutcome = \"true\";"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/6afc2ee1-9c4b-4438-b2ac-eb859b8bce16",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "6afc2ee1-9c4b-4438-b2ac-eb859b8bce16"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=6afc2ee1-9c4b-4438-b2ac-eb859b8bce16,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

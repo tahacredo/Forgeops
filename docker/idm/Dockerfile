@@ -16,3 +16,35 @@ RUN echo "\033[0;36m*** Building '${CONFIG_PROFILE}' profile ***\033[0m"
 COPY --chown=forgerock:root config-profiles/${CONFIG_PROFILE}/ /opt/openidm
 COPY --chown=forgerock:root bin/import-pem-certs.sh /opt/openidm/bin
 COPY --chown=forgerock:root . /opt/openidm
+COPY --chown=forgerock:root script/* /opt/openidm/script
+
+# Copy new empty security files into the container
+COPY --chown=forgerock:root security/storepass /opt/openidm/security/new_storepass
+COPY --chown=forgerock:root security/truststore /opt/openidm/security/new_truststore
+COPY --chown=forgerock:root security/keystore.jceks /opt/openidm/security/new_keystore.jceks
+
+# Copy contents of existing files into new files, backup originals, remove originals, and rename new files
+RUN \
+    # Step 1: Backup existing files
+    cp /opt/openidm/security/storepass /opt/openidm/security/storepass_bk && \
+    cp /opt/openidm/security/truststore /opt/openidm/security/truststore_bk && \
+    cp /opt/openidm/security/keystore.jceks /opt/openidm/security/keystore.jceks_bk && \
+    \
+    # Step 2: Copy contents of existing files into new files
+    cat /opt/openidm/security/storepass >> /opt/openidm/security/new_storepass && \
+    cat /opt/openidm/security/truststore >> /opt/openidm/security/new_truststore && \
+    cat /opt/openidm/security/keystore.jceks >> /opt/openidm/security/new_keystore.jceks && \
+    \
+    # Step 3: Remove existing files
+    rm /opt/openidm/security/storepass && \
+    rm /opt/openidm/security/truststore && \
+    rm /opt/openidm/security/keystore.jceks && \
+    rm /opt/openidm/security/storepass_bk && \
+    rm /opt/openidm/security/truststore_bk && \
+    rm /opt/openidm/security/keystore.jceks_bk && \
+    \
+    # Step 4: Rename new files to original names
+    mv /opt/openidm/security/new_storepass /opt/openidm/security/storepass && \
+    mv /opt/openidm/security/new_truststore /opt/openidm/security/truststore && \
+    mv /opt/openidm/security/new_keystore.jceks /opt/openidm/security/keystore.jceks
+

@@ -1,0 +1,27 @@
+{
+  "data": {
+    "_id": "default/8fba8089-ad31-40c0-b6f8-c6ff701f2fe1",
+    "_type": {
+      "_id": "ValidatedPasswordNode",
+      "collection": false,
+      "name": "ValidatedPasswordNode"
+    },
+    "passwordAttribute": "password",
+    "validateInput": false
+  },
+  "metadata": {
+    "entityId": "default/8fba8089-ad31-40c0-b6f8-c6ff701f2fe1",
+    "entityType": "ValidatedPasswordNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "8fba8089-ad31-40c0-b6f8-c6ff701f2fe1"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "instance",
+    "uid": "ou=8fba8089-ad31-40c0-b6f8-c6ff701f2fe1,ou=default,ou=OrganizationConfig,ou=1.0,ou=ValidatedPasswordNode,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

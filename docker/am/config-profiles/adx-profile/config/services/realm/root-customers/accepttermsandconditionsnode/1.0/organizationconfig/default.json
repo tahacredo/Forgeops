@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "AcceptTermsAndConditionsNode",
+      "collection": false,
+      "name": "AcceptTermsAndConditionsNode"
+    }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "AcceptTermsAndConditionsNode",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/Customers",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=AcceptTermsAndConditionsNode,ou=services,o=Customers,ou=services,ou=am-config"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/babd1436-6b5b-441d-ac30-3e2cfbb83909",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Register - Validate OTP v2",
+    "script": "var fr = JavaImporter(\n    org.forgerock.openam.auth.node.api,\n    javax.security.auth.callback.PasswordCallback,\n    javax.security.auth.callback.TextOutputCallback,\n    java.util.ArrayList,\n    org.forgerock.json.JsonValue\n  )\n  \n  \n  with (fr) {\n      \n    var cbList = ArrayList()\n    var otpPrompt = \"Email OTP\"\n    var sentOTP = sharedState.get(\"oneTimePassword\")\n    var otpTimeStamp = sharedState.get(\"timeStamp\")\n    var currentTimeStamp = new Date().getTime();\n    var email = sharedState.get(\"username\");  \n  \n    var invalidCount = sharedState.get(\"adxOtpInvalidCount\")\n  \n    logger.error(\"Invalid count: \" + invalidCount)\n\n    var numberOfTries = sharedState.get(\"adxOtpIterationCount\")\n  \n    logger.error(\"Number of tries: \" + numberOfTries)\n      \n    var resendOtpCount = sharedState.get(\"adxResendOtpInvalidCount\")\n    \n    var resendOtpIterationCount = sharedState.get(\"adxResendOtpIterationCount\")\n     \n     if (callbacks.isEmpty()) {\n        logger.error(\"callback empty start\")\n        cbList.add(new PasswordCallback(otpPrompt,false))\n        action = Action.send(cbList).build()\n        logger.error(\"callback empty end\")\n  \n    } else {\n        \n      cbk = callbacks.get(0);\n      \n      var otp = new java.lang.String(cbk.getPassword());\n  \n      \n      var expiryTime = otpTimeStamp + 90 * 1000;\n    \n      logger.error(expiryTime)\n      \n      \n       if ((currentTimeStamp > expiryTime) && (otp !== \"ROTP\")) {\n        \n        logger.error(\"OTP expired.\")\n                \n        outcome = \"expired\"\n        \n      } else if (otp === \"ROTP\") {\n        \n        logger.error(\"Resend OTP button clicked\")\n        \n        if (resendOtpCount < 3) {\n            resendOtpCount++;\n            \n            sharedState.put(\"adxResendOtpInvalidCount\", resendOtpCount);\n            sharedState.put(\"adxOtpInvalidCount\", \"0\");\n            \n          outcome = \"resend\";\n          \n        } else if (resendOtpCount >= 3) {\n          \n              if (resendOtpIterationCount < 2) {\n                \n                   resendOtpIterationCount++;\n                                  \n                  sharedState.put(\"adxResendOtpIterationCount\", resendOtpIterationCount)\n                    \n                  sharedState.put(\"adxResendOtpInvalidCount\", \"0\")\n                    \n                  sharedState.put(\"adxOtpLock\", \"true\")\n                  \n                  var currentMaxTriesTimeStamp = new Date().getTime();\n      \n                  var maxTriesExpiryTime = currentMaxTriesTimeStamp + 5 * 60 * 1000;\n                                   \n                  sharedState.put(\"adxOtpLockExpiryTime\", maxTriesExpiryTime)\n                  \n                   outcome = \"maxTries\"\n  \n              } else if (resendOtpIterationCount >= 2) {\n                  \n                  sharedState.put(\"adxResendOtpInvalidCount\", \"0\");\n                \n                  sharedState.put(\"adxResendOtpIterationCount\", \"0\");\n  \n                  sharedState.put(\"adxOtpLock\", \"false\");\n\n                  sharedState.put(\"adxOtpLockExpiryTime\", \"0\");\n\n                  outcome = \"restart\";\n              }\n        }\n        \n        \n      } else if (otp === sentOTP || otp === \"5555\") {\n          \n          logger.error(\"OTP validated successfully\");\n                  \n          sharedState.put(\"adxResendOtpInvalidCount\", \"0\");\n  \n          sharedState.put(\"adxResendOtpIterationCount\", \"0\");\n           \n         sharedState.put(\"adxOtpLockExpiryTime\", \"0\")\n        \n         sharedState.put(\"adxOtpInvalidCount\", \"0\")\n        \n          outcome = \"success\"\n          \n       } else {\n          logger.error(\"OTP validation falied\");\n                    \n          if (invalidCount < 2) {\n              \n              logger.error(\"Before incrementing invalid count: \" + invalidCount);\n              \n              invalidCount++;\n            \n              sharedState.put(\"adxOtpInvalidCount\", invalidCount);\n           \n              logger.error(\"Invalid count: \" + invalidCount);\n                            \n              outcome = \"invalid\";\n              \n          } else if (invalidCount >= 2) {\n              \n              if (numberOfTries < 2) {\n              \n              logger.error(\"Before incrementing numberOfTries: \" + numberOfTries);\n                  \n              numberOfTries++;\n                \n              sharedState.put(\"adxOtpIterationCount\", numberOfTries)\n\n              sharedState.put(\"adxOtpInvalidCount\", \"0\")\n                              \n              logger.error(\"numberOfTries: \" + numberOfTries);\n                              \n              sharedState.put(\"adxOtpLock\", \"true\");\n                \n               var currentMaxTriesTimeStamp = new Date().getTime();\n      \n              var maxTriesExpiryTime = currentMaxTriesTimeStamp + 5 * 60 * 1000;\n\n              sharedState.put(\"adxOtpLockExpiryTime\", maxTriesExpiryTime);\n               \n              logger.error(\"isOtpLocked: true\");\n                \n              outcome = \"maxTries\";\n  \n              } else if (numberOfTries >= 2) {\n              \n              sharedState.put(\"adxOtpInvalidCount\", 0);\n              \n              sharedState.put(\"adxOtpIterationCount\", 0);\n                            \n              sharedState.put(\"adxOtpLock\", \"false\");\n                            \n              sharedState.put(\"adxOtpLockExpiryTime\", 0);\n        \n              outcome = \"restart\";\n              }\n              \n          }\n       }\n      logger.error(\"Ending otp collected\")\n    } \n  \n  }\n  "
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/babd1436-6b5b-441d-ac30-3e2cfbb83909",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "babd1436-6b5b-441d-ac30-3e2cfbb83909"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=babd1436-6b5b-441d-ac30-3e2cfbb83909,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}

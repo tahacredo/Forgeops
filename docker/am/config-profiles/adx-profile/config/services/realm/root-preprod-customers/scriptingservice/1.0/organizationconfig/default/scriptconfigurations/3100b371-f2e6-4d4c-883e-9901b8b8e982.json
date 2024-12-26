@@ -1,0 +1,35 @@
+{
+  "data": {
+    "_id": "default/scriptConfigurations/3100b371-f2e6-4d4c-883e-9901b8b8e982",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "context": "AUTHENTICATION_TREE_DECISION_NODE",
+    "createdBy": "null",
+    "creationDate": "0",
+    "description": "null",
+    "evaluatorVersion": "V1_0",
+    "language": "JAVASCRIPT",
+    "lastModifiedBy": "null",
+    "lastModifiedDate": "0",
+    "name": "Check UAE PASS User Type",
+    "script": "var userType = sharedState.get(\"userType\");\nlogger.error(\"HERE: user type is: \" + userType);\n\nif (userType === \"SOP3\" || userType === \"SOP2\") {\n  outcome = \"true\";\n} else {\n  outcome = \"false\";\n}"
+  },
+  "metadata": {
+    "entityId": "default/scriptConfigurations/3100b371-f2e6-4d4c-883e-9901b8b8e982",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "3100b371-f2e6-4d4c-883e-9901b8b8e982"
+    ],
+    "pathParams": {},
+    "realm": "/preprod-Customers",
+    "sunServiceID": "scriptConfiguration",
+    "uid": "ou=3100b371-f2e6-4d4c-883e-9901b8b8e982,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=preprod-Customers,ou=services,ou=am-config"
+  }
+}
