@@ -57,6 +57,10 @@ create-backend-index \
           --index-name fr-idm-lastSync
 create-backend-index \
           --backend-name amIdentityStore \
+          --set index-type:equality \
+          --index-name emiratesID
+create-backend-index \
+          --backend-name amIdentityStore \
           --set index-type:extensible \
           --index-name fr-idm-managed-user-manager \
           --set index-extensible-matching-rule:1.3.6.1.4.1.36733.2.1.4.7 \
