@@ -33,7 +33,8 @@ define(["org/forgerock/openidm/ui/common/util/Constants"], function (constants) 
                 "resource-assignment": "org/forgerock/openidm/ui/admin/assignment/AssignmentView",
                 "resource-user": "org/forgerock/openidm/ui/admin/user/EditUserView",
                 "resource-role": "org/forgerock/openidm/ui/admin/role/EditRoleView",
-                "resource-group": "org/forgerock/openidm/ui/admin/role/EditRoleView"
+                "resource-group": "org/forgerock/openidm/ui/admin/role/EditRoleView",
+                "resource-adxpreproduser": "org/forgerock/openidm/ui/admin/user/EditUserView"
             }
         }, {
             moduleClass: "org/forgerock/commons/ui/common/components/Messages",
