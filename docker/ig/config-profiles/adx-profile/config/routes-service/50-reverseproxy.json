@@ -1,20 +1,6 @@
 {
   "heap": [
       {
-          "name": "404Handler",
-          "type": "StaticResponseHandler",
-          "config": {
-              "status": 200,
-              "reason": "Page not found",
-              "entity": "${read('/opt/forgerock/tomcat/webapps/ROOT/error/404.html')}",
-              "headers": {
-                  "content-type": [
-                      "text/html"
-                  ]
-              }
-          }
-      },
-      {
           "name": "503Handler",
           "type": "StaticResponseHandler",
           "config": {
@@ -78,10 +64,6 @@
                       "type": "SwitchFilter",
                       "config": {
                           "onResponse": [
-                              {
-                                  "condition": "${response.status.code == 404}",
-                                  "handler": "404Handler"
-                              },
                               {
                                   "condition": "${response.status.code == 502 or response.status.code == 503}",
                                   "handler": "503Handler"
